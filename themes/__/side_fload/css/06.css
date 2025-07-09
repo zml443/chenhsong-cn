@@ -1,0 +1,73 @@
+#side_fload_06 {position: fixed;top: 0;bottom: 0;display: flex;flex-direction: column;margin:40px 0px;pointer-events: none;}
+#side_fload_06[data-pos="1"] { left: -80px;justify-content: flex-start; }
+#side_fload_06[data-pos="4"] { left: -80px;justify-content: center; }
+#side_fload_06[data-pos="7"] { left: -80px;justify-content: flex-end; }
+#side_fload_06[data-pos="3"] { right: -80px;justify-content: flex-start; }
+#side_fload_06[data-pos="6"] { right: -80px;justify-content: center; }
+#side_fload_06[data-pos="9"] { right: -80px;justify-content: flex-end; }
+
+
+/* 展开按钮 */
+#side_fload_06 .btn {position: absolute;top:50%;left:0;width:30px;height:80px;transform: translate(-100%,-50%);pointer-events: all;background: rgba(0, 0, 0, 0.3);border-radius: 10px 0 0 10px;color: #fff;transition: .3s;}
+#side_fload_06.show {right:0px;}
+#side_fload_06.show .btn i {transform: rotate(-180deg);}
+
+#side_fload_06[data-pos="1"] .btn,
+#side_fload_06[data-pos="4"] .btn,
+#side_fload_06[data-pos="7"] .btn{left: initial;right: 0;transform: translate(100%,-50%);border-radius: 0 10px 10px 0;}
+
+#side_fload_06[data-pos="1"] .btn i,
+#side_fload_06[data-pos="4"] .btn i,
+#side_fload_06[data-pos="7"] .btn i{transform: rotate(-180deg);}
+
+#side_fload_06.show[data-pos="1"],
+#side_fload_06.show[data-pos="4"],
+#side_fload_06.show[data-pos="7"]{left: 0px;right: initial;}
+
+#side_fload_06.show[data-pos="1"] .btn i,
+#side_fload_06.show[data-pos="4"] .btn i,
+#side_fload_06.show[data-pos="7"] .btn i{transform: rotate(0deg);}
+
+
+
+/* href */
+#side_fload_06 .li {display: block;width:80px;min-height: 52px;padding:10px 6px;background: rgba(0, 0, 0, 0.3);pointer-events: all;cursor: pointer;transition: .3s;position: relative;}
+#side_fload_06 .li .svg {fill:#fff;transform: scale(.9);}
+#side_fload_06 .li .text {color:#fff;text-align: center;font-size: 12px;line-height: 1.5;margin-top: 5px;}
+#side_fload_06 .li::after{content: "";position: absolute;bottom:0;left:0px;width:100%;height: 1px;border-bottom: 1px solid #fff;}
+#side_fload_06 .li:nth-last-child(1)::after{border-bottom: none;}
+
+
+/* number */
+#side_fload_06 .li .subText{position: absolute;right:calc(100% + 30px);top: 50%;transform: translate(20px,-50%);transition: all .3s;overflow: hidden;opacity: 0;pointer-events: none;white-space: nowrap;}
+#side_fload_06[data-pos="1"] .li .subText,
+#side_fload_06[data-pos="4"] .li .subText,
+#side_fload_06[data-pos="7"] .li .subText{right: initial;left: calc(100% + 30px);transform: translate(-20px,-50%);}
+
+#side_fload_06 .li .subText > *{min-width: 300px;font-size: 16px;line-height: 52px;background: #333;color: #fff;box-shadow: 0 0 5px rgb(0 0 0 / 15%);padding: 0 20px;overflow: hidden;text-overflow: ellipsis;transform: translateX(110%);transition: .3s;}
+#side_fload_06[data-pos="1"] .li .subText > *,
+#side_fload_06[data-pos="4"] .li .subText > *,
+#side_fload_06[data-pos="7"] .li .subText > *{transform: translateX(-110%);}
+#side_fload_06 .li:hover .subText{opacity: 1;transform: translate(0px,-50%);}
+#side_fload_06 .li:hover .subText > *{transform: translateX(0%);}
+
+
+/* 二维码 */
+#side_fload_06 .codeBox .code {width:130px;height:130px;background-color: #fff;box-shadow: 0 0 20px rgb(0 0 0 / 15%);padding:20px;border-radius: 8px;right:100%;top:50%;transform: translate(0px,-50%);opacity: 0; transition: .3s; pointer-events: none;}
+#side_fload_06[data-pos="1"] .codeBox .code,
+#side_fload_06[data-pos="4"] .codeBox .code,
+#side_fload_06[data-pos="7"] .codeBox .code{right: initial;left: 100%;}
+#side_fload_06 .codeBox:hover .code { opacity: 1; transform: translate(-30px, -50%)}
+#side_fload_06[data-pos="1"] .codeBox:hover .code,
+#side_fload_06[data-pos="4"] .codeBox:hover .code,
+#side_fload_06[data-pos="7"] .codeBox:hover .code{transform: translate(30px, -50%)}
+
+
+
+/* 返回 */
+#side_fload_06 .backTop .svg {width:30px;height:30px;}
+
+
+@media screen and (max-width : 750px) {
+	#side_fload_06  {display: none;}
+}

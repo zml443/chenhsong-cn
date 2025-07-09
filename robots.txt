@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /
+Disallow: /themes/
+Disallow: /api/
+Disallow: /module/
+Disallow: /inc/

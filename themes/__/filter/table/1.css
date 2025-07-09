@@ -1,0 +1,63 @@
+/* 筛选弹窗 */
+.lyfilter_table{background: #f7f7f7;}
+/* 内容区 */
+.lyfilter_table_content{display: flex;flex-direction: column;padding: 50px 0;}
+
+
+
+/* 筛选标题 */
+.lyfilter_table_header{font-size: 48px;color: #333;padding-bottom: 40px;}
+
+
+
+
+
+
+.lyfilter_table_ul{}
+/* 表格 */
+.lyfilter_table_th_td{ min-width: 200px;padding: 10px;height: 70px;font-size: 20px;}
+
+
+.lyfilter_table_tb_tr{background: #fff;border-radius: 10px;box-shadow: 0 10px 20px rgba(0,0,0,.1);}
+.lyfilter_table_tb_td{border-right: 1px solid #eaeaea; min-width: 200px;padding: 20px;vertical-align: top;}
+.lyfilter_table_tb_td:last-child{border-right: none;}
+
+
+
+.lyfilter_table_box{}
+/* 多选 选项 */
+.lyfilter_table_label{width: 100%;display: block;cursor: pointer;padding: 8px 10px;line-height: 1.8;}
+.lyfilter_table_label .label_i{color: transparent;width: 20px;height: 20px;border: 1px solid #181818;transition: .3s;margin-right: 10px;font-size: 16px;}
+.lyfilter_table_label.cur .label_i{color: #181818;}
+
+/* 价格区间 */
+.lyfilter_table_price{gap: 0 3px;}
+.lyfilter_table_price .label{height: 40px;}
+.lyfilter_table_price .label input{width: 100%;height: 100%;padding: 0 10px;border: 1px solid #eaeaea;border-radius: 10px;}
+
+
+/* 显示更多产品按钮 */
+.lyfilter_table_more{width: 310px; height: 50px; background: #181818;color: #fff; border-radius: 25px;font-size: 14px;transition: .3s;cursor: pointer;margin: 60px auto;}
+
+
+@media screen and (max-width:750px) {
+    /* 筛选 & 关闭按钮 */
+    .lyfilter_table_header{font-size: .26rem;padding: 0 10%;}
+    .lyfilter_table_header i{font-size: .26rem;}
+
+    /* 下拉内容区 */
+    .lyfilter_table_ul{font-size: .26rem;padding:0 10%;margin: 15px 0;}
+
+    /* 一级类型 */
+    .lyfilter_table_name{height: 80px;}
+    .lyfilter_table_name i{font-size: .26rem;}
+
+    /* 二级选项 */
+    .lyfilter_table_label{}
+    .lyfilter_table_label .label_i{width: 30px;height: 30px;font-size: .24rem;}
+
+    .lyfilter_table_price .label{height: 60px;}
+
+    /* 显示更多产品按钮 */
+    .lyfilter_table_more{width: 60%; height: 70px; border-radius: 35px;font-size: .26rem;}
+}

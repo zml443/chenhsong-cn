@@ -1,0 +1,64 @@
+/* 筛选弹窗 */
+.lyfilter_popup_side{}
+/* 内容区 */
+.lyfilter_popup_side_content{width: 530px;background: #fff;display: flex;flex-direction: column;}
+
+
+
+/* 筛选标题 */
+.lyfilter_popup_side_header{height: 90px;background: rgba(200, 200, 200, 0.2);padding: 0 20%;font-size: 16px;}
+.lyfilter_popup_side_header span{font-weight: bold;}
+.lyfilter_popup_side_header i{margin-right: 20px;font-size: 14px;}
+
+
+
+/* 筛选列表 */
+.lyfilter_popup_side_form{flex: 1;overflow-y: auto;overflow-x: hidden;padding:0 14% 0 20%;margin: 15px 6% 15px 0;font-size: 16px;}
+/* 子项 */
+.lyfilter_popup_side_li{border-bottom: 1px solid #ccc;}
+
+/* 一级类型 */
+.lyfilter_popup_side_name{height: 66px;cursor: pointer;}
+.lyfilter_popup_side_name span{font-weight: bold;}
+.lyfilter_popup_side_name i{transition: .3s;font-size: 20px;}
+.lyfilter_popup_side_li.cur .lyfilter_popup_side_name i{transform: rotateZ(180deg);}
+
+
+/* 下拉内容区 */
+.lyfilter_popup_side_box{}
+/* 多选 选项 */
+.lyfilter_popup_side_label{width: 100%;display: block;cursor: pointer;padding: 8px 0;line-height: 1.8;}
+.lyfilter_popup_side_label .label_i{color: transparent;width: 20px;height: 20px;border: 1px solid #181818;transition: .3s;margin-right: 10px;font-size: 16px;}
+.lyfilter_popup_side_label.cur .label_i{color: #181818;}
+
+/* 价格区间 */
+.lyfilter_popup_side_price{margin-bottom: 10px;gap: 0 10px;}
+.lyfilter_popup_side_price .label{height: 40px;}
+.lyfilter_popup_side_price .label input{width: 100%;height: 100%;padding: 0 10px;border: 1px solid #eaeaea;border-radius: 5px;}
+
+
+/* 显示更多产品按钮 */
+.lyfilter_popup_side_more{width: 310px; height: 50px; background: #181818;color: #fff; border-radius: 25px;font-size: 14px;margin: 0 auto;transition: .3s;cursor: pointer;margin-bottom: 40px;margin-top: 30px;}
+
+
+@media screen and (max-width:750px) {
+    /* 筛选 & 关闭按钮 */
+    .lyfilter_popup_side_header{font-size: .26rem;padding: 0 10%;}
+    .lyfilter_popup_side_header i{font-size: .26rem;}
+
+    /* 下拉内容区 */
+    .lyfilter_popup_side_form{font-size: .26rem;padding:0 10%;margin: 15px 0;}
+
+    /* 一级类型 */
+    .lyfilter_popup_side_name{height: 80px;}
+    .lyfilter_popup_side_name i{font-size: .26rem;}
+
+    /* 二级选项 */
+    .lyfilter_popup_side_label{}
+    .lyfilter_popup_side_label .label_i{width: 30px;height: 30px;font-size: .24rem;}
+
+    .lyfilter_popup_side_price .label{height: 60px;}
+
+    /* 显示更多产品按钮 */
+    .lyfilter_popup_side_more{width: 60%; height: 70px; border-radius: 35px;font-size: .26rem;}
+}

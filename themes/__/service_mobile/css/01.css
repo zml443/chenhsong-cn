@@ -1,0 +1,7 @@
+
+#footer_fload_01{background: var(--mainColor);box-shadow: 0 0 9px rgba(0,0,0,.1)}
+#footer_fload_01 .li{height: 80px;color: #fff;font-size: 30px;position: relative;}
+#footer_fload_01 .li:after{position: absolute;width: 1px;left: 0;bottom: 15px;top: 15px;background: #fff;opacity: .9;content: '';}
+#footer_fload_01 .li:nth-child(1):after{display: none;}
+#footer_fload_01 .li .icon{font-size: 36px;margin-right: 20px}
+#footer_fload_01 .li .name{font-size: 30px}

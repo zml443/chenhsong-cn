@@ -1,0 +1,61 @@
+#side_fload_03 {position: fixed;top: 0;bottom: 0;display: flex;flex-direction: column;margin:40px 0px;pointer-events: none;}
+#side_fload_03[data-pos="1"] { left: 40px;justify-content: flex-start; }
+#side_fload_03[data-pos="4"] { left: 40px;justify-content: center; }
+#side_fload_03[data-pos="7"] { left: 40px;justify-content: flex-end; }
+#side_fload_03[data-pos="3"] { right: 40px;justify-content: flex-start; }
+#side_fload_03[data-pos="6"] { right: 40px;justify-content: center; }
+#side_fload_03[data-pos="9"] { right: 40px;justify-content: flex-end; }
+
+
+
+
+#side_fload_03 .ul{margin-bottom: 30px;width:60px;box-shadow: 0 0 10px 5px rgb(0 0 0 / 10%);pointer-events: all;border-radius: 8px;background: #fff;position: relative;}
+/* href */
+#side_fload_03 .li {width:60px;min-height:60px;display: flex;flex-direction: column;justify-content: center;align-items: center;transition: .3s;padding: 6px;z-index: 2;position: relative;}
+#side_fload_03 .li .svg {fill:var(--sideBgColor);transform: scale(.9);}
+#side_fload_03 .li .text {color:#222;font-size: 14px;line-height: 1.5;max-width: 100%;text-align: center;word-break : break-all;}
+
+/* 移动滑块 */
+#side_fload_03 .moveblock{display: block;position: absolute;transition: .3s;background: var(--sideBgColor);border-radius: 8px;left: 0;top: 0;height: 0;width: 100%;}
+
+#side_fload_03 .li.cur .text {color:#fff;}
+#side_fload_03 .li.cur .svg {fill:#fff;}
+
+
+
+/* number */
+#side_fload_03 .li .subText{position: absolute;right: calc(100% + 10px);top: 50%;z-index: 12;transform: translate(10px,-50%);transition: .3s;overflow: hidden;opacity: 0;pointer-events: none;white-space: nowrap;}
+#side_fload_03[data-pos="1"] .li .subText,
+#side_fload_03[data-pos="4"] .li .subText,
+#side_fload_03[data-pos="7"] .li .subText{right: initial;left: calc(100% + 10px);transform: translate(-10px,-50%)}
+
+#side_fload_03 .li .subText > *{min-width: 300px;font-size: 16px;line-height: 52px;background: #fff;color: var(--sideBgColor);box-shadow: 0 0 10px rgb(0 0 0 / 15%);padding: 0 20px;margin: 10px;overflow: hidden;text-overflow: ellipsis;transform: translateX(110%);transition: .3s;}
+#side_fload_03[data-pos="1"] .li .subText > *,
+#side_fload_03[data-pos="4"] .li .subText > *,
+#side_fload_03[data-pos="7"] .li .subText > *{transform: translateX(-110%);}
+#side_fload_03 .li:hover .subText{opacity: 1;transform: translate(0px,-50%);}
+#side_fload_03 .li:hover .subText > *{transform: translateX(0%);}
+
+
+/* 二维码 */
+#side_fload_03 .codeBox .code {width: 130px; height: 130px; background: #fff; box-shadow: 0 0 20px rgb(0 0 0 / 15%); border-radius: 8px; right: 100%; top: 50%; transform: translate(0px,-50%);opacity: 0; transition: .3s; pointer-events: none;}
+#side_fload_03[data-pos="1"] .codeBox .code,
+#side_fload_03[data-pos="4"] .codeBox .code,
+#side_fload_03[data-pos="7"] .codeBox .code{right: initial;left: 100%;}
+#side_fload_03 .codeBox:hover .code { opacity: 1; transform: translate(-20px, -50%)}
+#side_fload_03[data-pos="1"] .codeBox:hover .code,
+#side_fload_03[data-pos="4"] .codeBox:hover .code,
+#side_fload_03[data-pos="7"] .codeBox:hover .code{transform: translate(20px, -50%)}
+
+
+/* 返回 */
+#side_fload_03 .backTop {width:60px;height:60px;pointer-events:all;cursor: pointer;box-shadow: 0 0 20px rgb(0 0 0 / 15%);background: #fff;border-radius: 8px;}
+#side_fload_03 .backTop .svg {width:24px;height:24px;fill:var(--sideBgColor);}
+#side_fload_03 .backTop:hover {background-color: var(--sideBgColor);}
+#side_fload_03 .backTop:hover .svg {fill:#fff;}
+
+
+
+@media screen and (max-width :750px) {
+    #side_fload_03{display: none;}
+}

@@ -1,0 +1,14 @@
+2022-08-05 13:54:53, INFO, 127.0.0.1, File[ D:\Zinn\Backups\5.0\www\themes\api\pay\unionpay\sdk\acp_service.php ], Line[71]------ =====签名报文开始====== 
+2022-08-05 13:54:53, INFO, 127.0.0.1, File[ D:\Zinn\Backups\5.0\www\themes\api\pay\unionpay\sdk\cert_util.php ], Line[39]------ 读取签名证书…… 
+2022-08-05 13:54:53, INFO, 127.0.0.1, File[ D:\Zinn\Backups\5.0\www\themes\api\pay\unionpay\sdk\cert_util.php ], Line[43]------ D:/Zinn/Backups/5.0/www/file_get_contents fail。 
+2022-08-05 13:54:53, INFO, 127.0.0.1, File[ D:\Zinn\Backups\5.0\www\themes\api\pay\unionpay\sdk\cert_util.php ], Line[39]------ 读取签名证书…… 
+2022-08-05 13:54:53, INFO, 127.0.0.1, File[ D:\Zinn\Backups\5.0\www\themes\api\pay\unionpay\sdk\cert_util.php ], Line[43]------ D:/Zinn/Backups/5.0/www/file_get_contents fail。 
+2022-08-05 13:54:53, INFO, 127.0.0.1, File[ D:\Zinn\Backups\5.0\www\themes\api\pay\unionpay\sdk\acp_service.php ], Line[84]------ 签名key=val&...串 >accessType=0&backUrl=http://my.com/api/pay/unionpay/callback&bizType=000201&certId=&channelType=08&currencyCode=156&encoding=utf-8&frontUrl=http://my.com/api/unionpay/return.html&merId=&orderId=1659678893&payTimeout=20220805140953&signMethod=01&txnAmt=1&txnSubType=01&txnTime=20220805135453&txnType=01&version=5.1.0 
+2022-08-05 13:54:53, INFO, 127.0.0.1, File[ D:\Zinn\Backups\5.0\www\themes\api\pay\unionpay\sdk\acp_service.php ], Line[101]------ 摘要sha256x16 >85d517d645517935ec644e8803ec7623e045383706987017c1b92e727af2344b 
+2022-08-05 14:05:59, INFO, 127.0.0.1, File[ D:\Zinn\Backups\5.0\www\themes\api\pay\unionpay\sdk\acp_service.php ], Line[71]------ =====签名报文开始====== 
+2022-08-05 14:05:59, INFO, 127.0.0.1, File[ D:\Zinn\Backups\5.0\www\themes\api\pay\unionpay\sdk\cert_util.php ], Line[39]------ 读取签名证书…… 
+2022-08-05 14:05:59, INFO, 127.0.0.1, File[ D:\Zinn\Backups\5.0\www\themes\api\pay\unionpay\sdk\cert_util.php ], Line[43]------ D:/Zinn/Backups/5.0/www/file_get_contents fail。 
+2022-08-05 14:05:59, INFO, 127.0.0.1, File[ D:\Zinn\Backups\5.0\www\themes\api\pay\unionpay\sdk\cert_util.php ], Line[39]------ 读取签名证书…… 
+2022-08-05 14:05:59, INFO, 127.0.0.1, File[ D:\Zinn\Backups\5.0\www\themes\api\pay\unionpay\sdk\cert_util.php ], Line[43]------ D:/Zinn/Backups/5.0/www/file_get_contents fail。 
+2022-08-05 14:05:59, INFO, 127.0.0.1, File[ D:\Zinn\Backups\5.0\www\themes\api\pay\unionpay\sdk\acp_service.php ], Line[84]------ 签名key=val&...串 >accessType=0&backUrl=http://my.com/api/pay/unionpay/callback&bizType=000201&certId=&channelType=08&currencyCode=156&encoding=utf-8&frontUrl=http://my.com/api/unionpay/return.html&merId=&orderId=1659679559&payTimeout=20220805142059&signMethod=01&txnAmt=1&txnSubType=01&txnTime=20220805140559&txnType=01&version=5.1.0 
+2022-08-05 14:05:59, INFO, 127.0.0.1, File[ D:\Zinn\Backups\5.0\www\themes\api\pay\unionpay\sdk\acp_service.php ], Line[101]------ 摘要sha256x16 >8c2ffa8415ca605f58c90f084a7330fc03efdcc19fb5a97740f2fe6eb5e7bc02 

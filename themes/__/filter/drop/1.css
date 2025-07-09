@@ -1,0 +1,70 @@
+/* 筛选弹窗 */
+.lyfilter_drop{}
+/* 内容区 */
+.lyfilter_drop_content{width: 100%;background: #f7f7f7;display: flex;flex-direction: column;padding: 50px 0;}
+
+
+
+/* 筛选标题 */
+.lyfilter_drop_header{height: 90px;background: rgba(200, 200, 200, 0.2);padding:0 4vw;font-size: 16px;}
+.lyfilter_drop_header span{font-weight: bold;}
+.lyfilter_drop_header i{margin-right: 20px;font-size: 14px;}
+
+
+
+/* 筛选列表 */
+.lyfilter_drop_form{flex: 1;padding:20px 4vw;font-size: 16px;color: #333;display: flex;flex-wrap: wrap;gap: 30px 40px;}
+/* 子项 */
+.lyfilter_drop_form > *{width: calc((100% - 40px * 3)/4);}
+
+.lyfilter_drop_title{line-height: 1.8;padding-bottom: 5px;}
+.lyfilter_drop_li{border: 1px solid transparent;border-radius: 5px;padding: 0 26px;background: #fff;transition: border-color .3s;height: 56px;cursor: pointer;color: #333;}
+.lyfilter_drop_li.cur{border-color: red;}
+
+/* 一级类型 */
+.lyfilter_drop_name{height: 100%;}
+.lyfilter_drop_name .span{max-width: 85%;color: #999;}
+.lyfilter_drop_name .span .txt{white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
+.lyfilter_drop_name .span .num{}
+.lyfilter_drop_name i{transition: .3s;font-size: 14px;}
+.lyfilter_drop_li.cur .lyfilter_drop_name i{transform: rotateZ(180deg);}
+
+
+/* 下拉内容区 */
+.lyfilter_drop_box{background: #fff;position: absolute;left: 0;right: 0;bottom: 0;transform: translateY(calc(100% + 50px));z-index: 2;opacity: 0;transition: .3s;pointer-events: none;border-radius: 10px;box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);padding: 10px 26px;}
+.lyfilter_drop_li.cur .lyfilter_drop_box{transform: translateY(calc(100% + 10px));opacity: 1;pointer-events: all;}
+/* 多选 选项 */
+.lyfilter_drop_label{width: 100%;display: block;cursor: pointer;padding: 8px 0;line-height: 1.8;}
+.lyfilter_drop_label .label_i{color: transparent;width: 20px;height: 20px;border: 1px solid #181818;transition: .3s;margin-right: 10px;font-size: 16px;}
+.lyfilter_drop_label.cur .label_i{color: #181818;}
+
+/* 价格区间 */
+.lyfilter_drop_li.price{gap: 0 3px;color: #eaeaea;}
+.lyfilter_drop_li.price .label{height: 80%;color: #333;}
+.lyfilter_drop_li.price input{width: 100%;height: 100%;padding: 0 10px;border: 1px solid #eaeaea;border-radius: 10px;}
+
+
+/* 显示更多产品按钮 */
+.lyfilter_drop_more{width: 310px; height: 50px; background: #181818;color: #fff; border-radius: 25px;font-size: 14px;margin: 0 auto;transition: .3s;cursor: pointer;margin-bottom: 40px;margin-top: 30px;}
+
+
+@media screen and (max-width:750px) {
+    /* 筛选 & 关闭按钮 */
+    .lyfilter_drop_header{font-size: .26rem;padding: 0 10%;}
+    .lyfilter_drop_header i{font-size: .26rem;}
+
+    /* 下拉内容区 */
+    .lyfilter_drop_form{font-size: .26rem;padding:0 10%;margin: 15px 0;}
+
+    /* 一级类型 */
+    .lyfilter_drop_name{height: 80px;}
+    .lyfilter_drop_name i{font-size: .26rem;}
+
+    /* 二级选项 */
+    .lyfilter_drop_label{}
+    .lyfilter_drop_label .label_i{width: 30px;height: 30px;font-size: .24rem;}
+
+
+    /* 显示更多产品按钮 */
+    .lyfilter_drop_more{width: 60%; height: 70px; border-radius: 35px;font-size: .26rem;}
+}

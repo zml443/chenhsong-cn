@@ -1,0 +1,25 @@
+<IfModule mod_rewrite.c>
+	RewriteEngine on 
+	
+	# 注释：http 跳 https 的301重定向
+	# RewriteCond %{SERVER_PORT} !^443$    
+	# RewriteRule ^(.*)$ https://%{SERVER_NAME}%{REQUEST_URI} [L,R]
+
+
+	# 注释：www 的301重定向
+	#RewriteCond %{HTTP_HOST} !^www.域名.org$ [NC]
+	#RewriteRule ^(.*)$ http://www.域名.org/$1 [L,R=301]
+
+	#Block spider
+	RewriteCond %{HTTP_USER_AGENT} "SemrushBot|Webdup|AcoonBot|AhrefsBot|Ezooms|EdisterBot|EC2LinkFinder|jikespider|Purebot|MJ12bot|WangIDSpider|WBSearchBot|Wotbox|xbfMozilla|Yottaa|YandexBot|Jorgee|SWEBot|spbot|TurnitinBot-Agent|mail.RU|curl|perl|Python|Wget|Xenu|ZmEu" [NC]
+	RewriteRule !(^robots\.txt$) - [F]
+	
+	RewriteRule ^/?manage/(.*\.php)?$ manage/index.php [QSA,PT,L]
+	RewriteRule ^/?inc/(.*\.php)?$ index.php?weburl=404 [QSA,PT,L]
+
+	RewriteRule web.config$ index.php?weburl=$1 [QSA,PT,L]
+
+	RewriteCond %{REQUEST_FILENAME} !-d 
+	RewriteCond %{REQUEST_FILENAME} !-f 
+	RewriteRule ^(.*)$ index.php?weburl=$1 [QSA,PT,L]
+</IfModule>

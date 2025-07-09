@@ -1,0 +1,56 @@
+#side_fload_05 {position: fixed;top: 0;bottom: 0;display: flex;flex-direction: column;margin:40px 0px;pointer-events: none;}
+#side_fload_05[data-pos="1"] { left: 40px;justify-content: flex-start; }
+#side_fload_05[data-pos="4"] { left: 40px;justify-content: center; }
+#side_fload_05[data-pos="7"] { left: 40px;justify-content: flex-end; }
+#side_fload_05[data-pos="3"] { right: 40px;justify-content: flex-start; }
+#side_fload_05[data-pos="6"] { right: 40px;justify-content: center; }
+#side_fload_05[data-pos="9"] { right: 40px;justify-content: flex-end; }
+
+/* 展开按钮 */
+#side_fload_05 .expand {width:55px;height:55px;background-color: var(--sideBgColor);pointer-events: all;color: #fff;}
+#side_fload_05 .expand .svg{width:10px;height:10px;fill:#ffff;}
+
+
+/* href */
+#side_fload_05 .menu {pointer-events: all;box-shadow: 0 0 20px rgb(0 0 0 / 15%);background-color: var(--sideBgColor);}
+#side_fload_05 .menu .li{display: flex;width:55px;height:55px;}
+#side_fload_05 .menu .li::after{position: absolute;content: "";left: 12px;right: 12px;bottom: 0;border-bottom: 1px solid rgba(255, 255, 255,0.5)}
+#side_fload_05 .menu .li:nth-last-of-type(1)::after{border-bottom: none;}
+#side_fload_05 .menu .li .svg {fill:#fff;transform: scale(.9);}
+
+
+/* number */
+#side_fload_05 .menu .tel .subText{position: absolute;right:calc(100% + 20px);top: 50%;transform: translate(20px,-50%);transition: all .3s;overflow: hidden;opacity: 0;pointer-events: none;white-space: nowrap;}
+#side_fload_05[data-pos="1"] .menu .tel .subText,
+#side_fload_05[data-pos="4"] .menu .tel .subText,
+#side_fload_05[data-pos="7"] .menu .tel .subText{right: initial;left: calc(100% + 20px);transform: translate(-20px,-50%)}
+
+#side_fload_05 .menu .tel .subText > *{min-width: 300px;font-size: 16px;line-height: 52px;background: var(--sideBgColor);color: #fff;box-shadow: 0 0 5px rgb(0 0 0 / 15%);padding: 0 20px;overflow: hidden;text-overflow: ellipsis;transform: translateX(110%);transition: .3s;}
+#side_fload_05[data-pos="1"] .menu .tel .subText > *,
+#side_fload_05[data-pos="4"] .menu .tel .subText > *,
+#side_fload_05[data-pos="7"] .menu .tel .subText > *{transform: translateX(-110%);}
+#side_fload_05 .menu .tel:hover .subText{opacity: 1;transform: translate(0px,-50%);}
+#side_fload_05 .menu .tel:hover .subText > *{transform: translateX(0%);}
+
+
+/* 二维码 */
+#side_fload_05 .codeBox .code {width:130px;height:130px;background: #fff;box-shadow: 0 0 20px rgb(0 0 0 / 15%);border-radius: 8px;right:100%;top:50%;transform: translate(0px,-50%);opacity: 0; transition: .3s; pointer-events: none;}
+#side_fload_05[data-pos="1"] .codeBox .code,
+#side_fload_05[data-pos="4"] .codeBox .code,
+#side_fload_05[data-pos="7"] .codeBox .code{right: initial;left: 100%;}
+#side_fload_05 .codeBox:hover .code { opacity: 1; transform: translate(-20px, -50%)}
+#side_fload_05[data-pos="1"] .codeBox:hover .code,
+#side_fload_05[data-pos="4"] .codeBox:hover .code,
+#side_fload_05[data-pos="7"] .codeBox:hover .code{transform: translate(20px, -50%)}
+
+
+/* 返回 */
+#side_fload_05 .menu .backTop {display: flex;flex-direction: column;justify-content: center;align-items: center;width:55px;height:55px;background-color: #333;}
+#side_fload_05 .menu .backTop .svg {width:12px;height:12px;fill:#fff;transform: translateY(2px);}
+#side_fload_05 .menu .backTop .text {color:#fff;font-size: 12px;}
+
+
+
+@media screen and (max-width :750px) {
+    #side_fload_05 {display: none;}
+}

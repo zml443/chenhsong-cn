@@ -1,0 +1,14 @@
+/* 筛选弹窗 */
+.lyfilter_result{background: #eaeaea;}
+.lyfilter_result_box{padding: 35px 0;display: flex;}
+
+.lyfilter_result_title{flex-shrink: 0;margin-right: 10px;font-size: 18px;line-height: 40px;}
+
+.lyfilter_result_list{display: flex;flex-wrap: wrap;gap: 12px;line-height: 1.6;}
+.lyfilter_result_list_li{padding: 6px 20px;background: #f7f7f7;border: 1px solid transparent;border-radius: 5px;display: flex;align-items: center;transition: .3s;cursor: pointer;}
+
+.lyfilter_result_list_li.cur,
+.lyfilter_result_list_li:hover{color: var(--mainColor);border-color: var(--mainColor);}
+
+.lyfilter_result_list_name{}
+.lyfilter_result_list_close{margin-left: 6px;}

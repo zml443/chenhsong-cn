@@ -1,0 +1,15 @@
+
+# 注释：http 跳 https 的301重定向
+# if ($host != 'www.域名.cn') { rewrite ^/(.*)$ https://www.域名.cn/$1 permanent; }
+
+rewrite ^/?inc/(.*\.php)?$ /index.php?weburl=404 last;
+rewrite ^/?manage/.*\.php$ /manage/index.php last;
+
+rewrite web.config$ /index.php?weburl=$1 last;
+
+
+
+if (!-e $request_filename) {
+	rewrite ^(.*)?$ /index.php?weburl=$1 last;
+	break;
+}

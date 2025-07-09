@@ -1,0 +1,72 @@
+2022-12-24 18:06:49, INFO, 121.34.20.50, File[ /www/wwwroot/wb003.beta.lianyayun.com/themes/api/pay/unionpay/sdk/acp_service.php ], Line[71]------ =====签名报文开始====== 
+2022-12-24 18:06:49, INFO, 121.34.20.50, File[ /www/wwwroot/wb003.beta.lianyayun.com/themes/api/pay/unionpay/sdk/cert_util.php ], Line[39]------ 读取签名证书…… 
+2022-12-24 18:06:49, INFO, 121.34.20.50, File[ /www/wwwroot/wb003.beta.lianyayun.com/themes/api/pay/unionpay/sdk/cert_util.php ], Line[48]------ /www/wwwroot/wb003.beta.lianyayun.com/, pwd[] openssl_pkcs12_read fail。 
+2022-12-24 18:06:49, INFO, 121.34.20.50, File[ /www/wwwroot/wb003.beta.lianyayun.com/themes/api/pay/unionpay/sdk/cert_util.php ], Line[39]------ 读取签名证书…… 
+2022-12-24 18:06:49, INFO, 121.34.20.50, File[ /www/wwwroot/wb003.beta.lianyayun.com/themes/api/pay/unionpay/sdk/cert_util.php ], Line[48]------ /www/wwwroot/wb003.beta.lianyayun.com/, pwd[] openssl_pkcs12_read fail。 
+2022-12-24 18:06:49, INFO, 121.34.20.50, File[ /www/wwwroot/wb003.beta.lianyayun.com/themes/api/pay/unionpay/sdk/acp_service.php ], Line[84]------ 签名key=val&...串 >accessType=0&backUrl=http://wb003.beta.lianyayun.com/api/pay/unionpay/callback&bizType=000201&certId=&channelType=08&currencyCode=156&encoding=utf-8&frontUrl=http://wb003.beta.lianyayun.com/api/unionpay/return.html&merId=&orderId=1671876409&payTimeout=20221224182149&signMethod=01&txnAmt=1&txnSubType=01&txnTime=20221224180649&txnType=01&version=5.1.0 
+2022-12-24 18:06:49, INFO, 121.34.20.50, File[ /www/wwwroot/wb003.beta.lianyayun.com/themes/api/pay/unionpay/sdk/acp_service.php ], Line[101]------ 摘要sha256x16 >33bcd3ca0a02bf5e029299ee9de704aca989bb535f5a98822e9a7ab7224bbece 
+2022-12-24 18:06:49, INFO, 121.34.20.50, File[ /www/wwwroot/wb003.beta.lianyayun.com/themes/api/pay/unionpay/sdk/acp_service.php ], Line[109]------ >>>>>签名失败<<<<<<< 
+2022-12-24 18:06:49, INFO, 121.34.20.50, File[ /www/wwwroot/wb003.beta.lianyayun.com/themes/api/pay/unionpay/sdk/acp_service.php ], Line[119]------ =====签名报文结束====== 
+2022-12-24 18:06:49, INFO, 121.34.20.50, File[ /www/wwwroot/wb003.beta.lianyayun.com/themes/api/pay/unionpay/sdk/acp_service.php ], Line[364]------ 自动跳转html><html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body onload="javascript:document.pay_form.submit();">
+    <form id="pay_form" name="pay_form" action="https://gateway.95516.com/gateway/api/frontTransReq.do" method="post">
+	    <input type="hidden" name="version" id="version" value="5.1.0" />
+    <input type="hidden" name="encoding" id="encoding" value="utf-8" />
+    <input type="hidden" name="txnType" id="txnType" value="01" />
+    <input type="hidden" name="txnSubType" id="txnSubType" value="01" />
+    <input type="hidden" name="bizType" id="bizType" value="000201" />
+    <input type="hidden" name="frontUrl" id="frontUrl" value="http://wb003.beta.lianyayun.com/api/unionpay/return.html" />
+    <input type="hidden" name="backUrl" id="backUrl" value="http://wb003.beta.lianyayun.com/api/pay/unionpay/callback" />
+    <input type="hidden" name="signMethod" id="signMethod" value="01" />
+    <input type="hidden" name="channelType" id="channelType" value="08" />
+    <input type="hidden" name="accessType" id="accessType" value="0" />
+    <input type="hidden" name="currencyCode" id="currencyCode" value="156" />
+    <input type="hidden" name="merId" id="merId" value="" />
+    <input type="hidden" name="orderId" id="orderId" value="1671876409" />
+    <input type="hidden" name="txnTime" id="txnTime" value="20221224180649" />
+    <input type="hidden" name="txnAmt" id="txnAmt" value="1" />
+    <input type="hidden" name="payTimeout" id="payTimeout" value="20221224182149" />
+    <input type="hidden" name="certId" id="certId" value="" />
+   <!-- <input type="submit" type="hidden">-->
+    </form>
+</body>
+</html> 
+2022-12-24 18:07:49, INFO, 180.163.29.217, File[ /www/wwwroot/wb003.beta.lianyayun.com/themes/api/pay/unionpay/sdk/acp_service.php ], Line[71]------ =====签名报文开始====== 
+2022-12-24 18:07:49, INFO, 180.163.29.217, File[ /www/wwwroot/wb003.beta.lianyayun.com/themes/api/pay/unionpay/sdk/cert_util.php ], Line[39]------ 读取签名证书…… 
+2022-12-24 18:07:49, INFO, 180.163.29.217, File[ /www/wwwroot/wb003.beta.lianyayun.com/themes/api/pay/unionpay/sdk/cert_util.php ], Line[48]------ /www/wwwroot/wb003.beta.lianyayun.com/, pwd[] openssl_pkcs12_read fail。 
+2022-12-24 18:07:49, INFO, 180.163.29.217, File[ /www/wwwroot/wb003.beta.lianyayun.com/themes/api/pay/unionpay/sdk/cert_util.php ], Line[39]------ 读取签名证书…… 
+2022-12-24 18:07:49, INFO, 180.163.29.217, File[ /www/wwwroot/wb003.beta.lianyayun.com/themes/api/pay/unionpay/sdk/cert_util.php ], Line[48]------ /www/wwwroot/wb003.beta.lianyayun.com/, pwd[] openssl_pkcs12_read fail。 
+2022-12-24 18:07:49, INFO, 180.163.29.217, File[ /www/wwwroot/wb003.beta.lianyayun.com/themes/api/pay/unionpay/sdk/acp_service.php ], Line[84]------ 签名key=val&...串 >accessType=0&backUrl=http://wb003.beta.lianyayun.com/api/pay/unionpay/callback&bizType=000201&certId=&channelType=08&currencyCode=156&encoding=utf-8&frontUrl=http://wb003.beta.lianyayun.com/api/unionpay/return.html&merId=&orderId=1671876469&payTimeout=20221224182249&signMethod=01&txnAmt=1&txnSubType=01&txnTime=20221224180749&txnType=01&version=5.1.0 
+2022-12-24 18:07:49, INFO, 180.163.29.217, File[ /www/wwwroot/wb003.beta.lianyayun.com/themes/api/pay/unionpay/sdk/acp_service.php ], Line[101]------ 摘要sha256x16 >2e613168c486ed3ac2522b5769201a62eb392fc2b695bfd3bce57fec028d3e01 
+2022-12-24 18:07:49, INFO, 180.163.29.217, File[ /www/wwwroot/wb003.beta.lianyayun.com/themes/api/pay/unionpay/sdk/acp_service.php ], Line[109]------ >>>>>签名失败<<<<<<< 
+2022-12-24 18:07:49, INFO, 180.163.29.217, File[ /www/wwwroot/wb003.beta.lianyayun.com/themes/api/pay/unionpay/sdk/acp_service.php ], Line[119]------ =====签名报文结束====== 
+2022-12-24 18:07:49, INFO, 180.163.29.217, File[ /www/wwwroot/wb003.beta.lianyayun.com/themes/api/pay/unionpay/sdk/acp_service.php ], Line[364]------ 自动跳转html><html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body onload="javascript:document.pay_form.submit();">
+    <form id="pay_form" name="pay_form" action="https://gateway.95516.com/gateway/api/frontTransReq.do" method="post">
+	    <input type="hidden" name="version" id="version" value="5.1.0" />
+    <input type="hidden" name="encoding" id="encoding" value="utf-8" />
+    <input type="hidden" name="txnType" id="txnType" value="01" />
+    <input type="hidden" name="txnSubType" id="txnSubType" value="01" />
+    <input type="hidden" name="bizType" id="bizType" value="000201" />
+    <input type="hidden" name="frontUrl" id="frontUrl" value="http://wb003.beta.lianyayun.com/api/unionpay/return.html" />
+    <input type="hidden" name="backUrl" id="backUrl" value="http://wb003.beta.lianyayun.com/api/pay/unionpay/callback" />
+    <input type="hidden" name="signMethod" id="signMethod" value="01" />
+    <input type="hidden" name="channelType" id="channelType" value="08" />
+    <input type="hidden" name="accessType" id="accessType" value="0" />
+    <input type="hidden" name="currencyCode" id="currencyCode" value="156" />
+    <input type="hidden" name="merId" id="merId" value="" />
+    <input type="hidden" name="orderId" id="orderId" value="1671876469" />
+    <input type="hidden" name="txnTime" id="txnTime" value="20221224180749" />
+    <input type="hidden" name="txnAmt" id="txnAmt" value="1" />
+    <input type="hidden" name="payTimeout" id="payTimeout" value="20221224182249" />
+    <input type="hidden" name="certId" id="certId" value="" />
+   <!-- <input type="submit" type="hidden">-->
+    </form>
+</body>
+</html> 
