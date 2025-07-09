@@ -102,7 +102,6 @@ class ly200 {
 	public static function sendmail($toEmail, $Msubject, $Mbody){	//发送邮件
 		$config_row = (array)g('wb_email_config');
 		$data = array(
-			'Action'		=>	'send_mail',
 			'From'			=>	$config_row['FromEmail']?$config_row['FromEmail']:'noreply@szlianya.com',
 			'FromName'		=>	$config_row['FromName']?$config_row['FromName']:'联雅云',
 			'To'			=>	$toEmail,
@@ -120,10 +119,7 @@ class ly200 {
 			$data['SmtpUserName'] = $config_row['SmtpUserName'];
 			$data['SmtpPassword'] = $config_row['SmtpPassword'];
 		}
-		$data['sign'] = curl::sign(c('ApiKey'), $data);
-		// d($data);exit;
-		// return ly200_email::send($data);
-		return curl::api('https://api.ly200.com/gateway/', c('ApiKey'), $data);
+		return curl::api('https://api.lianyayun.com/gateway/lyy-sign/email/send', c('Apikey'), $data);
 	}
 
 	public static function send_sms($MobilePhone, $Contents, $SmsSign=''){
