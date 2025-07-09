@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="AclResult.php" server="a.ly200.com" local="131256000000000000" remote="131256000000000000" />
+<file name="AppendResult.php" server="a.ly200.com" local="131256000000000000" remote="131256000000000000" />
+<file name="BodyResult.php" server="a.ly200.com" local="131256000000000000" remote="131256000000000000" />
+<file name="ExistResult.php" server="a.ly200.com" local="131256000000000000" remote="131256000000000000" />
+<file name="GetCnameResult.php" server="a.ly200.com" local="131256000000000000" remote="131256000000000000" />
+<file name="GetCorsResult.php" server="a.ly200.com" local="131256000000000000" remote="131256000000000000" />
+<file name="GetLifecycleResult.php" server="a.ly200.com" local="131256000000000000" remote="131256000000000000" />
+<file name="GetLiveChannelHistoryResult.php" server="a.ly200.com" local="131256000000000000" remote="131256000000000000" />
+<file name="GetLiveChannelInfoResult.php" server="a.ly200.com" local="131256000000000000" remote="131256000000000000" />
+<file name="GetLiveChannelStatusResult.php" server="a.ly200.com" local="131256000000000000" remote="131256000000000000" />
+<file name="GetLoggingResult.php" server="a.ly200.com" local="131256000000000000" remote="131256000000000000" />
+<file name="GetRefererResult.php" server="a.ly200.com" local="131256000000000000" remote="131256000000000000" />
+<file name="GetWebsiteResult.php" server="a.ly200.com" local="131256000000000000" remote="131256000000000000" />
+<file name="HeaderResult.php" server="a.ly200.com" local="131256000000000000" remote="131256000000000000" />
+<file name="InitiateMultipartUploadResult.php" server="a.ly200.com" local="131256000000000000" remote="131256000000000000" />
+<file name="ListBucketsResult.php" server="a.ly200.com" local="131256000000000000" remote="131256000000000000" />
+<file name="ListLiveChannelResult.php" server="a.ly200.com" local="131256000000000000" remote="131256000000000000" />
+<file name="ListMultipartUploadResult.php" server="a.ly200.com" local="131256000000000000" remote="131256000000000000" />
+<file name="ListObjectsResult.php" server="a.ly200.com" local="131256000000000000" remote="131256000000000000" />
+<file name="ListPartsResult.php" server="a.ly200.com" local="131256000000000000" remote="131256000000000000" />
+<file name="PutLiveChannelResult.php" server="a.ly200.com" local="131256000000000000" remote="131256000000000000" />
+<file name="PutSetDeleteResult.php" server="a.ly200.com" local="131256000000000000" remote="131256000000000000" />
+<file name="Result.php" server="a.ly200.com" local="131256000000000000" remote="131256000000000000" />
+<file name="UploadPartResult.php" server="a.ly200.com" local="131256000000000000" remote="131256000000000000" />
+</dwsync>
