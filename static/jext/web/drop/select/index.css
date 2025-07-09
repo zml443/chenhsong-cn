@@ -1,0 +1,32 @@
+/*[drop-select]{display: flex;align-items: center;}*/
+/*[drop-select] input{flex:1;width:20px;}*/
+.lyui-drop-ui-parents{cursor:pointer;}
+.lyui-drop-ui-parents *{cursor:pointer;}
+
+/*.drop-input{flex: 1; display:flex;}*/
+/*.drop-arrow{display: flex;justify-content: center;align-items: center;fill: #aaa;padding: 0 15px 0 5px;}*/
+/*.drop-arrow svg{width: 12px;}*/
+
+/* 下拉框样式 */
+.drop-select-ul{margin:6px 0; max-height: 280px; overflow:auto; min-width:200px;flex: 1;border-right: 1px solid #f1f1f1;}
+.drop-select-dd{cursor:pointer; padding:10px 10px;}
+
+.drop-select-check input{pointer-events: none;}
+
+/* 下拉选项文字容器 */
+.drop-select-span{margin-left: 5px;}
+/* 有下一级 显示箭头 */
+.drop-select-icon{font-size: 14px;margin-left: 10px;transition: .3s;}
+.drop-select-dd.cur{color: #409eff;}
+.drop-select-dd:hover{color: #409eff;background: #ecf5ff;}
+
+/* 清除选择框内容 */
+.drop-select-clean{cursor:pointer; padding:16px 10px 10px;color: #999;display: flex;justify-content: flex-start;align-items: center;border-bottom: 1px solid #f1f1f1;}
+.drop-select-clean:hover{color: #409eff;}
+.drop-select-clean i{margin-left: 10px;}
+
+/* 搜索框 */
+.drop-select-search{cursor:pointer; color: #999;display: flex;justify-content: space-between;align-items: center;border-bottom: 1px solid #f1f1f1;height: 40px;padding: 5px 10px;}
+.drop-select-search input{border: 1px solid #ccc;height: 100%;padding-left: 5px;border-radius: 5px;}
+.drop-select-search:hover{color: #409eff;}
+.drop-select-search i{margin-left: 10px;}

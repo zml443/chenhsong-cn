@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script type="text/javascript" src="../internal.js"></script>
+    <link type="text/css" href="../../../../css/global.css" rel="stylesheet">
+    <script type='text/javascript' src='../../../../jext.js' ></script>
+
+    <style type="text/css">
+        .section{margin:9px auto;}
+        .section td{padding:5px;}
+        .section input{margin-left:5px; width:120px; height:22px; line-height:22px; border:1px solid #aaa; border-radius:4px;}
+    </style>
+
+</head>
+<body>
+    <table class='section'>
+        <tr>
+            <!-- <td><var id="lang_tdBkColor"></var></td> -->
+            <td>背景色</td>
+            <td><input type="text" id="color" autocomplete="off" /></td>
+        </tr>
+        <tr>
+            <td>宽　度</td>
+            <td><input type="text" id="width" int autocomplete="off" /></td>
+        </tr>
+        <tr>
+            <td>高　度</td>
+            <td><input type="text" id="height" int autocomplete="off" /></td>
+        </tr>
+    </table>
+<script type="text/javascript">
+
+    // 调用编辑器的颜色
+    var tone = $G("color"),
+            colorPiker = new UE.ui.ColorPicker({
+                editor:editor
+            }),
+            colorPop = new UE.ui.Popup({
+                editor:editor,
+                content:colorPiker
+            });
+    domUtils.on(tone, "click", function () {
+        colorPop.showAnchor(tone);
+    });
+    domUtils.on(document, 'mousedown', function () {
+        colorPop.hide();
+    });
+    colorPiker.addListener("pickcolor", function () {
+        tone.value = arguments[1];
+        colorPop.hide();
+    });
+    colorPiker.addListener("picknocolor", function () {
+        tone.value="";
+        colorPop.hide();
+    });
+    // 调用编辑器的颜色 end
+
+    dialog.onok=function(){
+        editor.execCommand("edittd", {
+            color: $('#color').val(),
+            width: parseInt($('#width').val()||0),
+            height: parseInt($('#height').val()||0)
+        });
+    };
+
+    // 如此就赋值
+    var start = editor.selection.getStart(),
+        cell = start && domUtils.findParentByTagName(start, ["td", "th"], true);
+    if(cell){
+        var color = domUtils.getComputedStyle(cell,'background-color');
+        var width = domUtils.getComputedStyle(cell,'width');
+        var height = domUtils.getComputedStyle(cell,'height');
+        if(/^#/.test(color)){
+            $('#color').val(color);
+            // $('#width').val(width);
+            // $('#height').val(height);
+        }
+
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<html>
+<head>
+<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+<title></title>
+<link href='../../css/global.css' rel='stylesheet' />
+<script src='../../a.js'></script>
+<script src='../../b.js'></script>
+<script src='sitemap.js'></script>
+
+<style>
+	*{font-family:'Microsoft Yahei';}
+	html,body{height:100%; overflow:hidden;}
+	body{/*background:rgba(3, 169, 244, .95);*/ background:#fff;}
+	.main{padding:46px 30px; font-size:14px; color:#666;}
+	.main [txt]{line-height:34px;}
+	.main [txt] [a]{color:#666;}
+	.main [txt] [a][mar0]{padding-left:50px;}
+	.main [txt] [b]{font-size:14px; padding-left:4px; color:#666;}
+	.main [txt] [status] a{color:#0ea4ff; text-decoration:underline; cursor:pointer;}
+
+	.main [box]{margin-top:20px; border:1px solid #ddd;}
+	.main [tab]{border-bottom:1px solid #ddd; height:36px;}
+	.main [tab] li{font-size:14px; padding:0 18px; float:left; line-height:35px; border-bottom:1px solid #ddd; border-right:1px solid #ddd; cursor:pointer;}
+	.main [tab] li.cur{border-bottom-color:#fff;}
+	.main [url]{padding:9px 0;}
+	.main [url] li{line-height:32px; font-size:13px; padding:0 12px;}
+	.main [mcscroll]{height:400px;}
+</style>
+
+</head>
+
+<body>
+
+	<div class='main'>
+		<table txt>
+			<tr>
+				<td a>处理中 :</td>
+				<td b deal-number>0 / 0</td>
+				<td a mar0>等待 :</td>
+				<td b wait-number>0</td>
+				<td a mar0>完成 / 总数 :</td>
+				<td b><span isok-number>0</span> / <span total-number>0</span></td>
+			</tr>
+			<tr>
+				<td a>状态 :</td>
+				<td b colspan='7' status>loading...</td>
+			</tr>
+		</table>
+		<div box>
+			<ul tab='[url]' clean>
+				<li>全部</li>
+				<li>超时</li>
+				<li>空链接</li>
+				<li>失败</li>
+			</ul>
+			<div mcscroll><ul url></ul></div>
+		</div>
+	</div>
+
+</body>
+</html>

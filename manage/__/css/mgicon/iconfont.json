@@ -1,0 +1,121 @@
+{
+  "id": "3895095",
+  "name": "后台菜单栏",
+  "font_family": "iconfont",
+  "css_prefix_text": "mgicon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "982375",
+      "name": "邮箱",
+      "font_class": "menu-email",
+      "unicode": "e667",
+      "unicode_decimal": 58983
+    },
+    {
+      "icon_id": "5121520",
+      "name": "文件夹",
+      "font_class": "menu-dir",
+      "unicode": "e64b",
+      "unicode_decimal": 58955
+    },
+    {
+      "icon_id": "21591058",
+      "name": "云平台",
+      "font_class": "menu-seo",
+      "unicode": "e69c",
+      "unicode_decimal": 59036
+    },
+    {
+      "icon_id": "15838607",
+      "name": "setting-filling",
+      "font_class": "menu-set",
+      "unicode": "e709",
+      "unicode_decimal": 59145
+    },
+    {
+      "icon_id": "15838619",
+      "name": "home-filling",
+      "font_class": "menu-home",
+      "unicode": "e715",
+      "unicode_decimal": 59157
+    },
+    {
+      "icon_id": "577332",
+      "name": "店铺-fill",
+      "font_class": "menu-web",
+      "unicode": "e735",
+      "unicode_decimal": 59189
+    },
+    {
+      "icon_id": "577347",
+      "name": "留言-fill",
+      "font_class": "menu-feedback",
+      "unicode": "e743",
+      "unicode_decimal": 59203
+    },
+    {
+      "icon_id": "1071077",
+      "name": "用户2",
+      "font_class": "menu-member",
+      "unicode": "e67f",
+      "unicode_decimal": 59007
+    },
+    {
+      "icon_id": "1126128",
+      "name": "应用",
+      "font_class": "menu-app",
+      "unicode": "e679",
+      "unicode_decimal": 59001
+    },
+    {
+      "icon_id": "1722999",
+      "name": "营销",
+      "font_class": "statistics",
+      "unicode": "e7c0",
+      "unicode_decimal": 59328
+    },
+    {
+      "icon_id": "12592397",
+      "name": "营销",
+      "font_class": "yingxiao1",
+      "unicode": "e74a",
+      "unicode_decimal": 59210
+    },
+    {
+      "icon_id": "15634037",
+      "name": "产品管理",
+      "font_class": "menu-products",
+      "unicode": "e62d",
+      "unicode_decimal": 58925
+    },
+    {
+      "icon_id": "16555696",
+      "name": "店铺营销",
+      "font_class": "menu-gift",
+      "unicode": "e6ed",
+      "unicode_decimal": 59117
+    },
+    {
+      "icon_id": "18644546",
+      "name": "系统后台",
+      "font_class": "menu-statistics",
+      "unicode": "e60d",
+      "unicode_decimal": 58893
+    },
+    {
+      "icon_id": "21242868",
+      "name": "订单",
+      "font_class": "menu-orders",
+      "unicode": "e639",
+      "unicode_decimal": 58937
+    },
+    {
+      "icon_id": "24158837",
+      "name": "首页-营销管理",
+      "font_class": "menu-marketing",
+      "unicode": "e62e",
+      "unicode_decimal": 58926
+    }
+  ]
+}

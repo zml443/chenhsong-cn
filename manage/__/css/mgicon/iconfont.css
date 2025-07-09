@@ -1,0 +1,80 @@
+@font-face {
+  font-family: "mgiconfont"; /* Project id 3895095 */
+  src: url('iconfont.woff2?t=1676359894603') format('woff2'),
+       url('iconfont.woff?t=1676359894603') format('woff'),
+       url('iconfont.ttf?t=1676359894603') format('truetype');
+}
+
+[class*="mgicon-"] {
+  font-family: "mgiconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1;
+}
+
+.mgicon-menu-email:before {
+  content: "\e667";
+}
+
+.mgicon-menu-dir:before {
+  content: "\e64b";
+}
+
+.mgicon-menu-seo:before {
+  content: "\e69c";
+}
+
+.mgicon-menu-set:before {
+  content: "\e709";
+}
+
+.mgicon-menu-home:before {
+  content: "\e715";
+}
+
+.mgicon-menu-web:before {
+  content: "\e735";
+}
+
+.mgicon-menu-feedback:before {
+  content: "\e743";
+}
+
+.mgicon-menu-member:before {
+  content: "\e67f";
+}
+
+.mgicon-menu-app:before {
+  content: "\e679";
+}
+
+.mgicon-statistics:before {
+  content: "\e7c0";
+}
+
+.mgicon-yingxiao1:before {
+  content: "\e74a";
+}
+
+.mgicon-menu-products:before {
+  content: "\e62d";
+}
+
+.mgicon-menu-gift:before {
+  content: "\e6ed";
+}
+
+.mgicon-menu-statistics:before {
+  content: "\e60d";
+}
+
+.mgicon-menu-orders:before {
+  content: "\e639";
+}
+
+.mgicon-menu-marketing:before {
+  content: "\e62e";
+}
+

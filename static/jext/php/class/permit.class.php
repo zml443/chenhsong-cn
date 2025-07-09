@@ -1,0 +1,221 @@
+<?php
+
+class permit {
+	/**
+	 * 所有操作权限 c('manage.permit.operation')
+	 * 当前账号的操作权限 c('manage.permit.operation_cur')
+	 * 全部链接 c('manage.permit.allurl')
+	 * 当前账号的链接 c('manage.permit.url')
+	 * 当前u参数 c('manage.permit.u')
+	 * 全部u参数 c('manage.permit.U')
+	 * 
+	 * 递归函数 - 检查与重新整理权限配置
+	 * @param {string} $key  正在遍历中的下标，全部权限都是有下标逐层拼接组合而成的
+	 * @param {string|array} $u  遍历后的对象
+	 * @param {bool} $allow  0:默认   1:允许全部通过权限，相当于 manage('Level')==1
+	 * @return {string}
+	 */
+	public static function check ($key, $u, $allow=0) {
+		$i = 1;
+		$j = '';
+		foreach ($u as $k => $v) {
+			if (!is_array($v)) {
+				foreach ($u as $myurl) {
+					if ($myurl && (int)$myurl==0) {
+						break;
+					}
+					$myurl = '';
+				}
+				$ma = url::to_array($myurl);
+				if ($ma['ma']) {
+					$zzz = explode('/', $ma['ma']);
+					$ma['m'] = $zzz[0];
+					unset($zzz[0]);
+					$ma['a'] = implode('/', $zzz);
+				}
+				if ($ma['mg']) {
+					$zzz = explode('/', $ma['ma']);
+					$ma['m'] = $zzz[0];
+					unset($zzz[0]);
+					$ma['a'] = implode('/', $zzz);
+				}
+				c('manage.permit.U.'.trim($ma['m'].'/'.$ma['a'], '/'), str_replace('0,','',$key));
+				$ma = trim($ma['m'].','.$ma['a'], ',').',';
+				/*if ($ma==$_GET['m'].','.$_GET['a'].',') {
+					c('manage.permit.u', str_replace('0,','',$key));
+				}*/
+				if ($myurl) {
+					foreach ($u as $style => $is) {
+						if ($is) {
+							c('manage.permit.operation.'.$ma.$style, $is);
+							if (!is_numeric($is)) $is=1;
+							$array_cur = 'manage.permit.array_cur.'.ltrim(str_replace(',','.',$key.'.'.$style),'0.');
+							if (c($array_cur)) {
+								c('manage.permit.operation_cur.'.$ma.$style, $is);
+								c('manage.permit.reset_cur.'.str_replace(array('0,',','), array('','.'), $key).'.'.$style, $is);
+							}
+							c('manage.permit.reset.'.str_replace(array('0,',','), array('','.'), $key).'.'.$style, $is);
+						}
+					}
+					$pre = str_replace('0,', '', $key);
+					$j = current($u);
+					$j && $j = "?u={$pre}&{$j}";
+					c('manage.permit.tablename.wb_'.str_replace(',','_', rtrim($ma,',')), $j);
+				}
+				if ($u['hide_nav']) $j.='::hide_nav';
+				if ($u['hide']) $j.='::hide';
+				if ($u['xxxx']) $j.='::abcd';
+				break;
+			}
+			$url = self::check($key.','.$k, $v);
+			$allurl = $url;
+			$is_xxxx = false;
+			if (strpos($url, '::abcd')!==false) {
+				$is_xxxx = true;
+				$allurl = str_replace('::abcd', '', $allurl);
+			}
+			$is_hide_nav = false;
+			if (strpos($url, '::hide_nav')!==false) {
+				$is_hide_nav = true;
+				$allurl = str_replace('::hide_nav', '', $allurl);
+			}
+			$is_hide = false;
+			if (strpos($url, '::hide')!==false) {
+				$is_hide = true;
+				$allurl = str_replace('::hide', '', $allurl);
+			}
+			if ($i) {
+				$i--;
+				$j = $url;
+			}
+			// d($allurl);
+			$key2 = ltrim(str_replace(',','.',$key), '0');
+			$array_cur = 'manage.permit.array_cur.'.ltrim(str_replace(',','.',$key.'.'.$k),'0.');
+			if ($allow || $is_xxxx || $allow || manage('Level')==1 || c($array_cur)) {
+				c('manage.permit.allurl'.$key2.'.'.$k.'._', $allurl);
+				// c('manage.permit.allurl'.$key2.'.'.$k.'.__.hide_nav', $is_hide_nav?1:'');
+				if ($is_hide_nav) c('manage.permit.allurl'.$key2.'.'.$k.'.__.hide_nav', 1);
+
+				if ($url && !$is_hide) {
+					c('manage.permit.url'.$key2.'.'.$k.'._', $allurl);
+					c('manage.permit.url'.$key2.'.'.$k.'.__.hide_nav', $u['hide_nav']?:'');
+				}
+			}
+		}
+		return $j;
+	}
+	
+	// 通过链接查找对应的页面名称
+	public static function name ($name_string='') {
+		if ($name_string) {
+			if (strstr($name_string, '&')) {
+				$url = $name_string;
+			} else {
+				$url = c('manage.permit.tablename.'.$name_string);
+			}
+			$url = url::to_array($url);
+			$u = $url['u'];
+		} else {
+			$u = ($_GET['u2']?:$_GET['u'])?:c('manage.permit.u');
+		}
+		$name = language('menu.'.str_replace(',', '.', $u).'.module_name');
+		return $name;
+	}
+	
+	// 通过链接查找对应的词语
+	public static function back_url () {
+		$arr_u = @explode(',', $_GET['u2']?:$_GET['u']);
+		$url = '';
+		if ($arr_u[1]) {
+			$first_url = c('manage.permit.url.'.$arr_u[0]);
+			if (count($first_url)==3) {
+				// if ($_GET['d']=='edit' && p($_GET['ma'].'.list')) {
+				if ($_GET['d']=='edit') {
+					$url = 'back()';
+				} else {
+					$url = $first_url['_'];
+				}
+			} else {
+				// if ($_GET['d']=='edit' && p($_GET['ma'].'.list')) {
+				if ($_GET['d']=='edit') {
+					$url = 'back()';
+				} else {
+					$url = '';
+				}
+			}
+		}
+		return $url;
+	}
+	
+	// 通过链接查找对应的词语
+	public static function nav ($index=0, $u='') {
+		$mg_u = @explode(',', $_GET['u2']?:$_GET['u']);
+		$mg_count = count($mg_u);
+		if (!$index) {
+			$index = $mg_count - 1;
+		} else {
+			$mg_count<$index && $index = $mg_count;
+		}
+		$key = '';
+		$langkey = '';
+		for ($i=0;$i<$index;$i++) {
+			$key .= '.'.$mg_u[$i];
+			$langkey .= $mg_u[$i].'.';
+		}
+		$arr = array();
+		if ($mg_count && $langkey) {
+			$app_son_menu = c('manage.permit.allurl'.$key);
+			$app_lang = 'menu.'.$langkey;
+			foreach ((array)$app_son_menu as $k => $v) {
+				if ($k=='0'||$k=='_'||$k=='__') {
+					continue;
+				}
+				$vna = language($app_lang.$k);
+				is_array($vna) && $vna = $vna['module_name'];
+				if (!$v['__']['hide_nav']) $arr[] = array(
+					'url' => $v['_'],
+					'name' => $vna,
+					'cur' => $mg_u[$index]==$k?'cur':''
+				);
+			}
+		}
+		return $arr;
+	}
+	
+	
+	// 权限总汇
+	public static function all ($prefix='') {
+		if (is_array($prefix)) {
+			$permit = array();
+			foreach ($prefix as $v) {
+				$permit[$v] = 1;
+			}
+		} else {
+		    $permit = array(
+				'list'	 => $prefix==1?1:p($prefix.'.list'),
+				'myorder'=> $prefix==1?1:p($prefix.'.myorder'),
+				'add'	 => $prefix==1?1:p($prefix.'.add'),
+				'_add'	 => $prefix==1?1:p($prefix.'._add'),
+				'edit'	 => $prefix==1?1:p($prefix.'.edit'),
+				'_edit'	 => $prefix==1?1:p($prefix.'._edit'),
+				'_view_edit'=> p($prefix.'._view_edit'),
+				'_hide_edit' => $prefix==1?1:p($prefix.'._hide_edit'),
+				'del'	 => $prefix==1?1:( p_all($prefix.'.recycle') ? p($prefix.'.del')&&p($prefix.'.recycle') : p($prefix.'.del') ),
+				'_del'	 => $prefix==1?1:p($prefix.'._del'),
+				'recycle' => p($prefix.'.recycle'),
+				'mdl'	 => $prefix==1?1:p($prefix.'.mdl'),
+				'copy'	 => $prefix==1?1:p($prefix.'.copy'),
+				'_copy'	 => $prefix==1?1:p($prefix.'._copy'),
+				'set'	 => $prefix==1?1:p($prefix.'.set'),
+				'seo'	 => $prefix==1?1:p($prefix.'.seo'),
+				'asc'	 => $prefix==1?1:p($prefix.'.asc'),
+				'orderby'=> $prefix==1?1:p($prefix.'.orderby'),
+				'export' => $prefix==1?1:p($prefix.'.export'),
+				'preview' => p($prefix.'.preview'),
+				'view' => p($prefix.'.view'),
+				'allow' => $prefix==1?1:p($prefix.'.allow'), //高级权限，超级管理员分配下来的当前数据表的最高权限
+			);
+		}
+	    return $permit;
+	}
+}

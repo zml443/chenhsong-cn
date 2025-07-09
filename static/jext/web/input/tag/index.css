@@ -1,0 +1,7 @@
+.ly-tagBox{padding: 10px;}
+.ly-tagBox-ul{gap:10px;}
+.ly-tagBox-li{background: var(--bgColor);height: 28px;padding: 0 15px;border-radius: 20px;transition: .3s;position: relative;cursor: pointer;}
+.ly-tagBox-i{background: var(--bgColor);width: 18px;position: absolute;top: 0;bottom: 0;right: 0px;opacity: 0;transition: .3s;border-radius: 20px;}
+.ly-tagBox-li:hover,
+.ly-tagBox-li:hover .ly-tagBox-i{background: var(--lightColor);}
+.ly-tagBox-li:hover .ly-tagBox-i{opacity: 1;right: -7px;}

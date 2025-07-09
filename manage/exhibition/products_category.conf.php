@@ -1,0 +1,36 @@
+<?php
+$db_config = array(
+	'dbc' => array(
+		'Name' => array(
+			'Type' => 'text',
+			'Sql' => array('varchar(100)', ''),
+			'Lang' => 1,
+		),
+		'wb_exhibition_id' => array(
+			'Type' => 'bind-id',
+			'Sql' => array('int(11)', ''),
+		),
+		'PageUrl' => array(
+			'Type' => 'pageurl',
+			'Tip' => language('{/notes.custom_url/}'),
+			'Sql' => array('varchar(200)', ''),
+		),
+		'UId' => array(
+		    'Name' => '类别',
+		    'Type' => 'uid',
+		    'Field' => array(
+		        'UId' => array('Sql'=>array('varchar(100)', '0,')),
+		        'Dept' => array('Sql'=>array('tinyint(1)', 1))
+		    ),
+		    'Dept' => 5,
+		),
+		'Seo' => 1,
+        'Pictures' => array(
+            'Type' => 'image',
+            'Sql' => array('text', ''),
+            'List' => 0
+        ),
+	)
+);
+return $db_config;
+?>

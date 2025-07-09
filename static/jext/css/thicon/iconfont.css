@@ -1,0 +1,115 @@
+@font-face {
+  font-family: "thiconfont"; /* Project id 3935961 */
+  src: url('iconfont.woff2?t=1682477039552') format('woff2'),
+       url('iconfont.woff?t=1682477039552') format('woff'),
+       url('iconfont.ttf?t=1682477039552') format('truetype');
+}
+
+[class*="thicon-"] {
+  font-family: "thiconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.thicon-amazon:before {
+  content: "\ea92";
+}
+
+.thicon-tengxunweibo:before {
+  content: "\e60e";
+}
+
+.thicon-pinterest:before {
+  content: "\e618";
+}
+
+.thicon-instagram:before {
+  content: "\e87f";
+}
+
+.thicon-youtube-line:before {
+  content: "\e775";
+}
+
+.thicon-kefu:before {
+  content: "\e62c";
+}
+
+.thicon-chuanzhen2:before {
+  content: "\e6f0";
+}
+
+.thicon-skype:before {
+  content: "\e6fc";
+}
+
+.thicon-dianhuaphone-fill:before {
+  content: "\e7bd";
+}
+
+.thicon-QRcode:before {
+  content: "\e821";
+}
+
+.thicon-IOS:before {
+  content: "\e719";
+}
+
+.thicon-QQ:before {
+  content: "\e71a";
+}
+
+.thicon-android:before {
+  content: "\e71b";
+}
+
+.thicon-pengyouquan:before {
+  content: "\e720";
+}
+
+.thicon-weibo:before {
+  content: "\e721";
+}
+
+.thicon-weixin:before {
+  content: "\e722";
+}
+
+.thicon-instagram-fill:before {
+  content: "\e88f";
+}
+
+.thicon-youtube-fill:before {
+  content: "\e774";
+}
+
+.thicon-QQkongjian:before {
+  content: "\e60f";
+}
+
+.thicon-twitter:before {
+  content: "\e613";
+}
+
+.thicon-linkedin:before {
+  content: "\e614";
+}
+
+.thicon-facebook:before {
+  content: "\e615";
+}
+
+.thicon-alipay:before {
+  content: "\e616";
+}
+
+.thicon-google:before {
+  content: "\e617";
+}
+
+.thicon-zhihu:before {
+  content: "\e619";
+}
+

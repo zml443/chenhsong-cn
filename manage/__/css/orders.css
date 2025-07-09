@@ -1,0 +1,96 @@
+
+/*布局框架*/
+/******************************************************************************************************/
+._dbs_submit{width:100%;}
+._dbs_submit_chilren{height:70px; background:#fff; border-top:5px solid var(--blockBgColor)}
+._dbs_submit_chilren>*{margin-right: 30px;}
+._dbs_submit_chilren>*:last-child{margin-right: 0px;}
+
+._dbs_box{
+	--gap:10px;
+	margin-top: var(--gap);
+	padding:15px 15px; background:#fff;
+	display:flex; justify-content:space-between; flex-wrap:wrap;
+	box-shadow: 0 0 9px rgba(0,0,0,.05);
+	border-radius: 3px;;
+}
+._dbs_box2{box-shadow: none;}
+._dbs_box:nth-child(1){margin-top:0px;}
+
+._dbs_h4{width:100%; padding:15px 0;}
+._dbs_item{width:100%; padding:15px 0;}
+._dbs_box ._dbs_item{padding:15px 15px;}
+._dbs_box ._dbs_h4{padding:15px 15px;}
+._dbs_item.flex-middle2 ._dbs_tit{margin-bottom:0;}
+
+._dbs_tit{margin-bottom:9px; font-size:14px; display:flex; align-items:center;}
+._dbs_tit .name{font-size:15px; color:#111; --font-weight:bold;}
+._dbs_tit .tip{font-size:12px; color:#999; padding-left:6px; font-weight:normal;}
+._dbs_tit .lang-na{color:#aaa; font-size:12px; display:none;}
+._dbs_tit .lang-na:nth-child(1){display:inherit;}
+._dbs_tit .langselbox{position:relative; cursor:pointer; z-index:4; font-weight:normal; margin-left:5px;}
+._dbs_tit .langselbox .ico{color:#999; font-size:12px}
+._dbs_tit .langselbox .changelang{position:absolute; top:calc(100% + 6px); left:-3px; box-shadow:0 0 5px rgba(0,0,0,.2); padding:6px 0; background:#fff;}
+._dbs_tit .langselbox .changelang font{display:block; font-size:12px; line-height:24px; padding:0 15px; white-space:nowrap;}
+._dbs_tit .langselbox .changelang font:hover{color:#0899ea;}
+._dbs_tit .langselbox.cur{z-index:5;}
+._dbs_tit .langselbox.cur .changelang{display:block;}
+
+._dbs_content{line-height:1.8; font-size:12px;}
+
+/*功能样式1*/
+._dbs_item.w2{width:calc((100% - var(--gap)) / 2);}
+._dbs_item.w3{width:calc((100% - var(--gap) * 2) / 3);}
+._dbs_item.w3-2{width:calc(100% - var(--gap) - (100% - var(--gap) * 2) / 3);}
+._dbs_item.w4{width:calc((100% - var(--gap) * 3) / 4);}
+._dbs_item.w4-3{width:calc(100% - var(--gap) - (100% - var(--gap) * 3) / 4);}
+
+._dbs_item.border_bottom{border-bottom:1px solid #eee; padding-bottom:15px;}
+._dbs_item:nth-child(1){margin-top:0;}
+
+/*额外样式*/
+._dbs_item ._dbs_item ._dbs_tit{font-size:12px;}
+._dbs_item ._dbs_item ._dbs_tit .name{font-size:12px;}
+._dbs_box ._dbs_item ._dbs_item{padding:10px;}
+/******************************************************************************************************/
+
+
+/*搜索*/
+/*#dbs_search_orders{z-index:9; padding:30px 20px; border-top:1px #f1f1f1 solid;}*/
+
+
+
+.box_custom_info{align-items:center; height:calc(var(--inputBtnHeightSmall) * 2); line-height:var(--inputBtnHeightSmall); padding:0 24px; border:1px solid var(--mainColor); border-radius:5px;}
+			
+
+
+.et_orders_ly_step .ly_step_text{font-size:14px; font-weight:bold;}
+.et_orders_ly_step .ly_step_text .time{font-size:12px; color:#a0a4a3; font-weight:normal;}
+
+
+
+/*.et_orders_transport .name{font-size:20px;}
+.et_orders_transport .ly_btn{cursor:default;}
+.et_orders_transport .box_button{line-height:var(--inputBtnHeightMini);}*/
+
+
+
+/* .global_top_title{border-radius:5px; --gap:0;} 
+.global_top_title .name{font-size:20px; display:flex; align-items:center; line-height:40px;}
+.global_top_title.bor .name{border-bottom:1px solid #eee; width:100%;}
+.global_top_title.bor .name .title_item{position:relative; z-index:2;}
+.global_top_title.bor .name .title_item::before{left:0; right:0; position:absolute; content:''; height:2px; bottom:-1px; background:var(--mainColor);}
+.global_top_title .time{font-size:14px; color:#999;}
+.global_top_title .ly_btn_radius{cursor:default;}
+.global_top_title .mod{line-height:35px;} */
+
+
+
+
+
+
+/*.global_addr_info{padding:20px 24px; border:1px solid #eee; border-radius:5px; background:#f6f6f6;}
+.global_addr_info .top{line-height:30px; font-size:14px;}
+.global_addr_info .top .icon{font-size:30px;}
+.global_addr_info .row{padding:4px 0;}
+.global_addr_info .row strong{font-weight:400;}*/

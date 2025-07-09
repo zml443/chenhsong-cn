@@ -1,0 +1,2631 @@
+/* 卡片底部边框鼠标交互效果1 */
+.lyCard1 {overflow: hidden;position: relative;width: 100%;display: flex;align-items: center;justify-content: space-between;padding: 30px 0;}
+.lyCard1::after {content: '';position: absolute;height: 2px;width: 100%;bottom: 0;left: 0;background-color: red;transform: translateX(-100%);-webkit-transform: translateX(-100%);}
+.lyCard1:hover::after {transform: translateX(0);-webkit-transform: translateX(0);animation-name: lyAnimate_1_start;-webkit-animation-name: lyAnimate_1_start;animation-duration: 0.5s;-webkit-animation-duration: 0.5s;}
+.lyCard1:not(:hover)::after {animation-name: lyAnimate_1_end;-webkit-animation-name: lyAnimate_1_end;animation-duration: 0.5s;-webkit-animation-duration: 0.5s;}
+.lyCard1::before {content: '';position: absolute;height: 2px;bottom: 0;right: 0;width: 100%;background: linear-gradient(to right, #eee calc(100% - 30px), red 30px);}
+/* 卡片内容 */
+.lyCard1 .name {font-size: 17px;line-height: 22px;color: #333;font-weight: bold;}
+/*lyCard1_icon的宽高为lyCard1_arrow切换文字&图片的大小*/
+.lyCard1_icon {width: 16px;height: 16px;overflow: hidden;margin-right: 14px;}
+.lyCard1_arrow {font-size: 16px;line-height: 1;color: red;font-weight: bold;display: flex;transform: translateX(-100%);-webkit-transform: translateX(-100%);}
+@media (any-hover:hover) {
+    .lyCard1:hover .lyCard1_arrow {transform: translateX(0);-webkit-transform: translateX(0);transition: 0.5s;-webkit-transition:0.5s;}
+}
+
+
+/* 卡片边框鼠标交互效果2 */
+.lyCard2_i,
+.lyCard2::after,
+.lyCard2::before,
+.lyCard2_i::after,
+.lyCard2_i::before{position: absolute;}
+
+.lyCard2::after,
+.lyCard2::before,
+.lyCard2_i::after,
+.lyCard2_i::before{background-color: var(--color1);z-index: 5;transition: var(--time);-webkit-transition:var(--time);}
+
+
+.lyCard2 {width: calc((100% - 60px)/3);height: auto;position: relative;background-color: #eee;--color1: red;--bWidth:2px;--time: .3s;}
+.lyCard2_i {bottom: 0;right: 0;width: 100%;height: 100%;}
+.lyCard2::after {content: '';height: var(--bWidth);width: 0;top: 0;left: 0;}
+.lyCard2::before {content: '';height: 0;width: var(--bWidth);top: 0;right: 0;}
+.lyCard2_i::after {content: '';height: var(--bWidth);width: 0;bottom: 0;right: 0;}
+.lyCard2_i::before {content: '';height: 0;width: var(--bWidth);bottom: 0;left: 0;}
+.lyCard2_img {width: 100%;}
+.lyCard2_img::before {padding-top: 100%;}
+.lyCard2_img img {position: absolute;}
+@media (any-hover:hover) {
+.lyCard2:hover {background-color: #fff;}
+.lyCard2:hover::after {width: calc(100% - var(--bWidth));}
+.lyCard2:hover::before {height: calc(100% - var(--bWidth));transition-delay: var(--time);-webkit-transition-delay: var(--time);}
+.lyCard2:hover .lyCard2_i::after {width: calc(100% - var(--bWidth));transition-delay: calc(var(--time)*2);-webkit-transition-delay: calc(var(--time)*2);}
+.lyCard2:hover .lyCard2_i::before {height: calc(100% - var(--bWidth));transition-delay: calc(var(--time)*3);-webkit-transition-delay: calc(var(--time)*3);}
+}
+
+
+/* 卡片边框鼠标交互效果3 */
+.lyCard3 {background-color: #efefef;height: 400px;overflow: hidden;width: calc((100% - 60px)/3);}
+.lyCard3_img {width: 100%;background-color: #ccc;height: 240px;}
+.lyCard3_img::before {padding-top: 60%;}
+.lyCard3_text {height: 100%;padding: 24px 30px 30px;position: relative;}
+.lyCard3 .time {font-size: 14px;line-height: 1;color: #999;margin-bottom: 14px;}
+.lyCard3 .name {font-size: 18px;line-height: 25px;color: #2c3441;height: 50px;}
+.lyCard3 .brief {font-size: 14px;line-height: 25px;color: #2c3441;margin-top: 35px;height: 100px;opacity: 0;}
+.lyCard3 .button {position: absolute;left: 30px;bottom: 30px;display: flex;align-items: center;font-size: 18px;line-height: 1;color: #2c3441;opacity: 0;}
+.lyCard3 .button .icon {display: flex;align-items: center;justify-content: center;width: 32px;height: 32px;border-radius: 50%;background-color: #6cccdc;font-size: 24px;line-height: 1;margin-right: 8px;}
+@media (any-hover:hover) {
+.lyCard3:hover .lyCard3_img {height: 0;}
+.lyCard3:hover .lyCard3_text {padding-top: 55px;}
+.lyCard3:hover .brief {opacity: 1;}
+.lyCard3:hover .button {opacity: 1;}
+}
+
+
+/* 卡片边框鼠标交互效果4 */
+.lyCard4 .name,
+.lyCard4 .icon,
+.lyCard4::after,
+.lyCard4::before{position: absolute;}
+
+.lyCard4 {background-color: #eee;border-radius: 20px;position: relative;overflow: hidden;width: calc((100% - 60px)/3);}
+.lyCard4_img {width: 100%;}
+.lyCard4_img::before {padding-top: 75%;}
+.lyCard4 .name {font-size: 22px;color: #fff;left: 30px;top: calc(100% - 60px);z-index: 4;transition: .3s;}
+.lyCard4 .icon {font-size: 30px;color: #fff;line-height: 1;left: 30px;bottom: 30px;z-index: 3;opacity: 0;}
+.lyCard4::after {content: '';width: 100%;height: 33%;left: 0;bottom: 0;background: linear-gradient(to top, rgba(0,0,0,0.6),rgba(0,0,0,0.3),rgba(0,0,0,0.1), transparent, transparent);transition: 0.3s;-webkit-transition:0.3s;}
+.lyCard4::before {content: '';width: 100%;height: 100%;left: 0;top: 0;background-color: rgba(0,0,0,0.2);transition: 0.3s;-webkit-transition:0.3s;opacity: 0;z-index: 3;}
+@media (any-hover:hover) {
+.lyCard4:hover .name {top: 30px;}
+.lyCard4:hover .icon {opacity: 1;}
+.lyCard4:hover::after {opacity: 0;}
+.lyCard4:hover::before {opacity: 1;}
+}
+
+
+/* 卡片鼠标交互效果6 */
+.lyCard6_img::after,
+.lyCard6_img::before,
+.lyCard6_img2::after,
+.lyCard6_img2::before{position: absolute;background-color: var(--color1);z-index: 1;transition: 0.3s;-webkit-transition:0.3s;}
+
+.lyCard6 {margin: 20px;width: 25%;--color1:#e00022}
+.lyCard6_img {position: relative;}
+.lyCard6_img::after {content: '';top: 0;left: 0;width: 100%;height: 0;}
+.lyCard6_img::before {content: '';bottom: 0;left: 0;width: 100%;height: 0;}
+.lyCard6_img2 {position: c;width: 100%;padding-top: 66.66%;background-color: #eee;}
+.lyCard6_img2::after {content: '';top: 0;left: 0;width: 0;height: 100%;}
+.lyCard6_img2::before {content: '';right: 0;top: 0;width: 0;height: 100%;}
+.lyCard6_tag {font-size: 16px;line-height: 1;color: #fff;position: absolute;bottom: -10px;right: -10px;padding: 7px 20px;z-index: 2;background-color: var(--color1);}
+.lyCard6 .time {font-size: 14px;line-height: 1;color: #666;padding-top: 27px;}
+.lyCard6 .brief {font-size: 14px;line-height: 30px;color: #333;padding-top: 10px;}
+.lyCard6 .button {padding-top: 20px;font-size: 16px;line-height: 1;color: var(--color1);}
+.lyCard6_icon {position: relative;height: 0;width: 0;border-left: 5px solid var(--color1);border-top: 5px solid transparent;border-bottom: 5px solid transparent;margin-left: 10px;transition: 0.3s;-webkit-transition:0.3s;}
+.lyCard6_icon::before {content: '';position: absolute;height: 2px;width: 0;right: calc(100% + 4px);top: 50%;transform: translateY(-50%);-webkit-transform: translateY(-50%);background-color: var(--color1);transition: 0.3s;-webkit-transition: 0.3s;}
+@media (any-hover:hover) {
+.lyCard6:hover .lyCard6_img::after {height: 20px;}
+.lyCard6:hover .lyCard6_img::before {height: 20px;}
+.lyCard6:hover .lyCard6_img2::after {width: 20px;}
+.lyCard6:hover .lyCard6_img2::before {width: 20px;}
+.lyCard6:hover .lyCard6_icon {margin-left: 35px;}
+.lyCard6:hover .lyCard6_icon::before {width: 25px;}
+}
+
+
+/* 卡片效果7 */
+.lyCard7 {width: calc((100% - 30px)/4);position: relative;}
+.lyCard7_img {width: 100%;}
+.lyCard7_img::before {padding-top: 66.66%;}
+.lyCard7_name {font-size: 16px;line-height: 1;color: #fff;bottom: 0;left: 0;height: 70px;width: 100%;padding: 5px 10px;z-index: 2;background-color: #344051;transform: translateY(100%);-webkit-transform: translateY(100%);}
+@media (any-hover:hover) {
+.lyCard7:hover .lyCard7_img {transform: translateY(-50px);-webkit-transform: translateY(-50px);}
+.lyCard7:hover .lyCard7_name {transform: translateY(0);-webkit-transform: translateY(0);}
+}
+
+
+/* 卡片效果8 */
+.lyCard8 {width: calc((100% - 10px)/3);position: relative;--color1: #edeff7;--color2: #1226aa;}
+.lyCard8 .lyCard8_img {width: 100%;}
+.lyCard8 .lyCard8_img::after {content: '';position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);width: 200%;padding-bottom: 200%;border-radius: 50%;background-color: transparent;border: 500px solid var(--color1);z-index: 3;transition: 0.3s;-webkit-transition: 0.3s;pointer-events: none;}
+.lyCard8 .lyCard8_img::before {padding-top: 61.29%;}
+.lyCard8 .name {font-size: 16px;line-height: 20px;color: #333;padding: 30px 40px;background-color: #fff;}
+.lyCard8 .icon {font-size: 25px;line-height: 1;color: var(--color2);width: 40px;height: 40px;border-radius: 50%;border: 2px solid var(--color2);right: 40px;bottom: 0;transform: translateY(50%);-webkit-transform: translateY(50%);}
+.lyCard8 .btn {font-size: 16px;line-height: 40px;color: #a0a0a0;padding: 0 40px;background-color: var(--color1);}
+@media (any-hover:hover) {
+.lyCard8:hover .lyCard8_img::after {width: 50%;padding-bottom: 50%;}
+.lyCard8:hover .name {background-color: var(--color1);color: var(--color2);}
+}
+
+
+/* 卡片效果11 */
+.lyCard11_icon::before,
+.lyCard11_icon::after{position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);background-color: #fff;transition: 0.3s;transition-delay: 0.1s;}
+
+.lyCard11_icon{width: 60px;height: 60px;background-color: #2145A8;top: 50%;left: 50%;transform: translate(-50%,-50%);border-radius: 50%;z-index: 2;opacity:0;transition: 0.3s;}
+.lyCard11_icon::before{content:'';width: 1px;height: 0;}
+.lyCard11_icon::after{content:'';width: 0;height: 1px;}
+@media (any-hover:hover) {
+.lyCard11:hover .lyCard11_icon{opacity: 1;}
+.lyCard11:hover .lyCard11_icon::before{height: 20px;}
+.lyCard11:hover .lyCard11_icon::after{width: 20px;}
+}
+
+
+/* 卡片效果12 */
+.lyCard12 {display: flex;transition: .6s;padding-top: 60px;}
+/* .lyCard12 * {box-sizing: border-box;} */
+.lyCard12_li{width:110px;height: 580px;transition:.5s;margin-left: 8px;padding-top: 40px;overflow: hidden;position: relative;background: center center/cover no-repeat;}
+.lyCard12_li::before{display: block;content: '';background: rgba(0, 0, 0, 0.3);z-index: 1;position: absolute;top: 0;left: 0;bottom: 0;right: 0;}
+.lyCard12_li.cur{width: calc(100% - 472px);box-shadow: 0 10px 15px 5px rgba(0, 0, 0, 0.1);}
+.lyCard12_li:nth-child(1){margin-left: 0;}
+.lyCard12_li:nth-child(2){transform: translateY(-32px);}
+.lyCard12_li:nth-child(3){transform: translateY(-60px);}
+.lyCard12_li:nth-child(4){transform: translateY(-32px);}
+.lyCard12_li:nth-child(5){}
+
+.lyCard12_img{width: 100%;height: 100%;position: absolute;top: 0;left: 0;}
+.lyCard12_li .name{writing-mode:vertical-lr;font-size: 24px;color: #fff;position: relative;margin: 0 auto;z-index: 1;}
+.lyCard12_li .brief {font-size: 16px;color: #fff;line-height: 26px;margin: 25px 0 45px;position: relative;max-width: 0px;overflow: hidden;max-height: 156px;z-index: 1;text-overflow: ellipsis;display: -webkit-box !important; -webkit-box-orient: vertical; -webkit-line-clamp: 6;}
+.lyCard12_li .btn {font-size: 16px;color: #fff;position: relative;max-width: 0px;overflow: hidden;display: inline-block;z-index: 1;pointer-events:visible;}
+.lyCard12_li .btn i{margin-left: 5px;}
+
+.lyCard12_li.cur{padding: 60px;}
+.lyCard12_li.cur .name{writing-mode:initial;}
+.lyCard12_li.cur .brief{max-width: initial;}
+.lyCard12_li.cur .btn{max-width: initial;}
+
+
+/* 卡片效果13 */
+.lyCard13 {padding: 60px 50px;color: #fff;overflow: hidden;display: flex;justify-content: space-between;flex-direction: column;width: 25%;}
+.lyCard13_text{position: relative;}
+.lyCard13 .num{font-size: 20px;}
+.lyCard13 .name1{font-size: 30px;margin: 40px 0 20px;}
+.lyCard13 .name{font-size: 24px;}
+.lyCard13_line{width: 50px;height: 2px;background: #fff;margin-top: 40px;}
+.lyCard13_btn{width: 60px; height: 60px; background: #000; border: 1px solid rgba(255, 255, 255,0.3); border-radius: 10px;transition: .3s;position: relative;font-size: 16px;}
+.lyCard13_btn .btn{transition: .3s;white-space: nowrap;max-width: 0;overflow: hidden;}
+.lyCard13_btn .icon{font-size: 20px;color: var(--viewFontColor);transition: .3s;}
+.lyCard13_mask{width: 100%;height: 100%;background: rgba(0, 0, 0,0.3);position: absolute;top: 0;left: 0;}
+.lyCard13_img1{position: absolute;top: 0;left: 0;width: 100%;height: 100%;}
+.lyCard13_img1 img{filter: blur(3px);transform: scale(1.05);}
+.lyCard13_img{position: absolute;top: 0;left: 0;width: 100%;height: 100%;transition:_3s;}
+.lyCard13_img img{transform: scale(1.05);}
+@media (any-hover:hover) {
+.lyCard13:hover .lyCard13_btn{width: 190px; height: 60px; background: #FFFFFF;border-radius: 30px;color: #000;}
+.lyCard13:hover .btn{max-width: 190px;margin-right: 20px;}
+.lyCard13_btn:hover .icon{transform: translateX(10px);}
+.lyCard13:hover .lyCard13_img{opacity: 0;}
+}
+
+
+/* 卡片效果14 */
+.lyCard14{transition: .3s;background: #fff;height: 355px;display: flex;width: calc((100% - 20px)/3);}
+.lyCard14::after{content: '';display: block;width: 100%;height: 100%;position: absolute;top: 0;left: 0;background: #fff;transition: .3s;opacity: 1;}
+.lyCard14_img{position: absolute;top: 0;left: 1px;width:calc(100% - 2px);height: 100%;}
+.lyCard14_img img{transition: .3s;top: 0;}
+.lyCard14_time{position: absolute;top: 0;right: 0;width: 150px;height: 80px;padding: 20px;transition: .3s;background: #fff;box-sizing: content-box;z-index: 1;}
+.lyCard14 .day{font-size: 44px;color: #221815;margin-right: 5px;transition: .3s;}
+.lyCard14 .year{font-size: 16px;line-height: 20px;color: #B8BDC0;}
+.lyCard14_text{width: 100%;padding: 0px 40px 30px;position: absolute;bottom: 0;left: 0;z-index: 1;opacity: 1;transition: .3s;pointer-events: none;}
+.lyCard14 .name{font-size: 20px;line-height: 60px;color: #221815;border-bottom: 1px solid rgba(98, 100, 102,0.5);}
+.lyCard14 .brief{font-size: 16px;line-height: 28px;color: #626466;margin-top: 12px;}
+@media (any-hover:hover) {
+.lyCard14:hover::after{opacity: 0;}
+.lyCard14:hover img{transform: scale(1.1);}
+.lyCard14:hover .lyCard14_time{padding: 0px;}
+.lyCard14:hover .day{color: var(--hoverColor)}
+.lyCard14:hover .lyCard14_text{opacity: 0;transform: translateY(80%);}
+}
+
+
+/* 卡片效果15 */
+.lyCard15 {width: calc((100% - 40px)/3);background-color: #fff;--color1: #2145A8;}
+.lyCard15_img{padding-top: 66.66%;position: relative;}
+.lyCard15_img img {top: 0;}
+.lyCard15_time{position: absolute;top: 0;right: 0;width: 156px;height: 92px;padding: 20px;transition: .5s;background: transparent;overflow: hidden;}
+.lyCard15_time::before{display: block;content: '';width: 100%;height: 100%;background: #F7F8F8;opacity: 0;position: absolute;right: -100%;top: -100%;transition: .5s;}
+.lyCard15 .day{font-size: 44px;color: #fff;margin-right: 5px;transition: .5s;position: relative;}
+.lyCard15 .year{font-size: 16px;line-height: 20px;color: #B8BDC0;position: relative;}
+.lyCard15 .name{font-size: 20px;line-height: 56px;color: #333;transition: .5s;max-height: 56px;}
+.lyCard15_line{width: 100%;height: 1px;background: #DCDDDD;margin-bottom: 15px;transition: .5s;position: relative;overflow: hidden;}
+.lyCard15 .brief{font-size: 16px;color: #626466;line-height: 28px;max-height: 56px;}
+.lyCard15_line::before{display: block;content: '';width: 100%;height: 1px;position: absolute;top: 0;left: 100%;transition: .5s;background: var(--color1);}
+@media (any-hover:hover) {
+.lyCard15:hover .lyCard15_time::before{opacity: 1;right: 0%;top: 0%;}
+.lyCard15:hover .day{color: var(--color1);}
+.lyCard15:hover .name{color: var(--color1);}
+.lyCard15:hover .lyCard15_line::before{left: 0%;}
+}
+
+
+/* 卡片效果16 */
+.lyCard16{padding-bottom: 40px;position: relative;width: calc((100% - 100px)/3);--color1: #2145A8;}
+.lyCard16::before{display: block;content: '';height: 2px;background: #ccc;position: absolute;bottom: 0px;left: 0;right: 0;}
+.lyCard16::after{display: block;content: '';height: 2px;background: var(--color1);position: absolute;bottom: 0px;left: 0;right: 100%;transition: .3s;}
+.lyCard16_img{padding-top: 62.4%;}
+.lyCard16_img img{transition: .3s;top: 0;}
+.lyCard16 .name{font-size: 24px;color: #333;margin: 40px 0 10px;transition: .3s;}
+.lyCard16 .category{font-size: 18px;color: #626466;}
+@media (any-hover:hover) {
+.lyCard16_img:hover img{transform: scale(1.1);}
+.lyCard16:hover::after{right: 0;}
+.lyCard16:hover .name{color: var(--color1);}
+}
+
+
+/* 卡片效果17 */
+.lyCard17 {width: calc((100% - 100px)/3);--color1: #e6ab43;}
+.lyCard17_img {padding-top: 50%;}
+.lyCard17_text {padding: 20px 0 10px;position: relative;}
+.lyCard17_text::before {position: absolute;content: '';width: 2px;height: 0;background-color: var(--color1);left: 30px;top: -30px;-webkit-transition:.3s;transition:.3s;}
+.lyCard17 .name {font-size: 24px;line-height: 1;color: #404040;}
+.lyCard17 .brief {font-size: 16px;line-height: 1;color: #999;margin-top: 20px;}
+@media (any-hover:hover) {
+.lyCard17:hover .lyCard17_text {padding-left: 60px;}
+.lyCard17:hover .lyCard17_text::before {height: calc(100% + 30px);}
+.lyCard17:hover .name {color: var(--color1);}
+}
+
+
+/* 卡片效果18 */
+.lyCard18 {width: calc((100% - 100px)/3);position: relative;overflow: hidden;--color1: #e6ab43;}
+.lyCard18_img {padding-top: 100%;}
+.lyCard18_img::after {position: absolute;content: '';left: 0;bottom: 0;width: 100%;height: 130px;background-color: #fff;-webkit-transition:.3s;transition:.3s;}
+.lyCard18_text {position: absolute;bottom: -70px;left: 0;width: 100%;padding: 20px 60px 60px;}
+.lyCard18 .name1 {font-size: 18px;line-height: 1;color: #404040;}
+.lyCard18 .name2 {font-size: 12px;line-height: 1;color: rgba(0,0,0,0.15);margin: 10px 0;}
+.lyCard18 .brief {font-size: 14px;line-height: 30px;color: #fff;height: 60px;margin: 10px 0;opacity: 0;}
+@media (any-hover:hover) {
+.lyCard18:hover .lyCard18_img::after {height: 0;}
+.lyCard18:hover .lyCard18_text {bottom: 0;}
+.lyCard18:hover .name1 {color: #fff;}
+.lyCard18:hover .name2 {color: rgba(255, 255, 255, 0.5);}
+.lyCard18:hover .brief {opacity: 1;}
+}
+
+
+/* 卡片效果19 */
+.lyCard19::before,
+.lyCard19_num,
+.lyCard19_line{position: absolute;}
+
+.lyCard19 {position: relative;border-radius: 20px;overflow: hidden;padding: 60px;width: calc((100% - 60px)/2);background-color: #171717;}
+.lyCard19::before {content: '';top: 50%;left: 50%;transform: translate(-50%,-50%);width: 0;height: 0;border-radius: 20px;background-color: #f59c02;-webkit-transition:.5s;transition:.5s;}
+.lyCard19_content {position: relative;padding-top: 70px;}
+.lyCard19_num {top: 0;left: 0;font-size: 48px;line-height: 1;color: #fff;}
+.lyCard19_line {top: 70px;left: 0;width: 18px;height: 1px;background-color: #fff;}
+.lyCard19 .name {font-size: 24px;line-height: 1;color: #fff;margin: 18px 0;}
+.lyCard19 .brief {font-size: 14px;line-height: 26px;color: rgba(255, 255, 255, 0.5);margin: 18px 0;}
+@media (any-hover:hover) {
+    .lyCard19:hover::before {width: 100%;height: 100%;}
+}
+
+
+/* 卡片效果20 */
+.lyCard20 {position: relative;overflow: hidden;width: calc((100% - 120px)/3);border-radius: 20px;background-color: #171717;}
+.lyCard20_img {padding-top: 163.3%;transform: translateX(-100%);border-radius: 20px;}
+.lyCard20_text {position: absolute;top: 0;left: 0;width: 100%;height: 100%;padding: 130px 60px;}
+.lyCard20 .num {font-size: 48px;line-height: 1;color: #fff;}
+.lyCard20 .icon {width: 18px;height: 1px;background-color: rgba(255, 255, 255, 0.5);margin: 15px 0;}
+.lyCard20 .name {font-size: 24px;line-height: 1;color: #fff;}
+.lyCard20 .brief {font-size: 14px;line-height: 26px;color: rgba(255, 255, 255, 0.5);height: 78px;}
+@media (any-hover:hover) {
+    .lyCard20:hover .lyCard20_img {transform: translateX(0);}
+}
+
+
+/* 卡片效果21 */
+.lyCard21 {border-radius: 20px;border: 1px solid #ccc;background-color: #fff;padding: 40px;width: calc((100% - 60px)/3);--color1:#fbb200;}
+.lyCard21 .img::after {display: initial;}
+.lyCard21 .tag {font-size: 14px;line-height: 1;color: #333;margin: 35px 0;}
+.lyCard21 .name {font-size: 20px;line-height: 1;color: #333;margin-bottom: 15px;}
+.lyCard21 .brief {font-size: 14px;line-height: 26px;color: #999;margin-bottom: 30px;}
+.lyCard21_btn {font-size: 16px;line-height: 1;color: #999;position: relative;}
+.lyCard21_btn::before {position: absolute;content: '';left: 0;top: 50%;transform: translateY(-50%);height: 1px;width: 0;background-color: var(--color1);}
+@media (any-hover:hover) {
+    .lyCard21:hover {box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);}
+    .lyCard21:hover .name {color: var(--color1);}
+    .lyCard21:hover .lyCard21_btn {padding-left: 40px;color: var(--color1);}
+    .lyCard21:hover .lyCard21_btn::before {width: 34px;}
+}
+
+
+/* 卡片效果22 */
+.lyCard22 {position: relative;width: calc(100% / 3);background-color: #fff;padding: 80px 60px;--color: #ff7327;}
+.lyCard22::before {position: absolute;content: '';width: 65px;height: 65px;border-radius: 100px;background-color: var(--color);right: 40px;top: 60px;-webkit-transition:.5s;transition:.5s;}
+.lyCard22_btn {font-size: 30px;line-height: 65px;color: #fff;position: absolute;right: 40px;top: 60px;width: 65px;height: 65px;background-color: var(--color);border-radius: 50%;transform: rotate(-45deg);}
+.lyCard22 .name {font-size: 20px;line-height: 1;color: #333;position: relative;}
+.lyCard22 .brief {font-size: 14px;line-height: 26px;color: #666;height: 78px;margin-top: 100px;position: relative;}
+@media (any-hover:hover) {
+    .lyCard22:hover::before {right: 0;top: 0;width: 100%;height: 100%;border-radius: 0;}
+    .lyCard22:hover .lyCard22_btn {transform: rotate(0);background-color: #ff8746;}
+    .lyCard22:hover .name,
+    .lyCard22:hover .brief {color: #fff;}
+}
+
+
+/* 卡片效果23 */
+.lyCard23 {position: relative;width: calc(100% / 3);background-color: #fff;padding-top: 56px;--color: #ff7327;}
+.lyCard23::before {position: absolute;content: '';width: 130px;height: 130px;border-radius: 100px;background-color: var(--color);left: 50%;top: 56px;transform: translateX(-50%);-webkit-transition:.5s;transition:.5s;}
+.lyCard23_img {width: 130px;height: 130px;border-radius: 50%;margin: 0 auto;}
+.lyCard23_text {padding: 50px 0;}
+.lyCard23 .name {font-size: 18px;line-height: 30px;color: #333;position: relative;}
+.lyCard23 .brief {font-size: 14px;line-height: 24px;color: #666;position: relative;}
+.lyCard23_btn {font-size: 34px;line-height: 1;color: #999;width: 35px;transform: rotate(-45deg);margin: 0 auto;}
+@media (any-hover:hover) {
+    .lyCard23:hover::before {right: 0;top: 0;width: 100%;height: 100%;border-radius: 0;}
+    .lyCard23:hover .name,
+    .lyCard23:hover .brief {color: #fff;}
+    .lyCard23:hover .lyCard23_btn {color: #fff;transform: rotate(0);}
+}
+
+
+/* 卡片效果24 */
+.lyCard24 {position: relative;width: calc(100% / 3);overflow: hidden;}
+.lyCard24_img {width: 100%;padding-top: 62.47%;}
+.lyCard24_text {position: absolute;left: 0;top: 0;width: 100%;height: 100%;background-color: #fff;padding: 80px 60px;}
+.lyCard24 .name {font-size: 20px;line-height: 1;color: #333;}
+.lyCard24 .brief1 {font-size: 14px;line-height: 1;color: #777;margin-top: 10px;}
+.lyCard24 .brief2 {font-size: 14px;line-height: 26px;color: #999;margin-top: 40px;}
+@media (any-hover:hover) {
+    .lyCard24:hover .lyCard24_text {top: 50%;background-color: transparent;}
+    .lyCard24:hover .name {color: #fff;}
+    .lyCard24:hover .brief1 {color: rgba(255, 255, 255, 0.5);}
+}
+
+
+/* 卡片效果25 */
+.lyCard25 {width: calc((100% - 60px)/3);}
+.lyCard25_img {padding-top: 52.46%;}
+.lyCard25_text {position: relative;padding: 32px 20px;}
+.lyCard25_text::before {position: absolute;content: '';bottom: 0;left: 50%;transform: translateX(-50%);width: 100%;height: 2px;background-color: #eaeaea;-webkit-transition:.3s;transition:.3s;}
+.lyCard25_name {font-size: 18px;line-height: 30px;color: #444;margin-bottom: 15px;}
+.lyCard25_brief {font-size: 14px;line-height: 26px;color: #999;height: 52px;}
+.lyCard25_btn {margin: 10px 20px;width: 50px;opacity: 0;}
+.lyCard25 .btn {font-size: 14px;line-height: 30px;color: #999;}
+.lyCard25 .icon {font-size: 16px;line-height: 30px;color: #999;}
+@media (any-hover:hover) {
+    .lyCard25:hover .lyCard25_img {box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);}
+    .lyCard25:hover img {transform: scale(1.1);-webkit-transform: scale(1.1);}
+    .lyCard25:hover .lyCard25_text::before {width: 80%;background-color: #999;}
+    .lyCard25:hover .lyCard25_name {transform: translateY(5px);}
+    .lyCard25:hover .lyCard25_brief {transform: translateY(10px);}
+    .lyCard25:hover .lyCard25_btn {width: 70px;opacity: 1;}
+}
+
+
+/* 卡片效果26 */
+.lyCard26 {width: calc((100% - 60px)/3);}
+.lyCard26_img {padding-top: 52.8%;}
+.lyCard26_img::before {position: absolute;content: '';width: 80px;height: 80px;border-radius: 50%;top: 0;left: 50%;transform: translate(-50%,0);background-color: #fff;z-index: 2;-webkit-transition:.3s;transition:.3s;opacity: 0;}
+.lyCard26_img_icon {font-size: 30px;color: #999;top: 50%;left: 50%;transform: translate(-50%,-50%);z-index: 3;opacity: 0;}
+.lyCard26_text {padding: 14px 0 24px;}
+.lyCard26_name {font-size: 16px;line-height: 30px;color: #999;}
+.lyCard26_btn {font-size: 14px;line-height: 30px;color: #999;width: 90px;padding: 0 20px;transform: translateY(100%);opacity: 0;}
+@media (any-hover:hover) {
+    .lyCard26:hover img {transform: scale(1.1);-webkit-transform: scale(1.1);}
+    .lyCard26:hover .lyCard26_img::before {top: 50%;transform: translate(-50%,-50%);opacity: 1;}
+    .lyCard26:hover .lyCard26_img_icon {opacity: 1;}
+    .lyCard26:hover .lyCard26_name {padding-left: 20px;}
+    .lyCard26:hover .lyCard26_btn {transform: translate(0);opacity: 1;}
+}
+
+
+/* 卡片效果27 */
+.lyCard27_img::after,
+.lyCard27_img::before,
+.lyCard27_mask,
+.lyCard27_text{position: absolute;}
+
+.lyCard27 {width: calc((100% - 40px)/3);position: relative;}
+.lyCard27_img {padding-top: 80%;position: relative;}
+.lyCard27_img::after {content: '';height: 32px;width: 2px;top: 0;left: 50%;transform: translate(-50%,0);background-color: #fff;-webkit-transition:.3s;transition:.3s;opacity: 0;z-index: 2;}
+.lyCard27_img::before {content: '';width: 32px;height: 2px;left: 0;top: 50%;transform: translate(0,-50%);background-color: #fff;z-index: 2;-webkit-transition:.3s;transition:.3s;opacity: 0;}
+.lyCard27_mask {top: 0;left: 0;width: 100%;height: 100%;background-color: rgba(0, 0, 0, 0.3);pointer-events: none;opacity: 0;}
+.lyCard27_text {font-size: 16px;line-height: 30px;color: #fff;bottom: 0;left: 50%;transform: translate(-50%,0);opacity: 0;}
+@media (any-hover:hover) {
+    .lyCard27:hover .lyCard27_img::after {opacity: 1;top: 50%;transform: translate(-50%,-50%);}
+    .lyCard27:hover .lyCard27_img::before {opacity: 1;left: 50%;transform: translate(-50%,-50%);}
+    .lyCard27:hover .lyCard27_mask {opacity: 1;}
+    .lyCard27:hover .lyCard27_text {opacity: 1;bottom: 80px;}
+}
+
+
+/* 卡片效果28 */
+.lyCard28_img,
+.lyCard28_img img,
+.lyCard28_text{-webkit-transition:.3s;transition:.3s;}
+
+.lyCard28 {width: calc((100% - 60px)/3);position: relative;}
+.lyCard28_img {padding-top: 128%;}
+.lyCard28_text {position: absolute;top: 50%;left: 50%;transform: rotateY(90deg) translate(-50%,-50%);width: 80%;height: 80%;background-color: #fff;padding: 42px;overflow: hidden;transform-origin: 0 50% 0;}
+.lyCard28_text::before {position: absolute;content: '';bottom: 0;left: 50%;transform: translateX(-50%);width: 0;height: 2px;background-color: #1a1a1a;-webkit-transition:.5s;transition:.5s;}
+.lyCard28 .name {font-size: 16px;line-height: 30px;color: #333;margin-bottom: 20px;}
+.lyCard28 .brief {font-size: 14px;line-height: 26px;color: #666;}
+@media (any-hover:hover) {
+    .lyCard28:hover .lyCard28_text {transform: rotateY(0) translate(-50%,-50%);}
+    .lyCard28:hover .lyCard28_text::before {width: 100%;}
+}
+
+
+/* 卡片效果29 */
+.lyCard29_btn,
+.lyCard29_btn::after,
+.lyCard29_btn::before{position: absolute;}
+
+.lyCard29 {width: calc((100% - 40px)/3);position: relative;--bWidth1:3px;--scale1:130%;--bWidth2:2px;--scale2:160%;}
+.lyCard29_img {padding-top: 60.6%;filter: saturate(0);-webkit-transition:.3s;transition:.3s;}
+.lyCard29_btn {top: 50%;left: 50%;transform: translate(-50%,-50%);width: 85px;height: 85px;border-radius: 50%;background-color: #fff;}
+.lyCard29_btn .btn {font-size: 30px;line-height: 1;color: #333;}
+.lyCard29_btn::after {content: '';width: calc(100% - var(--bWidth1)*2);height: calc(100% - var(--bWidth1)*2);border-radius: 50%;border: var(--bWidth1) solid #fff;-webkit-transition:.3s;transition:.3s;}
+.lyCard29_btn::before {content: '';width: calc(100% - var(--bWidth2)*2);height: calc(100% - var(--bWidth2)*2);border-radius: 50%;border: var(--bWidth2) solid rgba(255, 255, 255, 0.5);-webkit-transition:.3s;transition:.3s;}
+@media (any-hover:hover) {
+    .lyCard29:hover .lyCard29_img {filter: saturate(1);}
+    .lyCard29:hover .lyCard29_btn::after {width: var(--scale1);height: var(--scale1);}
+    .lyCard29:hover .lyCard29_btn::before {width: var(--scale2);height: var(--scale2);}
+}
+
+
+/* 卡片效果30 */
+.lyCard30 {background-color: #fafafa;width: 100%;}
+.lyCard30_img {padding-top: 100%;}
+.lyCard30_overImg {opacity: 0;pointer-events: none;}
+.lyCard30 .name {font-size: 16px;line-height: 1;color: #000;left: 0;bottom: 0;width: 100%;padding: 0 30px 40px;}
+@media (any-hover:hover) {
+    .lyCard30:hover .lyCard30_showImg {opacity: 0;pointer-events: none;}
+    .lyCard30:hover .lyCard30_overImg {opacity: 1;pointer-events: all;}
+    .lyCard30:hover .name {color: #666;}
+}
+
+
+/* 卡片效果31 */
+.lyCard31 {width: 20%;height: 100%;padding: 0 30px;display: flex;align-items: center;justify-content: space-between;flex-direction: column;position: relative;}
+.lyCard31_icon,
+.lyCard31_img {max-height: 40%;width: 100%;position: relative;display: flex;align-items: center;flex-direction: column;opacity: 0;}
+.lyCard31_text {position: relative;}
+.lyCard31 * {-webkit-transition:.5s;transition:.5s;}
+.lyCard31::before {position: absolute;content: '';width: 100%;height: 0;top: 0;left: 0;background-color: #fff;-webkit-transition:.5s;transition:.5s;}
+.lyCard31::after {position: absolute;content: '';width: 1px;height: 100%;top: 0;right: 0;background-color: rgba(255, 255, 255,0.3);}
+.lyCard31 .num {font-size: 60px;color: #ababab;line-height: 120px;}
+.lyCard31 .icon {width: 1px;height: 116px;background-color: #ababab;margin-bottom: 0;}
+.lyCard31 .name1 {font-size: 18px;line-height: 30px;color: #fff;text-align: center;}
+.lyCard31 .name2 {font-size: 14px;line-height: 20px;color: #ababab;text-align: center;}
+.lyCard31 .img {width: 100%;padding-top: 140.625%;}
+@media (any-hover:hover) {
+    .lyCard31:hover::before {height: 100%;}
+    .lyCard31:hover .name1 {color: #ddb36f;}
+    .lyCard31:hover .lyCard31_icon,
+    .lyCard31:hover .lyCard31_img {opacity: 1;}
+    .lyCard31:hover .lyCard31_text {transform: translateY(30px);}
+}
+
+
+/* 卡片效果32 */
+.lyCard32::before,
+.lyCard32_img img,
+.lyCard32_text{-webkit-transition:.3s;transition:.3s;}
+
+.lyCard32 {position: relative;width: 50%;}
+.lyCard32::before {position: absolute;content: '';top: 0;left: 0;width: 100%;height: 100%;background-color: rgba(0, 0, 0, 0.3);pointer-events: none;opacity: 0;z-index: 2;}
+.lyCard32_img {padding-top: 55%;}
+
+.lyCard32_text {position: absolute;top: 50%;left: 50%;transform: translate(-50%,0);display: flex;align-items: center;justify-content: center;flex-direction: column;opacity: 0;z-index: 3;}
+.lyCard32 .btn {width: 50px;height: 50px;border-radius: 50%;background-color: #fff;font-size: 20px;line-height: 50px;color: #666;text-align: center;margin-bottom: 10px;}
+.lyCard32 .name {font-size: 16px;line-height: 30px;color: #fff;}
+.lyCard32 .category {font-size: 14px;line-height: 22px;color: #fff;}
+@media (any-hover:hover) {
+    .lyCard32:hover .lyCard32_text {transform: translate(-50%,-50%);opacity: 1;}
+    .lyCard32:hover::before {opacity: 1;}
+    .lyCard32:hover img {transform: scale(1.1);}
+}
+
+
+/* 卡片效果33 */
+.lyCard33::before,
+.lyCard33_img img,
+.lyCard33_text,
+.lyCard33_btn,
+.lyCard33_name1,
+.lyCard33_name2{-webkit-transition:.5s;transition:.5s;}
+
+.lyCard33 {position: relative;width: calc(100% / 3);--color1: #3db45e;}
+.lyCard33::before {position: absolute;content: '';top: 0;left: 0;width: 100%;height: 100%;background-color: rgba(0, 0, 0, 0.3);pointer-events: none;opacity: 0;z-index: 2;}
+.lyCard33_img {padding-top: 63.28%;}
+.lyCard33_text {position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);display: flex;align-items: center;justify-content: center;flex-direction: column;opacity: 0;z-index: 3;}
+.lyCard33_btn {width: 50px;height: 50px;border-radius: 50%;background-color: var(--color1);font-size: 20px;line-height: 50px;color: #fff;text-align: center;margin-bottom: 40px;transform: translateY(-100%);}
+.lyCard33_name1 {font-size: 16px;line-height: 24px;color: var(--color1);transform: translateY(50%);}
+.lyCard33_name2 {font-size: 14px;line-height: 22px;color: #fff;transform: translateY(-50%);}
+@media (any-hover:hover) {
+    .lyCard33:hover::before {opacity: 1;}
+    .lyCard33:hover .lyCard33_text {opacity: 1;}
+    .lyCard33:hover .lyCard33_btn,
+    .lyCard33:hover .lyCard33_name1,
+    .lyCard33:hover .lyCard33_name2 {transform: translateY(0);}
+    .lyCard33:hover img {transform: scale(1.1);}
+}
+
+
+/* 卡片效果34 */
+.lyCard34_text::before,
+.lyCard34 .num,
+.lyCard34_btn{position: absolute;-webkit-transition:.3s;transition:.3s;}
+
+.lyCard34 {width: calc((100% - 60px)/3);--color1: #f2cb62;padding-bottom: 26px;}
+.lyCard34_img {padding-top: 53%;position: relative;}
+.lyCard34_text {position: relative;padding: 35px 0 20px;margin-top: 35px;}
+.lyCard34_text::before {content: '';left: 0;top: 0;width: 100%;height: 1px;background-color: rgba(255, 255, 255,0.3);}
+.lyCard34 .num {right: 0;top: -100%;font-size: 100px;line-height: 1;color: var(--color1);opacity: 0;}
+.lyCard34 .name {font-size: 20px;line-height: 30px;color: #fff;-webkit-transition:.3s;transition:.3s;}
+.lyCard34 .brief {font-size: 14px;line-height: 26px;color: rgba(255, 255, 255, 0.5);}
+.lyCard34_btn {font-size: 14px;line-height: 30px;color: rgba(255, 255, 255, 0.5);padding: 0 20px;}
+.lyCard34_btn::before {position: absolute;content: '';top: 50%;left: 0;transform: translateY(-50%);height: 0;width: 0;border-left: 5px solid #fff;border-top: 4px solid transparent;border-bottom: 4px solid transparent;}
+
+@media (any-hover:hover) {
+    .lyCard34:hover .lyCard34_text::before {height: 2px;background-color: var(--color1);}
+    .lyCard34:hover .num {top: calc(-100% - 35px);opacity: 1;}
+    .lyCard34:hover .name {color: var(--color1);}
+    .lyCard34:hover .lyCard34_btn {color: #fff;}
+}
+
+
+/* 卡片效果35 */
+.lyCard35_img::before,
+.lyCard35_text,
+.lyCard35_brief{-webkit-transition:.3s;transition:.3s;}
+
+.lyCard35 {width: calc((100% - 60px)/4);}
+.lyCard35_img {padding-top: 127%;background-color: rgba(0,0,0,0.5);position: relative;}
+.lyCard35_img::after {display: initial;}
+.lyCard35_img::before {position: absolute;content: '';top: 0;bottom: 0;left: 0;right: 0;background-color: rgba(0,0,0,0.5);z-index: 2;opacity: 0;}
+.lyCard35_text {top: 100%;left: 50%;transform: translate(-50%,-50%);display: flex;align-items: center;justify-content: center;flex-direction: column;position: absolute;z-index: 3;opacity: 0;}
+.lyCard35 .name {font-size: 16px;line-height: 30px;color: #fff;}
+.lyCard35 .category {font-size: 14px;line-height: 22px;color: #fff;opacity: 0;}
+.lyCard35_brief {padding: 20px;font-size: 14px;line-height: 26px;color: #232323;position: relative;transform: translateY(-100%);opacity: 0;}
+.lyCard35_brief::before {position: absolute;content: '';width: calc(100% - 10px);height: 1px;bottom: 0;left: 50%;transform: translateX(-50%);background-color: #e0e0e0;}
+@media (any-hover:hover) {
+    .lyCard35:hover .lyCard35_img::before {opacity: 1;}
+    .lyCard35:hover .lyCard35_text {top: 50%;opacity: 1;}
+    .lyCard35:hover .lyCard35_brief {transform: translateY(0);opacity: 1;}
+}
+
+
+/* 卡片效果36 */
+.lyCard36 {width: calc(100% / 3);position: relative;}
+.lyCard36 * {-webkit-transition:.5s;transition:.5s;}
+.lyCard36::before {position: absolute;content: '';top: 0;left: 0;width: 100%;height: 100%;background-color: rgba(0,0,0,0.5);z-index: 1;opacity: 0;-webkit-transition:.5s;transition:.5s;}
+.lyCard36_img {padding-top: 88.8%;}
+.lyCard36_content {position: absolute;left: 0;bottom: 0;width: 100%;opacity: 0;z-index: 2;}
+.lyCard36 .num {font-size: 50px;line-height: 1;color: #fff;transform: translate(40px,-50%);}
+.lyCard36 .line {width: 1px;height: 100px;background-color: #fff;transform: translateX(75px) rotate(0);}
+.lyCard36_text {padding-left: 40px;margin-top: -20px;margin-bottom: 40px;}
+.lyCard36 .name {font-size: 22px;line-height: 36px;color: #fff;transform: translateY(100%);}
+.lyCard36 .brief {font-size: 12px;line-height: 16px;color: rgba(255, 255, 255, 0.5);}
+@media (any-hover:hover) {
+    .lyCard36:hover::before {opacity: 1;}
+    .lyCard36:hover .lyCard36_content {opacity: 1;}
+    .lyCard36:hover .num {transform: translate(40px,0);}
+    .lyCard36:hover .line {transform: translateX(75px) rotate(60deg);}
+    .lyCard36:hover .name {transform: translateY(0);}
+}
+
+
+/* 卡片效果37 */
+.lyCard37 {width: calc((100% - 100px)/3);}
+.lyCard37 * {-webkit-transition:.3s;transition:.3s;}
+.lyCard37_img {padding-top: 80%;}
+.lyCard37_text {position: relative;}
+.lyCard37_name {position: relative;font-size: 18px;line-height: 1;color: #fff;width: 70%;padding: 20px 0;}
+.lyCard37_name::before {position: absolute;content: '';left: 0;bottom: 0;width: 30px;height: 2px;background-color: rgba(255, 255, 255, 0.5);-webkit-transition:.3s;transition:.3s;}
+.lyCard37 .brief {font-size: 14px;line-height: 1;color: #848484;padding: 20px 0;opacity: 0;}
+.lyCard37_num {font-size: 100px;line-height: 1;color: #fff;font-weight: bold;position: absolute;right: 0;top: 100%;transform: translateY(-50%);opacity: 0;}
+@media (any-hover:hover) {
+    .lyCard37:hover .lyCard37_name::before {width: 100%;background-color: #fff;}
+    .lyCard37:hover .brief {opacity: 1;}
+    .lyCard37:hover .lyCard37_num {top: 50%;opacity: 1;}
+    .lyCard37:hover img {transform: scale(1.1);-webkit-transform: scale(1.1);}
+}
+
+
+/* 卡片效果38 */
+.lyCard38 {width: calc((100% - 30px)/3);position: relative;}
+.lyCard38_img {padding-top: 107.9%;}
+.lyCard38_text {position: absolute;top: 55%;left: 50%;transform: translate(-50%,-50%);width: calc(100% - 50px);height: calc(100% - 50px);background-color: #fff;padding: 42px;overflow: hidden;transform-origin: 0 50% 0;-webkit-transition:.5s;transition:.5s;opacity: 0;}
+.lyCard38_text::before {position: absolute;content: '';bottom: 0;left: 50%;transform: translateX(-50%);width: 0;height: 2px;background-color: #1a1a1a;-webkit-transition:.5s;transition:.5s;}
+.lyCard38 .name {font-size: 16px;line-height: 30px;color: #333;margin-bottom: 20px;}
+.lyCard38 .brief {font-size: 14px;line-height: 26px;color: #666;}
+@media (any-hover:hover) {
+    .lyCard38:hover .lyCard38_text {top: 50%;opacity: 1;}
+    .lyCard38:hover .lyCard38_text::before {width: 100%;}
+}
+
+
+/* 卡片效果39 */
+.lyCard39 {width: calc((100% - 150px)/4);}
+.lyCard39 * {-webkit-transition:.3s;transition:.3s;}
+.lyCard39_img {width: 100%;padding-top: 142.7%;position: relative;overflow: hidden;}
+.lyCard39_cont {width: 100%;height: 100%;position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);}
+.lyCard39 .name {font-size: 16px;line-height: 20px;color: #333;opacity: 0;}
+.lyCard39 .brief {font-size: 14px;line-height: 22px;color: #666;opacity: 0;}
+@media (any-hover:hover) {
+    .lyCard39:hover .lyCard39_cont {width: 90%;height: 90%;}
+    .lyCard39:hover img {transform: scale(1.3);-webkit-transform: scale(1.3);}
+    .lyCard39:hover .name {opacity: 1;}
+    .lyCard39:hover .brief {opacity: 1;}
+}
+
+
+/* 卡片效果40 */
+.lyCard40::before,
+.lyCard40_img::after
+.lyCard40_img::before
+.lyCard40_text{position: absolute;-webkit-transition:.3s;transition:.3s;}
+
+.lyCard40 {width: calc((100% - 90px)/4);position: relative;}
+.lyCard40::before {content: '';top: 0;bottom: 0;left: 0;right: 0;background-color: #fff;z-index: 1;}
+.lyCard40_img {padding-top: 100%;}
+.lyCard40_img::after {content: '';top: 50%;left: 50%;transform: translate(-50%,-50%);border: 1px solid rgba(255, 255, 255, 0.5);width: 100%;height: 100%;pointer-events: none;z-index: 1;}
+.lyCard40_img::before {content: '';top: 50%;left: 50%;transform: translate(-50%,-50%);border: 1px solid rgba(255, 255, 255, 0.5);width: 120%;height: 120%;pointer-events: none;z-index: 1;}
+.lyCard40_text {top: 0;left: 0;width: 100%;height: 100%;z-index: 2;}
+.lyCard40 .time {font-size: 32px;line-height: 36px;color: #bfbfbf;margin-bottom: 30px;}
+.lyCard40 .name {font-size: 16px;line-height: 1;color: #1a1a1a;margin-bottom: 15px;}
+.lyCard40 .brief {font-size: 14px;line-height: 26px;color: #666;max-height: 52px;}
+@media (any-hover:hover) {
+    .lyCard40:hover::before {opacity: 0;pointer-events: none;}
+    .lyCard40:hover .lyCard40_img::after {width: 90%;height: 90%;}
+    .lyCard40:hover .lyCard40_img::before {width: 92%;height: 92%;}
+    .lyCard40:hover .lyCard40_text {opacity: 0;}
+}
+
+
+/* 卡片效果41 */
+.lyCard41::before,
+.lyCard41_cont,
+.lyCard41_text{position: absolute;}
+
+.lyCard41 {width: calc((100% - 60px)/4);position: relative;}
+.lyCard41::before {content: '';top: 50%;left: 50%;transform: translate(-50%,-50%);width: 50%;height: 50%;background-color: #2145A8;z-index: 1;-webkit-transition:.3s;transition:.3s;opacity: 0;}
+.lyCard41 * {-webkit-transition:.3s;transition:.3s;}
+.lyCard41_img {width: 100%;padding-top: 57.8%;position: relative;overflow: hidden;}
+.lyCard41_cont {width: 100%;height: 100%;top: 50%;left: 50%;transform: translate(-50%,-50%);}
+.lyCard41_text {top: 0;bottom: 0;width: 100%;height: 100%;padding: 30px;opacity: 0;z-index: 2;}
+.lyCard41 .name {font-size: 16px;line-height: 20px;color: #fff;}
+.lyCard41 .brief {font-size: 14px;line-height: 22px;color: #fff;}
+@media (any-hover:hover) {
+    .lyCard41:hover::before {width: 100%;height: 100%;opacity: 1;}
+    .lyCard41:hover .lyCard41_cont {width: 50%;height: 50%;}
+    .lyCard41:hover .lyCard41_text {opacity: 1;}
+}
+
+
+/* 卡片效果42 */
+.lyCard42,
+.lyCard42::before,
+.lyCard42_img,
+.lyCard42_text{-webkit-transition:.3s;transition:.3s;}
+
+.lyCard42_bg {position: relative;}
+.lyCard42_bg::before {position: absolute;content: '';top: 0;left: 0;width: 100%;height: 100%;background-color: rgba(0, 0, 0, 0.5);}
+
+.lyCard42 {width: calc(100% /3);height: 100%;position: relative;display: flex;align-items: center;justify-content: center;flex-direction: column;padding: 20px;z-index: 1;}
+.lyCard42::before {position: absolute;content: '';left: 0;top: 0;width: 100%;height: 100%;background-color: rgba(0, 87, 255, 0.4);opacity: 0;}
+.lyCard42_img {padding-top: 41.7%;width: 100%;}
+.lyCard42_text {padding: 20px 0;z-index: 2;width: 100%;}
+.lyCard42 .name {font-size: 16px;line-height: 20px;color: #fff;}
+.lyCard42 .brief {font-size: 14px;line-height: 22px;color: rgba(255,255,255,0.5);}
+@media (any-hover:hover) {
+    .lyCard42:hover::before {opacity: 1;}
+    .lyCard42:hover .lyCard42_img {transform: translateY(-100%);}
+    .lyCard42:hover .lyCard42_text {transform: translateY(100%);}
+}
+
+
+/* 卡片效果43 */
+.lyCard43 {position: relative;background-color: #333;width: calc(100% / 3);}
+.lyCard43:nth-child(2n) {background-color: #1a1a1a;}
+.lyCard43_main {width: 100%;padding-top: 43.8%;}
+.lyCard43_img {position: absolute;right: 30px;bottom: 30px;width: 100px;height: 100px;border-radius: 50px;background: no-repeat 100%/cover;-webkit-transition:.3s;transition:.3s;}
+.lyCard43_text {position: absolute;top: 0;left: 0;width: 100%;height: 100%;padding: 30px;}
+.lyCard43 .name {font-size: 16px;line-height: 30px;color: #f0f0f0;}
+.lyCard43 .brief {font-size: 14px;line-height: 22px;color: #777;}
+@media (any-hover:hover) {
+    .lyCard43:hover .lyCard43_img {bottom: 0;right: 0;width: 100%;height: 100%;border-radius: 0;}
+}
+
+
+/* 卡片效果44 */
+.lyCard44::before,
+.lyCard44_name,
+.lyCard44_name::before,
+.lyCard44 .tag,
+.lyCard44 .brief{-webkit-transition:.3s;transition:.3s;}
+
+.lyCard44 {width: calc((100% - 50px)/2);position: relative;}
+.lyCard44::before {position: absolute;content: '';top: 0;left: 0;width: 100%;height: 100%;background-color: #fff;z-index: 1;}
+.lyCard44_img {padding-top: 50%;width: 100%;}
+.lyCard44_text {position: absolute;bottom: 50%;left: 0;width: 100%;max-height: 100%;transform: translateY(50%);padding: 53px;z-index: 2;}
+.lyCard44_name {font-size: 18px;line-height: 26px;color: #333;position: relative;}
+.lyCard44_name::before {position: absolute;content: '';bottom: 0;left: 0;width: 20px;height: 1px;background-color: #fff;}
+.lyCard44 .tag {font-size: 14px;line-height: 32px;color: #777;margin-bottom: 30px;}
+.lyCard44 .brief {font-size: 14px;line-height: 26px;color: #777;height: 52px;}
+@media (any-hover:hover) {
+    .lyCard44:hover::before {opacity: 0;pointer-events: none;}
+    .lyCard44:hover .lyCard44_text {bottom: 0;transform: translateY(0);}
+    .lyCard44:hover .lyCard44_name {color: #fff;padding-bottom: 10px;margin-bottom: 5px;}
+    .lyCard44:hover .lyCard44_name::before {width: 100%;}
+    .lyCard44:hover .tag {margin-bottom: 0;color: #fff;}
+    .lyCard44:hover .brief {height: 0;opacity: 0;}
+}
+
+
+/* 卡片效果45 */
+.lyCard45_img img,
+.lyCard45_text,
+.lyCard45_text .name,
+.lyCard45_text .brief{-webkit-transition:.3s;transition:.3s;}
+
+.lyCard45 {width: 25%;position: relative;}
+.lyCard45_img {width: 100%;padding-top: 66.8%;}
+.lyCard45_img img {filter: saturate(0);}
+.lyCard45_text {position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);width: calc(100% - 80px);height: calc(100% - 80px);display: flex;align-items: center;justify-content: center;flex-direction: column;border-bottom: 2px solid rgba(255, 255, 255, 0.5);border-top: 2px solid rgba(255, 255, 255, 0.5);opacity: 0;}
+.lyCard45_text .name {font-size: 16px;line-height: 30px;color: #fff;transform: translateY(50%);}
+.lyCard45_text .brief {font-size: 14px;line-height: 22px;color: rgba(255, 255, 255, 0.5);transform: translateY(-50%);}
+@media (any-hover:hover) {
+    .lyCard45:hover img {filter: saturate(1) brightness(0.8);transform: scale(1.1);-webkit-transform: scale(1.1);}
+    .lyCard45:hover .lyCard45_text {opacity: 1;}
+    .lyCard45:hover .name {transform: translateY(0);}
+    .lyCard45:hover .brief {transform: translateY(0);}
+}
+
+
+/* 卡片效果46 */
+.lyCard46 {width: 25%;height: 100vh;position: relative;background-color: #fff;}
+.lyCard46 * {-webkit-transition:.3s;transition:.3s;}
+.lyCard46_img {height: 50%;width: 100%;border-bottom: 1px solid rgba(0,0,0,0.05);}
+.lyCard46_img img {transform: translateY(-50%);opacity: 0;}
+.lyCard46_main {height: 50%;width: 100%;display: flex;align-items: center;flex-direction: column;}
+.lyCard46_text {width: 100%;padding: 24px;display: flex;align-items: center;flex-direction: column;transform: translateY(-74px);}
+.lyCard46_time {font-size: 24px;line-height: 26px;color: #999;padding-bottom: 24px;margin-bottom: 24px;position: relative;}
+.lyCard46_time::before {position: absolute;content: '';bottom: 0;left: 50%;transform: translateX(-50%);width: 40px;height: 1px;background-color: #dedede;}
+.lyCard46 .name {font-size: 16px;line-height: 30px;color: #333;margin-bottom: 10px;}
+.lyCard46 .brief {font-size: 14px;line-height: 26px;color: #999;margin-bottom: 50px;}
+.lyCard46_btn {width: 132px;height: 33px;border: 1px solid #ababab;position: relative;transform: translateY(100%);opacity: 0;}
+.lyCard46_btn::before {position: absolute;content: '';top: 0;left: 50%;transform: translate(-50%,0);width: 1px;height: 13px;background-color: #ababab;-webkit-transition:.3s;transition:.3s;}
+.lyCard46_btn::after {position: absolute;content: '';top: 50%;left: 0;transform: translate(0,-50%);width: 13px;height: 1px;background-color: #ababab;-webkit-transition:.3s;transition:.3s;}
+@media (any-hover:hover) {
+    .lyCard46:hover img {transform: translateY(0);opacity: 1;}
+    .lyCard46:hover .lyCard46_main {background-color: #eee;}
+    .lyCard46:hover .lyCard46_text {transform: translateY(0);}
+    .lyCard46:hover .lyCard46_btn {opacity: 1;transform: translateY(0);}
+    .lyCard46:hover .lyCard46_btn::before {top: 50%;transform: translate(-50%,-50%);}
+    .lyCard46:hover .lyCard46_btn::after {left: 50%;transform: translate(-50%,-50%);}
+}
+
+
+/* 卡片效果47 */
+.lyCard47 {width: calc((100% - 90px)/4);--color1: #15ab47;}
+.lyCard47 * {-webkit-transition:.3s;transition:.3s;}
+.lyCard47_img {width: 100%;padding-top: 81.5%;}
+.lyCard47_text {padding: 30px 20px;background-color: #eee;}
+.lyCard47_msg {margin-bottom: 15px;}
+.lyCard47 .name {font-size: 16px;line-height: 28px;color: #333;margin-right: 10px;}
+.lyCard47 .tag {font-size: 12px;line-height: 18px;color: #bfbfbf;}
+.lyCard47 .brief {font-size: 12px;line-height: 22px;color: #999;height: 44px;}
+.lyCard47_btn {padding: 0 30px;width: 100%;height: 42px;color: #999;border: 1px solid rgba(170,170,170,0.2);}
+.lyCard47_btn .btn {font-size: 12px;line-height: 1;}
+.lyCard47_btn .icon {font-size: 6px !important;line-height: 1;margin-left: 10px;}
+@media (any-hover:hover) {
+    .lyCard47:hover img {transform: scale(1.1);-webkit-transform: scale(1.1);}
+    .lyCard47:hover .lyCard47_text {background-color: var(--color1);}
+    .lyCard47:hover .name,
+    .lyCard47:hover .tag,
+    .lyCard47:hover .brief {color: #fff;}
+    .lyCard47:hover .lyCard47_btn {border-color: var(--color1);color: var(--color1);}
+}
+
+
+/* 卡片效果48 */
+.lyCard48::before,
+.lyCard48_img img,
+.lyCard48_text,
+.lyCard48_text .name,
+.lyCard48_text .brief{-webkit-transition:.3s;transition:.3s;}
+
+.lyCard48 {width: calc(100% / 3);position: relative;}
+.lyCard48::before {position: absolute;content: '';top: 0;bottom: 0;left: 0;right: 0;background-color: rgba(255, 255, 255, 0.8);z-index: 1;pointer-events: none;opacity: 0;}
+.lyCard48_img {width: 100%;padding-top: 70%;}
+.lyCard48_text {position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);width: 80%;height: 80%;display: flex;align-items: center;justify-content: center;flex-direction: column;border-bottom: 2px solid #1a1a1a;border-top: 2px solid #1a1a1a;opacity: 0;z-index: 2;}
+.lyCard48_text .name {font-size: 16px;line-height: 30px;color: #333;transform: translateY(-50%);}
+.lyCard48_text .brief {font-size: 14px;line-height: 22px;color: #666;transform: translateY(50%);}
+@media (any-hover:hover) {
+    .lyCard48:hover::before {opacity: 1;}
+    .lyCard48:hover img {transform: scale(1.1);-webkit-transform: scale(1.1);}
+    .lyCard48:hover .lyCard48_text {opacity: 1;width: 90%;height: 90%;}
+    .lyCard48:hover .name {transform: translateY(0);}
+    .lyCard48:hover .brief {transform: translateY(0);}
+}
+
+
+/* 卡片效果49 */
+.lyCard49 {width: 50%;position: relative;}
+.lyCard49_img {width: 100%;padding-top: 51%;-webkit-transition:.5s;transition:.5s;}
+.lyCard49_text {position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);width: 80%;display: flex;align-items: center;justify-content: center;flex-direction: column;-webkit-transition:.5s;transition:.5s;opacity: 0;}
+.lyCard49_name {font-size: 18px;line-height: 40px;color: #fff;width: 100%;-webkit-transition:.5s;transition:.5s;transform: translateY(50%);}
+.lyCard49_name::before {position: absolute;content: '';bottom: 0;left: 50%;transform: translateX(-50%);height: 1px;width: 0;background-color: rgba(255, 255, 255, 0.5);-webkit-transition:.5s;transition:.5s;}
+.lyCard49 .brief {font-size: 14px;line-height: 40px;color: rgba(255, 255, 255, 0.5);width: 100%;-webkit-transition:.5s;transition:.5s;transform: translateY(-50%);}
+@media (any-hover:hover) {
+    .lyCard49:hover .lyCard49_img {filter: brightness(0.5);}
+    .lyCard49:hover .lyCard49_text {opacity: 1;}
+    .lyCard49:hover .lyCard49_name {transform: translateY(0);}
+    .lyCard49:hover .lyCard49_name::before {width: 100%;}
+    .lyCard49:hover .brief {transform: translateY(0);}
+}
+
+
+/* 卡片效果50 */
+.lyCard50_img::before,
+.lyCard50_icon,
+.lyCard50 .icon{position: absolute}
+
+.lyCard50 {width: calc((100% - 60px)/3);}
+.lyCard50 * {-webkit-transition:.5s;transition:.5s;}
+.lyCard50_img {width: 100%;padding-top: 64%;}
+.lyCard50_img::before {content: '';top: 0;left: 0;width: 100%;height: 0;background-color: #1226aa;opacity: 0.8;-webkit-transition:.5s;transition:.5s;z-index: 1;}
+.lyCard50_icon {font-size: 30px;line-height: 1;color: #fff;top: 0;left: 50%;transform: translate(-50%,0);z-index: 2;opacity: 0;}
+.lyCard50_text {padding: 25px 100px 25px 0;position: relative;}
+.lyCard50 .name {font-size: 16px;line-height: 24px;color: #666;}
+.lyCard50 .brief {font-size: 14px;line-height: 18px;color: #bdbdbd;}
+.lyCard50 .icon {font-size: 20px;line-height: 40px;color: #bdbdbd;text-align: center;width: 40px;height: 40px;border-radius: 50%;background-color: #fff;right: 20px;top: 50%;transform: translateY(-50%);opacity: 0;}
+@media (any-hover:hover) {
+    .lyCard50:hover img {transform: scale(1.1);-webkit-transform: scale(1.1);}
+    .lyCard50:hover .lyCard50_img::before {height: 100%;}
+    .lyCard50:hover .lyCard50_icon {top: 50%;transform: translate(-50%,-50%);opacity: 1;}
+    .lyCard50:hover .lyCard50_text {background-color: #fff;padding-left: 20px;}
+    .lyCard50:hover .icon {opacity: 1;box-shadow: 0 0 20px rgba(0,0,0,0.2);}
+}
+
+
+
+/* 百叶窗 */
+.lyCard51{border-radius:10px; position: relative;overflow: hidden;font-size: 16px;}
+.lyCard51_li{width: 226px;  transition: .5s;overflow: hidden;background: url(../images/body.png) no-repeat right / auto 100%;}
+.lyCard51 .lyCard51_left{width: 226px; background-color:#F6F6F6;height: 436px; padding-left: 35px; position: relative; transition: .5s;}
+.lyCard51 .icon{width: 80px;height: 100px; margin-top: 78px;}
+.lyCard51 .img{max-width:100%; max-height:100%;transition: 0.6s;}
+.lyCard51 .name1{font-size: 20px; font-weight: 500;line-height: 1.5;color:#333333}
+.lyCard51 .name2{opacity: 0.5;font-size: 16px; margin-top: 13px;}
+.lyCard51 .brief{padding-top: 43px;font-weight: 400;line-height: 1.56;color: #f6f6f6;display: none;}
+.lyCard51 .btn{position: absolute;  width: 50px; height: 50px;border: 2px solid #333333;opacity: 0.2; border-radius: 50%; bottom:70px; left:35px;}
+
+.lyCard51_li:nth-child(2n+1) .lyCard51_left{background-color:#F1F1F1;}
+.lyCard51_li:nth-child(n+2)  .name1{color:#333333}
+.lyCard51_li.cur{width: calc(100% - 226px * 3); }
+.lyCard51_li.cur .lyCard51_left{background: #ccc ; width:270px;}
+.lyCard51_li.cur .img{opacity: 0;}
+.lyCard51_li.cur .name2{color:#ffffff;line-height: 1;}
+.lyCard51_li.cur .name1{color:#ffffff;padding-top: 70px;height: 100px;}
+.lyCard51_li.cur .brief{display: block;margin-right: 38px;width: 191px;max-height: 145px;}
+.lyCard51_li.cur .btn{border: 1px solid #ccc;background-color: #ffffff;opacity: 1;}
+
+/* 新闻遮盖 */
+.lyCard52_datee{transition: .5s;}
+.lyCard52_datee .num{font-size: 60px; font-weight: bold;color:#CCCCCC;margin: 48px 0 -10px 0;}
+.lyCard52_datee .time{font-size: 12px; font-weight: normal ; color: #CCCCCC;margin-bottom: 42px;margin-top:5px;}
+
+.lyCard52{width: 480px;margin: 0 20px;}
+.lyCard52 .name{font-size: 18px;color: #333333;font-weight: 400;margin-bottom: 28px;height: 45px;}
+.lyCard52 .brief{font-size: 16px; color: #666666;font-weight: 400;margin-bottom: 45px;line-height: 1.8;}
+.lyCard52 .icon{font-size:45px;color: #CCCCCC;}
+.lyCard52 .lyCard52_img1{width: 100%;top:20px; opacity: 0;transition: 0.5s;border-radius: 15px;height: 100%;}
+.lyCard52 .lyCard52_time{top: 0px;left: 0;width: 155px;height: 155px;background-color:green;border-radius: 15px 0px 15px 0px;color: #FFFFFF;transition: 0.5s;}
+.lyCard52 .img{width: 100%;height: 100%;border-radius: 15px 0px 15px 0px;}
+
+@media (any-hover: hover) { 
+    .lyCard52:hover .lyCard52_datee{margin-left: 40px;z-index: 5;color: #fff;}
+    .lyCard52:hover .num{color: #fff;}
+    .lyCard52:hover .time{color: #fff;}
+    .lyCard52:hover .lyCard52_img1{opacity: 1;box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.08);transform:translateY(-10px);}
+    .lyCard52:hover .lyCard52_img1 .time{padding-left: 41px;}
+    .lyCard52:hover .lyCard52_img1 .number,
+    .lyCard52:hover .lyCard52_img1 .date{color: #FFFFFF;}
+}
+
+/* 渐变色延伸 */
+.lyCard53::before,
+.lyCard53_text,
+.lyCard53_text .btn{transition: 0.6s;}
+
+.lyCard53{color: #999999;background: #fff;box-shadow: 0px 0px 10px rgba(0,0,0,.1);position: relative;margin: 0 20px;}
+.lyCard53::before{content:'';background-image: linear-gradient(to top, #b11b21 40%, transparent);width: 100%;height: 100%;position: absolute;z-index: 2;opacity: 0;}
+
+
+.lyCard53_text{padding:42px 40px 10px 45px;z-index:3;position: relative;}
+.lyCard53_text .tag{display: flex;margin-bottom:25px;}
+.lyCard53_text .icon{margin-top:2px;margin-right: 12px;}
+.lyCard53_text .icon1{width: 30px;height: 30px;fill:#333333}
+.lyCard53_text .icon1 *{fill:#333333}
+.lyCard53_text .name{font-size:24px;color:#333333;font-weight: 500;transition: 0.6s}
+.lyCard53_text .brief{font-size: 16px;max-height: 140px;color: #333333;line-height: 24px;transition: 0.6s}
+
+.lyCard53_text .btn{width: 130px;height: 40px;background-color: #fff;color: #b11b21;font-size: 16px;border-radius:20px;padding-left: 29px;transform: translateY(30px);opacity: 0;}
+.lyCard53_text .btn1{margin-left: 2px;}
+
+.lyCard53_img{position: relative;}
+.lyCard53_img .img{height: 410px;}
+
+@media (any-hover: hover) {
+	.lyCard53:hover{transform: translateY(-10px);}
+	.lyCard53:hover .lyCard53_text{transform: translateY(-60px);}
+	.lyCard53:hover::before{opacity: 1;}
+	.lyCard53:hover .name,
+	.lyCard53:hover .brief{color: #fff;}
+	.lyCard53:hover .btn{opacity: 1;}
+	.lyCard53:hover .icon1 *{fill:#fff}
+}
+
+/* 色块遮盖 */
+.lyCard54::before,
+.lyCard54::after{width:0;height: 0;;border-width:0 0;border-style: solid;border-color: transparent;position: absolute;transition:0.6s;opacity: 0.08;}
+.lyCard54{width: 500px;height: 500px;position: relative;overflow: hidden;padding: 400px 20px 20px 20px;}
+.lyCard54::before{content: ''; border-left-color: #333;border-right:none;border-top:none;top: 0;left: 0;}
+.lyCard54::after{content: ''; border-right-color: #333;border-left:none;border-bottom:none;bottom: 0;right: 0;}
+.lyCard54 .name{font-size: 20px;color:#fff}
+.lyCard54 .brief{font-size: 16px;color: #fff;line-height: 1.8;}
+
+
+@media (any-hover: hover) {
+    .lyCard54:hover::before{border-width:500px 500px ;}
+    .lyCard54:hover::after{border-width:500px 500px ;}
+}
+
+/* 信息区开始隐藏,鼠标移入从下而上出现,盖住底下图片并携带一定透明度 */
+.lyCard55{width: 500px;position: relative;overflow: hidden;margin: 0 20px;}
+.lyCard55_img{height: 350px;width: 100%;}
+.lyCard55_text{position: absolute;top:calc(100% - 150px);left: 0;width: 100%;height:100%;padding: 60px;color: #fff;transition:top .3s;}
+.lyCard55_text::before{content: '';display: block;width: 100%;height: 100%;position: absolute;top: 0;left: 0;opacity: 0;background:#999;transition:.3s;}
+.lyCard55_text .name{font-size: 24px;font-weight: bold;margin: 0 0 20px;transition: .3s;line-height: 1;position: relative;}
+.lyCard55_text .tag{overflow-y: auto;transform: translateY(50px);transition:transform .3s;padding-right: 5px;position: relative;}
+.lyCard55_text .brief{font-size: 16px;line-height: 1.8;}
+
+@media (any-hover: hover) {
+.lyCard55:hover .lyCard55_text{top: 0;}
+.lyCard55:hover .lyCard55_text::before{opacity: .5;}
+.lyCard55:hover .tag{transform: translateY(0%);}
+}
+
+/* 不透明两色块,交替移动 */
+.lyCard56{position: relative;overflow: hidden;width: calc((100% - 40px)/2);height:400px;}
+.lyCard56_mask1 {left: 0;bottom: 0;border-bottom: 500px solid #999;border-right: 250px solid transparent;transition: .3s;opacity: .8;}
+.lyCard56_mask2 {left: 0;bottom: 0;border-bottom: 1000px solid #999;border-right: 275px solid transparent;opacity: .5;}
+
+@media (any-hover: hover) {
+    .lyCard56:hover .lyCard56_mask1 {border-bottom: 1000px solid #999;border-right: 275px solid transparent;}
+    .lyCard56:hover .lyCard56_mask2 {border-bottom: 500px solid #999;border-right: 250px solid transparent;}   
+}
+
+/* 鼠标移入,图片上移,描述下移 */
+.lyCard57{width:33.33%;height:500px;margin: 0 10px;}
+.lyCard57_bri{padding-left: 23px;transition:0.75s;transform: translateY(-90px);z-index: -1;position: relative;}
+.lyCard57_bri .name{font-size: 24px; font-weight: 500;margin-top: 25px;margin-bottom: 15px;color:#404040 ;}
+.lyCard57_bri .brief{color:#666666;font-size: 16px; margin-bottom: 15px;font-weight: 400;}
+.lyCard57_bri .icon{font-size: 20px;margin-top: 50px;margin-right: 34px;}
+
+.lyCard57 .img{height: 500px;width: 100%;background-color: #ccc; border-radius: 20px;transition:0.5s;transform: translateY(40px);}
+
+@media (any-hover: hover) {
+    .lyCard57:hover .lyCard57_bri{transform: translateY(0px);}
+    .lyCard57:hover .img{transform: translateY(0);}
+}
+
+/* 鼠标移入,图片放大,出现遮盖层,描述部分按要求上浮或者下移 */
+.lyCard58_category,
+.lyCard58_category .name,
+.lyCard58_category .brief,
+.lyCard58_tag{transition: all .6s cubic-bezier(.215,.61,.355,1) 0s;}
+
+.lyCard58{width:380px;margin: 0 20px;}
+.lyCard58_img{height: 250px;width: 400px;border-radius: 5%;}
+.lyCard58_img .img{transition: 0.3s;}
+.lyCard58_img::before{content:'';position: absolute;top: 0;left: 0;right: 0;bottom: 0;margin: 15px;border-radius: 3%;background-color: #333;opacity: 0;z-index: 2;transition:all ease-out .3s;}
+.lyCard58_category{padding-top: 50px;text-align: center;}
+.lyCard58_category .name{margin-bottom: 20px;font-size: 18px;}
+.lyCard58_category .brief{color:#999;font-size: 16px;}
+
+.lyCard58_btn{width: 180px;height: 50px;background-color: red;margin:0 auto;transform: translateY(-140px);transition:all .6s cubic-bezier(.215,.61,.355,1) 0s;opacity: 0;position: relative;}
+.lyCard58_btn::before,
+.lyCard58_btn::after{content: '';position:absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);width: 0;height: 0;transition: all .3s ease-out 0s;background-color: #fff;}
+
+.lyCard58_tag{padding:30px 10px 20px 10px;;transform: translateY(-65px);opacity: 0;}
+.lyCard58_tag .brief1{font-size: 16px;text-align: center;color: #999;}
+
+@media (any-hover: hover) {
+    .lyCard58:hover .img{transform: scale(1.1);}
+    .lyCard58:hover .lyCard58_img::before{opacity: 0.5;}
+    .lyCard58:hover .lyCard58_category{transform: translateY(-150px);color:white;z-index: 3;position: relative;}
+    .lyCard58:hover .name,
+    .lyCard58:hover .brief{color:#fff;}
+    .lyCard58:hover .lyCard58_btn{transform: translateY(-110px);opacity: 1;}
+    .lyCard58:hover .lyCard58_btn::before{width: 15px;height: 1.5px;}
+    .lyCard58:hover .lyCard58_btn::after{width:1.5px;height: 15px;}
+    .lyCard58:hover .lyCard58_tag{transform: translateY(-115px);opacity: 1;}
+}
+
+/* 鼠标移入,卡片下移或上移,并且出现有颜色的阴影 */
+.lyCard59{width: 380px;height: 400px;transition: all .3s ease-out 0s;transform: translateY(0);border-radius: 20px;margin: 0 20px;padding: 20px;}
+.lyCard59 .name{font-size: 20px;margin-bottom: 30px;}
+.lyCard59 .brief{font-size: 16px;}
+
+@media (any-hover: hover) {
+    .lyCard59:hover{box-shadow: 0 20px 40px rgba(158, 77, 22, 0.2);transform: translateY(10px);}
+}
+
+/* 鼠标移入,图片边框出现颜色 */
+.lyCard60_category .time,
+.lyCard60_category .icon,
+.lyCard60_category .icon1,
+.lyCard60_category .brief{transition: all .6s cubic-bezier(.215,.61,.355,1) 0s;}
+
+.lyCard60{width:480px;height: 400px;margin: 0 20px;--color:#f98339}
+.lyCard60_category{border: 1px solid #464646;transition:all .6s cubic-bezier(.215,.61,.355,1) 0s;}
+.lyCard60_category .time{font-size: 50px;color: #464646;margin-top: 30px;}
+.lyCard60_category .icon{width: 1px;height: 50px;text-align: center;background-color: #464646;margin-top: 20px;margin-bottom: 30px;}
+.lyCard60_category .icon1{font-size: 20px;margin-bottom: 20px;opacity: 0;transform: translateY(-30px);color: #fff;}
+.lyCard60_category .brief{font-size: 18px;color:#464646;margin-bottom: 30px;}
+.lyCard60_img{width: 100%;height: 300px;position: relative;}
+.lyCard60_img::before{content: '';position: absolute;z-index: 3;border: 4px solid var(--color);width: calc(100% - 8px);height: calc(100% - 8px);opacity: 0;}
+.lyCard60_img .img{transition:all .6s cubic-bezier(.215,.61,.355,1) 0s;}
+@media (any-hover: hover) {
+    .lyCard60:hover .img{transform: scale(1.1);}
+    .lyCard60:hover .lyCard60_img::before{opacity: 1;}
+    .lyCard60:hover .lyCard60_category{background-color: var(--color);border-color: var(--color);}
+    .lyCard60:hover .time,
+    .lyCard60:hover .brief{color:#fff;}
+    .lyCard60:hover .icon{background-color: #fff;}
+    .lyCard60:hover .icon1{transform: translateY(0);transform: translateY(0);opacity: 1;}
+
+    .lyCard60:hover .brief,
+    .lyCard60:hover .icon{transform: translateY(-20px);}
+}
+
+/* 鼠标移入,边距变大,并影响图片高度 */
+.lyCard61,
+.lyCard61_img,
+.lyCard61_category{transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;}
+
+.lyCard61{width: 480px;height:525px;border-bottom: 1px solid #999;margin: 0 20px;}
+.lyCard61_img{width: 100%;height:410px;}
+.lyCard61_img .img{transition: 0.3s;height: auto;}
+.lyCard61_category{padding: 0 15px;}
+.lyCard61 .name{font-size: 18px;margin-top: 20px;}
+.lyCard61 .num{font-size: 16px;color:#464646;margin-top: 15px;margin-bottom: 20px;}
+
+.lyCard61 .icon{position: relative;}
+.lyCard61 .icon::before{content: '';
+    width: 37px;
+    height: 20px;
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: -20px;
+    background: transparent url(http://resources.jsmo.xin/templates/upload/302/201606/icon.png) no-repeat -30px -66px;
+    transition: all 0.3s ease-out 0s;
+    margin-top: -10px;
+    border-left: 1px solid rgba(0, 0, 0, .0);}
+
+.lyCard61 .icon::after{content: '';position: absolute;width:1px;height:20%;background-color: #999;left:-30px;top: 40%;opacity: 0;transition: all 0.3s ease-out 0s;}
+
+@media (any-hover: hover) {
+    .lyCard61:hover{height: 500px;}
+    .lyCard61:hover .lyCard61_category{padding: 10px 15px;}
+    .lyCard61:hover .img{transform: scale(1.1);}
+    .lyCard61:hover .lyCard61_img{height: 390px;}
+    .lyCard61:hover .lyCard61 .num{margin-bottom: 0;}
+
+    .lyCard61:hover .icon::before{opacity: 1;background: transparent url(http://resources.jsmo.xin/templates/upload/302/201606/icon.png) no-repeat 5px -66px;}
+    .lyCard61:hover .icon::after{opacity: 1;}
+}
+
+/* 鼠标移入,图片上移,描述信息下移 */
+.lyCard62{width: 480px;height: 700px;margin: 0 20px;--color:#f00}
+.lyCard62_img{height: 700px;width: 100%;transition: all .6s cubic-bezier(.215, .61, .355, 1);;}
+.lyCard62_category{margin: 40px 20px;bottom: 0;background-color: rgba(0, 0, 0, .35);width:calc(100% - 50px);height: 150px;padding: 20px; transition: all 0.3s ease-out 0s;border-top: 1px solid rgba(255, 255, 255, .2);border-bottom: 1px solid rgba(255, 255, 255, 0);}
+.lyCard62_category .name{font-size: 20px;color:#fff}
+.lyCard62_category .brief{font-size: 20px;margin-top: 15px;color:#fff}
+
+@media (any-hover: hover) {
+    .lyCard62:hover .lyCard62_img{height: 650px;}
+    .lyCard62:hover .lyCard62_category{transform: translateY(100px);border-top: 3px solid var(--color);border-bottom: 3px solid var(--color);}
+}
+
+/* 鼠标移入,文字多偏移效果  */
+.bg-color-63{background:url('https://resources.jsmo.xin/templates/upload/17614/201909/1568700968638.jpg') 100%/cover}
+.lyCard63{width: 400px;height: 400px;position: relative;transition: all .6s cubic-bezier(.215, .61, .355, 1);--color:red}
+.lyCard63::before{content: '';position: absolute;top: 0;left: 0;width: 1px;height: 0;transition: all .6s cubic-bezier(.215, .61, .355, 1);background-color: var(--color);}
+
+.lyCard63{padding: 120px 20px 30px 20px;}
+.lyCard63 .name{font-size: 24px;color:#fff}
+.lyCard63 .brief{font-size: 16px;transition: all .6s cubic-bezier(.215, .61, .355, 1);color:#fff}
+.lyCard63 .icon{margin-top: 40px;font-size:30px;transition: all .6s cubic-bezier(.215, .61, .355, 1);color:#fff}
+
+.lyCard63_time{margin-top: 20px;margin-bottom: 25px;transition: all .6s cubic-bezier(.215, .61, .355, 1);}
+.lyCard63_time .day{font-size: 22px;color:#fff}
+.lyCard63_time .time{font-size: 18px;padding: 3px 0 0 20px;color:#fff;transition: all 0.3s ease-out 0s;;}
+
+
+
+@media (any-hover: hover) {
+    .lyCard63:hover .name{color:var(--color)}
+    .lyCard63:hover::before{height: 60%;}
+
+    .lyCard63:hover .lyCard63_time{transform: translateY(112px);}
+    .lyCard63:hover .brief{transform: translateY(-20px);}
+    .lyCard63:hover .icon{transform: translateX(75px);}
+    .lyCard63:hover .time{font-size: 0;}
+}
+
+/* 鼠标移入,图片所在圆圈变小,跳转链接的圆圈变大 */
+.lyCard64_bg{background: url(https://resources.jsmo.xin/templates/upload/17671/201909/1568974077457.png) no-repeat 100%/cover;height: 960px;}
+
+.lyCard64_img{width: 500px;height: 500px;border-radius: 50%;transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;}
+.lyCard64{height:500px;left:50%;right:0;transform:translate(-50%,0);}
+.lyCard64_btn{width: 200px;height: 200px;border-radius: 50%;background-color: #fff;opacity: 0.5;padding-top: 60px;transform: translateX(-60px) scale(1);transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;}
+.lyCard64_btn .btn{width: 50px;height: 50px;background-color: #5942d2;border-radius: 50%;margin-top: 30px;transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;}
+.lyCard64_btn .name{font-size: 20px;}
+.lyCard64_btn .icon{color:#fff;font-size: 20px;}
+
+@media (any-hover: hover) {
+    .lyCard64:hover .lyCard64_img{transform: scale(0.85);}
+    .lyCard64:hover .btn{background-color: orange;}
+    .lyCard64:hover .lyCard64_btn{transform: translate(-100px,-50px) scale(1.2);}
+}
+
+/* 鼠标移入,上方块下拉变长,描述部分下移 */
+.lyCard65{padding: 0 40px;background-color: #dadada;width: 500px;transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;height: 360px;margin-right: 20px;}
+.lyCard65 .category{transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;}
+.lyCard65 .brief{font-size: 18px;color:#999;margin-top: 30px;padding-bottom: 80px;transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;}
+.lyCard65 .name{font-size: 20px;transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;}
+
+.lyCard65_time{width: 100px;height: 120px;background-color: #333;margin-bottom: 30px;transform: translateY(-20px);transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;}
+.lyCard65_time .month{font-size: 30px;color:#fff}
+
+@media (any-hover: hover) {
+    .lyCard65:hover{background-color: #333;}
+    .lyCard65:hover .brief,
+    .lyCard65:hover .name{color:#fff}
+    .lyCard65:hover .lyCard65_time{height: 150px;background-color: orange;}
+}
+
+/* 鼠标移入,图片所在圆圈变小,跳转链接的圆圈变大 */
+.lyCard64_bg{background: url(https://resources.jsmo.xin/templates/upload/17671/201909/1568974077457.png) no-repeat 100%/cover;height: 960px;}
+
+.lyCard64_img,
+.lyCard64_btn,
+.lyCard64_btn .btn {transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;}
+.lyCard64_img{width: 500px;height: 500px;border-radius: 50%;}
+.lyCard64{height:500px;left:50%;right:0;transform:translate(-50%,0);}
+.lyCard64_btn{width: 200px;height: 200px;border-radius: 50%;background-color: #fff;opacity: 0.5;padding-top: 60px;transform: translateX(-60px) scale(1);}
+.lyCard64_btn .btn{width: 50px;height: 50px;background-color: #5942d2;border-radius: 50%;margin-top: 30px;}
+.lyCard64_btn .name{font-size: 20px;}
+.lyCard64_btn .icon{color:#fff;font-size: 20px;}
+
+@media (any-hover: hover) {
+    .lyCard64:hover .lyCard64_img{transform: scale(0.85);}
+    .lyCard64:hover .btn{background-color: orange;}
+    .lyCard64:hover .lyCard64_btn{transform: translate(-100px,-50px) scale(1.2);}
+}
+
+/* 鼠标移入,上方块下拉变长,描述部分下移 */
+.lyCard65,
+.lyCard65 .category,
+.lyCard65 .brief,
+.lyCard65 .name,
+.lyCard65_time{transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;}
+
+.lyCard65{padding: 0 40px;background-color: #dadada;width: 500px;height: 360px;margin-right: 20px;}
+.lyCard65 .brief{font-size: 18px;color:#999;margin-top: 30px;padding-bottom: 80px;}
+.lyCard65 .name{font-size: 20px;}
+.lyCard65_time{width: 100px;height: 120px;background-color: #333;margin-bottom: 30px;transform: translateY(-20px);}
+.lyCard65_time .month{font-size: 30px;color:#fff}
+
+@media (any-hover: hover) {
+    .lyCard65:hover{background-color: #333;}
+    .lyCard65:hover .brief,
+    .lyCard65:hover .name{color:#fff}
+    .lyCard65:hover .lyCard65_time{height: 150px;background-color: orange;}
+}
+
+/* 鼠标移入,图片放大,下方描述块向上移入出现,按钮从上方移下 */
+.lyCard66{width: 380px;height: 380px;overflow: hidden;margin-right: 10px;}
+.lyCard66_img{height: 380px;width: 100%;}
+
+.lyCard66_img .img,
+.lyCard66_category,
+.lyCard66_btn{transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;}
+
+.lyCard66_category{bottom: 0;left: 0;right: 0;background-color: rgba(40, 130, 232, 0.9);padding: 30px 20px;transform: translateY(100%);}
+.lyCard66_category .name{font-size: 20px; color:#fff;border-bottom: 1px solid rgba(255, 255, 255, 0.3);padding-bottom: 20px;}
+.lyCard66_category .brief{font-size: 16px;color:#fff;margin-top: 20px;}
+.lyCard66_btn{width:40px;height:40px;border-radius: 50%;border: 1px solid rgba(255, 255, 255, 0.3);top: 20px;right: 20px;transform: translateY(-100px);}
+.lyCard66_btn .icon{font-size: 20px; color:#fff}
+
+@media (any-hover: hover) {
+    .lyCard66:hover .lyCard66_category{transform: translateY(0);}
+    .lyCard66:hover .lyCard66_btn{transform: translateY(0);}
+    .lyCard66:hover .img{transform: scale(1.1);}
+}
+
+/* 鼠标移入,图片放大,下方描述块有颜色遮盖从左侧出现覆盖描述部分 */
+.lyCard67{margin-right: 15px;width: 380px;overflow: hidden;}
+.lyCard67_img{height: 200px;width: 100%;}
+
+.lyCard67_img .img,
+.lyCard67_brief::before,
+.lyCard67_brief .name,
+.lyCard67_brief .brief {transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;}
+
+.lyCard67_brief{position: relative;background-color: rgb(62, 62, 62);}
+.lyCard67_brief::before{content: '';position: absolute;top: 0;bottom: 0;width: 100%;background-color:orange;transform: translateX(-100%);}
+.lyCard67_brief .name{font-size: 22px;color:#fff;padding: 20px 40px 10px 40px;position: relative;z-index: 2;}
+.lyCard67_brief .brief{font-size: 14px;color:#999;padding: 0 40px 30px 40px;position: relative;z-index: 2;}
+
+@media (any-hover: hover) {
+    .lyCard67:hover .img{transform: scale(1.1);}
+    .lyCard67:hover .name,
+    .lyCard67:hover .brief{color:#333}
+    .lyCard67:hover .lyCard67_brief::before{transform: translateX(0);}
+}
+
+/* 鼠标移入,描述从上方往下展开,遮盖住图片 */
+.lyCard68{width: 380px;margin-right: 15px;}
+.lyCard68_img{height:300px;width: 100%;}
+.lyCard68_img .img,
+.lyCard68_text,
+.lyCard68_brief {transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;}
+
+.lyCard68_text{top: 0;width: 100%;height: 100%;}
+
+.lyCard68_brief{transform: scale(1,0); transform-origin: center top 0;}
+.lyCard68_brief .name{font-size: 25px;}
+.lyCard68_brief .icon{width: 2px;height: 50px;background-color: #333;margin: 20px 0;}
+.lyCard68_brief .number{font-size: 70px;font-weight: bold;margin-top: 20px;}
+
+@media (any-hover: hover) {
+    .lyCard68:hover .lyCard68_text{background-color: #fff;}
+    .lyCard68:hover .lyCard68_brief{transform: scale(1,1);}
+    .lyCard68:hover .img{transform: scale(1.1);}
+}
+
+/* 鼠标移入上方颜色块覆盖内容区在底部有弹跳的效果 */
+.lyCard69{width: 750px;margin-right: 20px;padding: 10px 40px;position: relative;}
+.lyCard69::before{content: '';position: absolute;top: 0;width: 100%;background-color:#30d493;}
+.lyCard69 .time{font-size: 80px;font-weight: bold;margin-top: 50px;margin-bottom: 40px;position: relative;z-index: 2;color: #30d493;}
+.lyCard69 .name{font-size: 20px;margin-bottom: 50px;position: relative;z-index: 2;}
+.lyCard69 .brief{font-size: 14px;color:#999;margin-bottom: 50px;position: relative;z-index: 2;}
+
+@media (any-hover: hover) {
+    .lyCard69:hover::before{animation-name: lyAnimate55;animation-duration: 0.5s;height: 100%;transition-timing-function: cubic-bezier(cubic-bezier(0.52, 1.64, 0.37, 0.66))}
+    .lyCard69:not(:hover)::before{animation-name: lyAnimate56;animation-duration: 0.5s;transition-timing-function: cubic-bezier(cubic-bezier(0.52, 1.64, 0.37, 0.66))}
+    .lyCard69:hover .time,
+    .lyCard69:hover .name,
+    .lyCard69:hover .brief{color: #fff;}
+}
+
+/* 鼠标移入,图片下方出现描述,图片放大,图片中间出现白色边框 */
+.lyCard70{height: 600px;width: 500px;overflow: hidden;position: relative;}
+.lyCard70::before,
+.lyCard70::after,
+.lyCard70_brief::before {transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;}
+.lyCard70::before{content: '';position: absolute;top:-10%;left: 50%;transform: translate(-50%,-50%);
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    background: url(http://resources.jsmo.xin/templates/upload/307/icon/jia.png);
+    margin: 0 auto;
+    display: inline-block;
+    position: absolute;
+    z-index: 10;
+    opacity: 0;
+}
+.lyCard70::after{content: '';position: absolute;width: 90%;height:350px;border:1px solid #fff;top:33%;left: 50%;transform: translate(-50%,-50%);opacity: 0;}
+.lyCard70_img{height: 600px;width: 100%;}
+.lyCard70_img .img{transition:all .6s cubic-bezier(.215,.61,.355,1) 0s}
+.lyCard70_brief{padding: 25px;bottom: 0;transform: translateY(100%);width: 100%;transition:all .6s cubic-bezier(.215,.61,.355,1) 0s;background-color: #fff;}
+.lyCard70_brief::before{position: absolute;
+    width: 20px;
+    height: 20px;
+    margin-top: 6px;
+    margin-left: 120px;
+    background-color: #fff;
+    content: "";
+    transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -o-transform: rotate(45deg);}
+
+.lyCard70_brief .name{font-size: 20px;margin-bottom: 20px;transition: 0.3s;}
+.lyCard70_brief .name1{font-size: 16px;color:#999;margin-bottom: 20px;transition: 0.3s;}
+.lyCard70_brief .brief{font-size: 16px;color:#999;padding-top: 20px;transition: 0.3s;border-top: 1px solid rgba(96, 85, 85, 0.8);}
+
+@media (any-hover: hover) {
+    .lyCard70:hover .img{transform: scale(1.1);}
+    .lyCard70:hover .lyCard70_brief{transform: translateY(0);}
+    .lyCard70:hover .lyCard70_brief::before{margin-top: -34px;}
+    .lyCard70:hover::before{opacity: 1;top: 33%;}
+    .lyCard70:hover::after{opacity: 1;}
+
+    .lyCard70_brief2:hover .btn{background-color: #22a9ff;}
+}
+
+
+.lyCard70_2{height: 600px;width: 300px;position: relative;overflow: hidden;}
+.lyCard70_2::before,
+.lyCard70_2::after,
+.lyCard70_2 .btn,
+.lyCard70_img1,
+.lyCard70_brief1::before {transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;}
+
+.lyCard70_2::before{content: '';position: absolute;top:-10%;left: 50%;transform: translate(-50%,-50%);
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    background: url(http://resources.jsmo.xin/templates/upload/307/icon/jia.png);
+    margin: 0 auto;
+    display: inline-block;
+    position: absolute;
+    z-index: 10;
+    opacity: 0;
+}
+.lyCard70_2::after{content: '';position: absolute;width: 90%;height:250px;border:1px solid #fff;top:25%;left: 50%;transform: translate(-50%,-50%);opacity: 0;}
+.lyCard70_2 .btn{width: 200px;height: 50px;background-color: #CBCBCB;margin-top: auto;margin-bottom: 0;color: #fff;font-size: 20px;}
+.lyCard70_img1{height: 300px;width: 100%;}
+
+.lyCard70_brief1{height: 50%;}
+.lyCard70_brief1 .name{font-size: 20px;margin-bottom: 20px;transition: 0.3s;padding: 30px 20px 0 20px;}
+.lyCard70_brief1 .name1{font-size: 16px;color:#999;margin-bottom: 20px;transition: 0.3s;padding: 0px 20px 0 20px;}
+.lyCard70_brief1 .brief{font-size: 16px;color:#999;padding-top: 20px;transition: 0.3s;border-top: 1px solid rgba(96, 85, 85, 0.8);padding:20px 20px 0 20px;}
+
+.lyCard70_brief1::before{position: absolute;
+    width: 20px;
+    height: 20px;
+    margin-top: 6px;
+    margin-left: 142px;
+    background-color: #fff;
+    content: "";
+    transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -o-transform: rotate(45deg);}
+
+
+@media (any-hover: hover) {
+    .lyCard70_2:hover .img{transform: scale(1.1);}
+    .lyCard70_2:hover .lyCard70_brief{transform: translateY(0);}
+    .lyCard70_2:hover .lyCard70_brief1::before{margin-top: -11px;}
+    .lyCard70_2:hover::before{opacity: 1;top:25%;}
+    .lyCard70_2:hover::after{opacity: 1;}
+
+
+    .lyCard70_2:hover .btn{background-color: #22a9ff;}
+}
+
+/* 鼠标移入,图片放大,加号符号从上到下,下方出现元素交互 */
+.lyCard71{margin-right: 15px;width: 385px;overflow: hidden;}
+.lyCard71_img{height: 200px;width: 100%;position: relative;}
+.lyCard71_img .img,
+.lyCard71_img::before,
+.lyCard71_text::before
+,.lyCard71_text .icon{transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;}
+.lyCard71_img::before{content: '+';position: absolute;top: -20%;left: 50%;transform: translate(-50%,-50%);font-size: 30px;width: 64px;height: 64px;border-radius: 50%;border: 2px solid #fff;z-index: 3;color:#fff;text-align: center;line-height: 64px;}
+
+.lyCard71_text{padding: 30px;position: relative;}
+.lyCard71_text::before{content: '';position: absolute;bottom: 0;left: 0;width: 0;height: 1px;background-color: #999;}
+.lyCard71_text .name{font-size: 18px;margin-bottom: 10px;}
+.lyCard71_text .brief{font-size: 16px;color:#999}
+.lyCard71_text .icon{transform: translateX(30px);opacity: 0;}
+
+@media (any-hover: hover) {
+    .lyCard71:hover .img{transform: scale(1.1);}
+    .lyCard71:hover .lyCard71_img::before{top: 50%;}
+    .lyCard71:hover .lyCard71_text::before{width: 100%;}
+    .lyCard71:hover .icon{transform: translateX(0);opacity: 1;}
+}
+
+/* 鼠标移入,图片放大,出现遮盖层,下方价格上移并且消失 */
+.lyCard72{margin-right: 15px;width: 385px;overflow: hidden;}
+.lyCard72_img{height: 200px;width: 100%;position: relative;}
+.lyCard72_img::before{
+    content: '';
+    width: 46px;
+    height: 40px;
+    line-height: 40px;
+    background-image: url(http://resources.jsmo.xin/templates/upload/1342/ico/hg.png);
+    margin: 0 auto;
+    margin-left: -20px;
+    margin-top: 0px;
+    display: inline-block;
+    position: absolute;
+    top: -20%;
+    left: 50%;
+    z-index: 10;
+    transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+    opacity: 0;
+}
+.lyCard72_img::after{content: '';position: absolute;width: 100%;height: 100%;background-color:#333;transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;z-index: 2;opacity: 0;}
+
+.lyCard72_text .name{font-size: 18px;margin-bottom: 10px;margin-top: 20px;}
+.lyCard72_text .brief{font-size: 16px;color:#999;transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s}
+
+@media (any-hover: hover) {
+    .lyCard72:hover .lyCard72_img::before{top: 40%;opacity: 1;}
+    .lyCard72:hover .lyCard72_img::after{opacity: 0.08;}
+    .lyCard72:hover .brief{transform: translateY(-30px);opacity: 0;}
+}
+
+/* 鼠标移入,上方日期块移到到最下方,描述区上移 */
+.lyCard73{width: 500px;margin-right: 15px;}
+.lyCard73_time{padding: 30px 45px;transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s}
+.lyCard73_time .month{font-size: 50px;color:#999;transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s}
+.lyCard73_time .icon{width: 50px;height: 50px;border: 1px solid #999;transition: all 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;opacity: 0;}
+
+.lyCard73_brief{padding: 50px 30px;border-top: 1px solid #999;transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s}
+.lyCard73_brief .name{font-size: 20px;}
+.lyCard73_brief .brief{font-size: 16px;color:#999;margin-top: 30px;margin-bottom: 30px;}
+
+@media (any-hover: hover) {
+    .lyCard73:hover .lyCard73_time{background-color: #49ADA3;transform: translateY(220%);}
+    .lyCard73:hover .month,
+    .lyCard73:hover .icon{color: #fff;border-color: #fff;}
+    .lyCard73:hover .icon{transform: translateX(-150%);opacity: 1;}
+    .lyCard73:hover .lyCard73_brief{transform: translateY(-20%);}
+}
+
+/* 鼠标移入,内容区下移,更多按钮进行切换 */
+.bg-color-74{background:url('https://resources.jsmo.xin/templates/upload/17444/201909/1568880811135.png') no-repeat;height: 1000px;}
+.lyCard74{width:23%;;padding: 50px 20px;border-left: 1px solid rgba(255, 255, 255, .2);border-right: 1px solid rgba(255, 255, 255, .2);transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;}
+.lyCard74_bg{padding: 20px 50px;}
+.lyCard74 .img{height: 150px;}
+.lyCard74 .name{font-size: 20px;color: #fff;margin-top: 50px;margin-bottom: 50px;}
+.lyCard74 .brief{font-size: 16px;color:#fff;margin-bottom: 40px;text-align: center;}
+.lyCard74 .icon{position: relative;color: #fff;margin-bottom: 50px;}
+.lyCard74 .icon::before{   
+    position: absolute;
+    content: "";
+    width: 80px;
+    height: 40px;
+    background: url(http://resources.jsmo.xin/templates/upload/376/icon/icon.png) -80px 0 no-repeat;
+    transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+    left: 50%;
+    transform: translate(-50%,0);
+}
+
+@media (any-hover: hover) {
+    .lyCard74:hover{transform: translateY(50px);background-color: rgba(0, 0, 0, .5);}
+    .lyCard74:hover .icon::before{background: url(http://resources.jsmo.xin/templates/upload/376/icon/icon.png) -7px 0 no-repeat;}
+}
+
+/* 指定块进行偏移 */
+.lyCard75_bg{height: 700px;background:url('https://resources.jsmo.xin/templates/upload/17542/201909/1568275482764.jpg') no-repeat 50%/cover}
+
+.lyCard75{width: 48%;padding: 80px 50px;background-color:#fff;position: relative;}
+.lyCard75::after{    
+    content: '';
+    width: 25px;
+    height: 10px;
+    background: url(http://resources.jsmo.xin/templates/upload/302/201606/icon.png) no-repeat 0 -71px;
+    position: absolute;
+    left: 100px;
+    bottom: 44px;
+    opacity: 0;
+    transition: all 0.3s ease-out 0s;
+}
+.lyCard75 .time{position: relative;padding: 0 20px 0 20px;width:275px;}
+.lyCard75 .time::before{content: '';position: absolute;top: 15px;left: -48px;width: 40%;height: 1px;background-color: #999;transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;}
+.lyCard75 .month{font-size: 25px;color:#696969;margin-bottom:20px;}
+.lyCard75 .year{font-size: 16px;color:#999}
+
+.lyCard75_text .name{font-size:20px;margin-bottom: 50px;transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s}
+.lyCard75_text .brief{font-size: 16px;color:#999;transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;line-height: 1.8;}
+
+@media (any-hover: hover) {
+    .lyCard75:hover::after{opacity: 1;left: 200px;}
+    .lyCard75:hover .time::before{left: 90px;}
+    .lyCard75:hover .name{transform: translateX(20px);}
+    .lyCard75:hover .brief{transform: translateY(-20px);}
+}
+
+/* 内容区上移,序号加亮  */
+.lyCard76{width: 500px;position: relative;padding: 20px;--color:orangered}
+.lyCard76_text,
+.lyCard76 .num,
+.lyCard76 .num::before,
+.lyCard76 .name,
+.lyCard76_img .img {transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;}
+
+.lyCard76 .num{position: absolute;font-size: 40px;color:#999;top: 0;left: 0;}
+.lyCard76 .num::before{content: '';position: absolute;bottom: 0;left: 0;width: 0;height: 1px;background-color: #999;opacity: 0;}
+.lyCard76 .name{font-size: 20px;margin: 20px 20px;}
+.lyCard76 .brief{line-height: 1.8;font-size: 16px;color:#999}
+.lyCard76_img{height: 220px;width: 100%;}
+
+@media (any-hover: hover) {
+    .lyCard76:hover .lyCard76_text{transform: translateY(-30px);}
+    .lyCard76:hover .name,
+    .lyCard76:hover .num{color: var(--color);}
+    .lyCard76:hover .num::before{width: 100%;opacity: 1;}
+}
+
+
+/* 下方背景有颜色的内容区移入图片下方 */
+.lyCard77{width: 420px;overflow: hidden;position: relative;}
+.lyCard77_img{height: 400px;width: 100%;}
+.lyCard77_text{padding: 20px;background-color: rgba(0, 0, 0, 0.5);border-top: 1px solid rgba(255, 255, 255, .5);transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;bottom:0;width: 97%;transform: translateY(100%);left: 1.5%;right: 1.5%;}
+.lyCard77_text .name{font-size:20px;color: #fff;margin-bottom:10px;}
+.lyCard77_text .brief{font-size:16px;color: #fff;}
+.lyCard77_text .icon{width:40px;height:100%;position: relative;}
+.lyCard77_text .icon1{color: #fff;font-size: 20px;}
+.lyCard77_text .icon::before{content: '';position: absolute;top: 0;bottom: 0;left: 0;background-color: rgba(255, 255, 255, .5);width: 1px;}
+
+@media (any-hover: hover) {
+    .lyCard77:hover .lyCard77_text{transform: translateY(-10%);bottom: 0;}
+}
+
+/* 图片出现透明遮盖,遮盖层中心有文字内容 */
+.lyCard79_img .img,
+.lyCard79_text .name,
+.lyCard79_text .tag,
+.lyCard79_text::before{transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;}
+
+.lyCard79{width: 400px;}
+.lyCard79_img{height: 250px;}
+
+.lyCard79_text{width: 100%;height: 100%;top: 0;left: 0;}
+.lyCard79_text .name{font-size: 20px;color:#fff;margin-bottom: 10px;opacity: 0;}
+.lyCard79_text .tag{font-size: 16px;color: rgba(255, 255, 255, .7);opacity: 0;}
+.lyCard79_text::before{content: '';position: absolute;width: 100%;height: 100%;opacity: 0;background-color: rgba(0, 0, 0, 0.5);}
+
+@media (any-hover: hover) {
+    .lyCard79:hover .img{transform: scale(1.1);}
+    .lyCard79:hover .name,
+    .lyCard79:hover .tag{opacity: 1;z-index: 2;}
+    .lyCard79:hover .lyCard79_text::before{opacity: 1;}
+}
+
+/* 内容区,边框放大,图片放大并且上移 */
+.lyCard80,
+.lyCard80_text::before{transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;}
+
+.lyCard80_bg{height: 500px;}
+.lyCard80{width: 30%;background-color: #fff;margin: 0 20px;}
+.lyCard80_img{height: 250px;width: 100%;}
+.lyCard80_img .img{padding: 10px;}
+
+.lyCard80_text{padding:30px 20px;position: relative;}
+.lyCard80_text::before{content: '';position: absolute;border: 1px solid rgba(0, 0, 0, .15);transform: scale(0.88,0.9);width: 100%;height: 100%;opacity: 0;}
+.lyCard80_text .name{font-size: 22px;}
+.lyCard80_text .brief{font-size: 16px; color:#999;margin-top:20px;}
+
+/* box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1); */
+@media (any-hover: hover) {
+    .lyCard80:hover{box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);transform: translateY(-10px);}
+    .lyCard80:hover .lyCard80_text::before{transform: scale(0.95,0.85);opacity: 1;}
+}
+
+/* 内容区,下方按钮出现并且右移,内容上移,下方线条延伸 */
+.lyCard81 .month,
+.lyCard81 .name,
+.lyCard81 .brief,
+.lyCard81 .brief::before,
+.lyCard81_icon .icon{transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;}
+
+.lyCard81_bg{height: 700px;background:url('https://resources.jsmo.xin/templates/upload/17108/201908/1565921403313.png') no-repeat 50%/cover}
+.lyCard81_1{margin:30px 80px}
+.lyCard81{padding: 0 20px;border-top: 1px solid #999;}
+.lyCard81:nth-child(1){border-right: 1px solid #999;}
+.lyCard81 .month{font-size: 40px;color: rgba(0, 0, 0, .3);margin-bottom: 30px;padding-top: 30px;}
+.lyCard81 .name{font-size: 20px;margin-bottom: 20px;}
+.lyCard81 .brief{font-size: 16px;color:#999;line-height: 1.8;padding-bottom: 20px;position: relative;}
+.lyCard81 .brief::before{content: '';position: absolute;bottom: 0;left: 0;width: 6%;background-color: #999;height: 1px;}
+.lyCard81_icon{padding-bottom: 50px;padding-top: 20px;}
+.lyCard81_icon .btn{font-size: 16px;color: #999;}
+.lyCard81_icon .icon{transform: translateX(-10px);opacity: 0;}
+
+@media (any-hover: hover) {
+    .lyCard81:hover .month{color: rgba(0, 0, 0, 1)}
+    .lyCard81:hover .name,
+    .lyCard81:hover .brief{transform: translateY(-10px);}
+    .lyCard81:hover .brief::before{width: 100%;}
+    .lyCard81:hover .icon{transform: translateX(0);opacity: 1;}
+}
+
+/* 图片出现透明遮盖,遮盖层中心有文字内容,边框放大 */
+.lyCard82_img .img,
+.lyCard82_text .name,
+.lyCard82_text .name::before,
+.lyCard82_text .tag,
+.lyCard82_text::before,
+.lyCard82_text::after{transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;}
+
+.lyCard82{width:500px;}
+.lyCard82_img{height:400px;}
+
+
+.lyCard82_text{width: 100%;height: 100%;top: 0;left: 0;}
+.lyCard82_text .name{font-size: 20px;margin-bottom: 10px;opacity: 0;position: relative;padding-bottom: 15px;}
+.lyCard82_text .name::before{content: '';position: absolute;bottom: 0;left:50%;width: 30%;height: 1px;background-color: #333;transform-origin: center center;transform: translateX(-50%);}
+.lyCard82_text .tag{font-size: 16px;opacity: 0;}
+.lyCard82_text::before{content: '';position: absolute;width: 100%;height: 100%;opacity: 0;background-color: rgba(255, 255, 255, 0.8);}
+.lyCard82_text::after{content: '';position: absolute;top: 20px;left: 20px;bottom: 20px;right: 20px;border: 2px solid #333;transform: scale(0.7);opacity: 0;}
+
+@media (any-hover: hover) {
+    .lyCard82:hover .img{transform: scale(1.1);}
+    .lyCard82:hover .name,
+    .lyCard82:hover .tag{opacity: 1;z-index: 2;}
+    .lyCard82:hover .name::before{width:60%;}
+    .lyCard82:hover .lyCard82_text::before{opacity: 1;}
+    .lyCard82:hover .lyCard82_text::after{transform: scale(1);opacity: 1;}
+}
+
+/* 序号出现圆形遮盖,上方线条变短  */
+.lyCard83 .name,
+.lyCard83 .name::before,
+.lyCard83 .num::before{transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;}
+
+.lyCard83{padding: 20px 20px;width:400px;}
+.lyCard83 .name{font-size: 18px;position: relative;padding-bottom: 20px;color: #999;padding-top:20px;}
+.lyCard83 .name::before{content: '';position: absolute;bottom: 0;left: 50%;transform: translateX(-50%);width: 80%;height: 1px;background-color: #848484;}
+.lyCard83 .num{font-size: 14px;color: #848484;margin: 30px 20px 20px 20px;position: relative;z-index: 3;}
+.lyCard83 .num::before{content: '';position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);width: 30px;height: 30px;border-radius: 50%;background-color: #fff;box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);z-index: -1;opacity: 0;}
+.lyCard83 .brief{font-size: 16px;color: #848484;line-height: 1.8;}
+.lyCard83_img{height:100px;width:100px;}
+
+@media (any-hover: hover) {
+    .lyCard83:hover .name{color:#038A03}
+    .lyCard83:hover .name::before{width: 20%;}
+    .lyCard83:hover .num::before{opacity: 1;}
+}
+
+/* 上方出现遮盖,盖住图片,下方内容向右移动,出现按钮 */
+.lyCard84_img::before,
+.lyCard84_img::after,
+.lyCard84_text .name,
+.lyCard84_text .icon,
+.lyCard84_mess{transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;}
+
+.lyCard84{width: 450px;padding: 25px;}
+.lyCard84_img{height: 200px;width: 100%;position: relative;}
+.lyCard84_img::before{content: '';position: absolute;top: 0;left: 50%;background-image: url(http://resources.jsmo.xin/templates/upload/593/icon/hg.png);width:46px;height:42px;z-index: 3;transform: translate(-50%,-50%);opacity: 0;}
+.lyCard84_img::after{content: '';position: absolute;top: 0;width: 100%;;background-color: rgba(0, 0, 0, .35);height: 0;}
+.lyCard84_text{padding: 20px 0;}
+.lyCard84_text .name{font-size: 18px;margin-bottom: 15px;}
+.lyCard84_text .brief{font-size: 14px;color:#999}
+.lyCard84_text .icon{width: 35px;height: 35px;border-radius: 50%;box-shadow: 0px 0px 10px rgba(0,0,0,.1);opacity: 0;}
+.lyCard84_text .icon1{font-size: 16px;color: #999;}
+
+
+
+@media (any-hover: hover) {
+    .lyCard84:hover .lyCard84_img::before{top: 50%;opacity: 1;}
+    .lyCard84:hover .lyCard84_img::after{height: 100%;}
+    .lyCard84:hover .icon{opacity: 1;}
+    .lyCard84:hover .lyCard84_mess{transform: translateX(10px);}
+    .lyCard84:hover .name{color:#5942d2}
+}
+
+/* 块上移,按钮翻转 */
+.lyCard85{width: 450px;margin: 0 25px;border:1px solid #e7e7e7;transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;}
+.lyCard85_text1{padding: 30px;background-color: #29D79E;}
+.lyCard85_text1 .num{font-size: 70px;color: #fff;margin-right: 10px;}
+.lyCard85_text1 .tag{font-size: 20px;color: #fff;margin-top: auto;}
+.lyCard85_text1 .name{font-size: 16px;color: #fff;margin-top: 10px;}
+
+.lyCard85_text2{padding: 40px 20px;}
+.lyCard85_text2 .name1{font-size: 18px;margin-bottom: 20px;}
+.lyCard85_text2 .brief{font-size: 14px;margin-bottom: 40px;}
+.lyCard85_btn .btn{font-size: 18px;margin-right: 15px;}
+.lyCard85_btn .icon{position: relative;}
+.lyCard85_btn .icon::before{content: '';
+    display: block;
+    width: 32px;
+    height: 32px;
+    background: url(http://resources.jsmo.xin/templates/upload/593/201608/ico_img01.png) no-repeat -0px -2px;
+    position: absolute;
+    top: 0px;
+    right: -25px;
+    transition: all 0.3s ease 0s;
+}
+
+@media (any-hover: hover) {
+    .lyCard85:hover{box-shadow: 0px 12px 32px rgba(0, 0, 0, 0.12);transform: translateY(-10px);}
+    .lyCard85:hover .icon::before{background: url(http://resources.jsmo.xin/templates/upload/593/201608/ico_img01.png) no-repeat -0px -35px;}
+}
+
+/* 图片下方中间位置出现提示语 */
+.lyCard86{width: 450px;margin: 25px;transition: .75s cubic-bezier(.475,.425,0,.995);}
+.lyCard86_img{height: 200px;width: 100%;}
+.lyCard86_img .img{transition: .75s cubic-bezier(.475,.425,0,.995);}
+
+.lyCard86_text{padding: 30px 15px;position: relative;}
+.lyCard86_text .tag{content: '经久耐用';position: absolute;bottom: 100%;;;left: 50%;transform: translateX(-50%);height: 0px;width: 150px;background-color: rgba(48, 93, 195, 0.87);transition:all ease-out .3s;;z-index: 3;color: #fff;transform-origin: center bottom;}
+.lyCard86_text .name{font-size: 18px;margin-bottom: 20px;opacity: 0;}
+.lyCard86_text .brief{font-size: 14px;color: #999;line-height: 1.8;}
+
+@media (any-hover: hover) {
+    .lyCard86:hover{box-shadow: 0px 12px 32px rgba(0, 0, 0, 0.12);}
+    .lyCard86:hover .tag{height: 40px;opacity: 1;}
+}
+
+/* 图片出现不同颜色的遮罩层从下到上 */
+.lyCard87{width: 750px;margin: 0 25px;background-color: #e7e7e7;position: relative;transition: .75s cubic-bezier(.475,.425,0,.995);overflow: hidden;}
+.lyCard87::before{content: '';position: absolute;width: 100%;height: 100%;transform: translateY(-100%);background-color: #fff;transition: transform .75s cubic-bezier(.19,1,.22,1);}
+.lyCard87_img{height: 100px;width: 200px;position: relative;z-index: 2;}
+.lyCard87_img .img{padding-left: 20px;}
+.lyCard87_text{padding: 20px;}
+.lyCard87_text .name{font-size: 20px;margin-bottom: 20px;position: relative;z-index: 2;}
+.lyCard87_text .brief{font-size: 16px;line-height: 1.8;color: #999;position: relative;z-index: 2;}
+
+@media (any-hover: hover) {
+    .lyCard87:hover{box-shadow: 0px 7px 17px #dedede;}
+    .lyCard87:hover::before{transform: translateY(0);z-index: 1;}
+    .lyCard87:not(:hover)::before{transition: transform .75s cubic-bezier(.19,1,.22,1);}
+}
+
+/* 内容区两侧变高,背景也变颜色 */
+.lyCard88_text,
+.lyCard88_text .name,
+.lyCard88_text .brief{transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;}
+
+.lyCard88{width: 380px;padding: 0 20px;}
+.lyCard88_img{height: 300px;width: 100%;}
+.lyCard88_text{background-color: #f7f7f7;padding: 30px 25px 36px;top: 0px;position: relative;}
+.lyCard88_text .name{font-size: 20px;margin-bottom: 15px;}
+.lyCard88_text .brief{font-size: 16px;color: #999;line-height: 1.8;}
+
+@media (any-hover: hover) {
+    .lyCard88:hover .lyCard88_text{background-color: #305DC3;padding-top: 40px;padding-bottom: 46px;margin-top: -20px;}
+    .lyCard88:hover .name,
+    .lyCard88:hover .brief{color:#fff}
+}
+
+/* 图片出现遮盖,并且翻转铺满图片 */
+.lyCard89_img .img,
+.lyCard89_text,
+.lyCard89_text .name,
+.lyCard89_text .name::before,
+.lyCard89_text .brief{transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;}
+
+.lyCard89{width:500px;margin: 0 20px;}
+.lyCard89_img{height: 300px;width: 100%;position: relative;}
+.lyCard89_img::before{content: "+";position: absolute;    
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0);
+    left: 0;
+    top: 0;
+    opacity: 1;
+    -webkit-transform: rotateX(180deg) scale(0.5, 0.5);
+    transform: rotateX(180deg) scale(0.2, 0.2);
+    transition: all ease-out .5s;z-index: 3;}
+
+.lyCard89_text{background-color: #f7f7f7;padding: 30px 25px 36px;top: 0px;position: relative;}
+.lyCard89_text .name{font-size: 20px;padding-bottom: 15px;border-bottom: 1px solid #999;position: relative;}
+.lyCard89_text .name::before{content: '';position: absolute;bottom: 0;left: 0;width: 0;height: 1px;background-color:rgba(2, 31, 75, 0.3);opacity: 0;}
+.lyCard89_text .brief{font-size: 16px;color: #999;line-height: 1.8;padding-top: 10px;;}
+
+@media (any-hover: hover) {
+    .lyCard89:hover .img{transform: scale(1.1);}
+    .lyCard89:hover .name::before{opacity: 1;width: 100%;}
+    .lyCard89:hover .lyCard89_img::before{    
+        opacity: 1;
+        -webkit-transform: rotateX(0deg) scale(1, 1);
+        transform: rotateX(0deg) scale(1, 1);
+        transition: all 1s cubic-bezier(.23, 1, .38, 1) 0s;
+        background: rgba(2, 31, 75, 0.3);}
+}
+
+/* 颜色色块覆盖内容区,按钮从下到上漂浮 */
+.lyCard90_img .img,
+.lyCard90_text,
+.lyCard90_brief,
+.lyCard90_btn{transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;}
+
+.lyCard90{width: 380px;margin-right: 15px;}
+.lyCard90_img{height:300px;width: 100%;}
+
+
+.lyCard90_text{top: 0;width: 100%;height: 150%;transform: translateY(-100%);pointer-events: none;opacity: 0;}
+
+.lyCard90_brief{ transform-origin: center top 0;padding: 20px;}
+.lyCard90_brief .name{font-size: 20px;color:#fff}
+.lyCard90_brief .icon{width: 2px;height:50px;background-color: #fff;margin: 20px 0;}
+.lyCard90_brief .brief{font-size:14px;font-weight: bold;margin-top: 20px;color:#fff}
+
+.lyCard90_btn{width: 200px;height: 47px;border:1px solid #fff;position: relative;font-size: 16px;margin-top: 600px;}
+.lyCard90_btn .icon1{transform: translateX(10px);transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;color: #fff;}
+.lyCard90_btn .icon2{opacity: 0;transition: all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;font-size: 16px;transform: translateX(-5px);color: #fff;}
+
+
+@media (any-hover: hover) {
+    .lyCard90:hover .lyCard90_text{background-color: rgba(188, 162, 103, 0.87);transform: translateY(0);transition-delay: 0.6s pointer-events;pointer-events: all;opacity: 1;}
+    .lyCard90:hover .img{transform: scale(1.1);}
+    .lyCard90:hover .lyCard90_btn{margin-top: 20px;}
+    .lyCard90_btn:hover .icon1{transform: translateX(0);}
+    .lyCard90_btn:hover .icon2{transform: translateX(10px);opacity: 1;}
+}
+
+/* 图片缩小周围出现边框,名字右移 */
+.lyCard91_img,
+.lyCard91_img .img,
+.lyCard91_text .name,
+.lyCard91_text .name::before{transition: all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;}
+
+.lyCard91{width: 750px;padding: 25px;}
+.lyCard91_img{height: 200px;width: 100%;border: 1px solid rgba(0, 0, 0, 0);}
+.lyCard91_img .img{padding: 10px;transform: scale(1.05);}
+
+.lyCard91_text{padding: 40px 0;}
+.lyCard91_text .name{font-size: 18px;position: relative;margin-bottom: 10px;}
+.lyCard91_text .name::before{content: '';position: absolute;top: 50%;transform: translateY(-50%);left: -40px;height: 1px;width:0;background-color: #333;opacity: 0;}
+.lyCard91_text .brief{color:#999;font-size: 16px;line-height: 1.8;}
+
+@media (any-hover: hover) {
+    .lyCard91:hover .img{border: 1px solid rgba(0, 0, 0, 0.3);transform: scale(1);padding: 10px;}
+    .lyCard91:hover .img{padding: 10px;}
+    .lyCard91:hover .name{margin-left: 50px;}
+    .lyCard91:hover .name::before{opacity: 1;width:5%;}
+}
+
+/* 图片出现遮盖,并且出现有颜色的边框,内容区从下方移上来 */
+.lyCard92_img .img,
+.lyCard92_img::before,
+.lyCard92_img::after,
+.lyCard92_text{transition: all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;}
+
+.lyCard92{width: 380px;position: relative;overflow: hidden;margin: 0 10px;--color:#FFC000}
+.lyCard92_img{height: 250px;width: 100%;position: relative;}
+
+.lyCard92_img::before{content: '';position: absolute;width: 100%;height: 100%;top: 0;left: 0;background-color: rgba(0, 0, 0, .3);opacity: 0;}
+.lyCard92_img::after{content: '';position: absolute;width:calc(100% - 12px);height:calc(100% - 12px);opacity: 0;border: 6px solid var(--color);z-index: 3;top: 0px;left: 0px;right: 0px;bottom: 0px;}
+.lyCard92_text{position: absolute;padding: 0 20px 40px 20px;transform: translateY(100%);bottom: 0;z-index: 2;width: 100%;}
+.lyCard92_text .name{font-size: 18px;color:#fff}
+.lyCard92_text .brief{font-size: 14px;color: rgba(255, 255, 255, .5);padding-top: 10px;}
+
+@media (any-hover: hover) {
+    .lyCard92:hover .img{transform: scale(1.1);}
+    .lyCard92:hover .lyCard92_text{transform: translateY(0);}
+    .lyCard92:hover .lyCard92_img::before{opacity: 1;}
+    .lyCard92:hover .lyCard92_img::after{opacity: 1;}
+}
+
+/* 图片出现边框和按钮,有些错位 */
+.lyCard93_img .img,
+.lyCard93_img::before,
+.lyCard93_text .icon::after{transition: all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;}
+
+.lyCard93{width: 485px;padding: 0 20px;}
+.lyCard93_img{width: 100%;height: 250px;position: relative;}
+.lyCard93_img::before{content: '';position: absolute;top: 19px;bottom: 19px;left: 19px;width: 100%;border: 1px solid rgba(255, 255, 255, .5);opacity: 0;height: 80%;z-index: 3;}
+.lyCard93_img::after{content: '';position: absolute;top: 0;left: 0;width: 40px;height: 40px;background-color: rgba(0, 0, 0, .3);background: url(http://resources.jsmo.xin/templates/upload/307/icon/jia.png);transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;opacity: 0;transform: translateY(-50%);z-index: 4;}
+
+.lyCard93_text{padding: 20px 0;}
+.lyCard93_text .name{font-size: 18px;}
+.lyCard93_text .brief{font-size: 14px;color: #999;margin-top: 10px;}
+.lyCard93_text .icon{position: relative;margin-top: 10px;}
+.lyCard93_text .icon::after{content: '';position: absolute;bottom: 0;left: 0;width: 4px;height: 1px;background-color: #333;}
+
+@media (any-hover: hover) {
+    .lyCard93:hover .img{transform: scale(1.1);}
+    .lyCard93:hover .lyCard93_img::before{opacity: 1;}
+    .lyCard93:hover .lyCard93_img::after{opacity: 1;top: 50%;}
+    .lyCard93:hover .icon::after{width: 30px;}
+}
+
+/* 时间块下方的直线变长,时间也随之偏移 */
+.lyCard94{width:700px;padding:0 25px;}
+.lyCard94_img{height: 180px;width:180px;}
+.lyCard94_img .img{transition: all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;}
+
+.lyCard94_text{padding: 20px;width:calc(100% - 220px);}
+.lyCard94_text .year{font-size: 12px;color: #7E7E7E;position: relative;margin-bottom: 20px;transition: all 0.6s cubic-bezier(0.22, 0.61, 0.36, 1) 0s;}
+.lyCard94_text .year::before{
+    content: '';
+    display: block;
+    border-bottom: 1px solid #999;
+    width: 30px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;}
+.lyCard94_text .name{font-size: 18px;margin-bottom: 30px;}
+.lyCard94_text .brief{font-size: 14px;color: #999;line-height: 1.8;}
+
+@media (any-hover: hover) {
+    .lyCard94:hover .img{transform: scale(1.1);}
+    .lyCard94:hover .year{padding-left: 110px;}
+    .lyCard94:hover .year::before{width: 120px;}
+}
+
+/* 图片出现透明遮盖,遮盖层中心有文字内容,边框放大 */
+.lyCard95{width:500px;margin: 0 25px;}
+.lyCard95_img{height:400px;}
+.lyCard95_img .img,
+.lyCard95_text .name,
+.lyCard95_text .tag,
+.lyCard95_text  .brief,
+.lyCard95_text .btn,
+.lyCard95_text::before,
+.lyCard95_text::after{transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;}
+
+.lyCard95_text{width: 100%;height: 100%;top: 0;left: 0;}
+.lyCard95_text .name{font-size: 20px;margin-bottom: 10px;opacity: 0;padding-bottom: 15px;transform: scale(1.4, 1.4);color:#fff}
+.lyCard95_text .tag{font-size: 14px;opacity: 0;transform: scale(1.4, 1.4);color:#fff}
+.lyCard95_text  .brief{font-size: 16px;color: #fff;line-height: 1.8;margin-top: 20px;transform: scale(1.4, 1.4);opacity: 0;}
+.lyCard95_text .btn{width: 200px;height: 40px;border: 1px solid #fff;margin-top: 10px;transform: scale(1.4, 1.4);opacity: 0;}
+.lyCard95_text .icon{color: #fff;}
+.lyCard95_text::before{content: '';position: absolute;width: 100%;height: 100%;opacity: 0;background-color: rgba(0, 0, 0, 0.4);}
+.lyCard95_text::after{content: '';position: absolute;top: 20px;left: 20px;bottom: 20px;right: 20px;border: 2px solid rgba(255, 255, 255, .5);transform: scale(0.7);opacity: 0;}
+
+@media (any-hover: hover) {
+    .lyCard95:hover .img{transform: scale(1.1);}
+    .lyCard95:hover .name,
+    .lyCard95:hover .tag,
+    .lyCard95:hover .brief,
+    .lyCard95:hover .btn{opacity: 1;z-index: 2;transform: scale(1.1);}
+    .lyCard95:hover .name::before{width:60%;}
+    .lyCard95:hover .lyCard95_text::before{opacity: 1;}
+    .lyCard95:hover .lyCard95_text::after{transform: scale(1);opacity: 1;}
+
+}
+
+/* 整体块变高,内容区出现边框 */
+.lyCard96{width: 500px;margin: 0 25px;--color:#43b9f6;background-color: var(--color);height:380px;transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;}
+.lyCard96_img{height: 150px;margin: 12px;}
+.lyCard96_img .img{background: rgba(0,0,0,.03);}
+
+.lyCard96_text{position: relative;}
+.lyCard96_text::before{    position: absolute;
+    content: "";
+    left: 10px;
+    width: 95%;
+    height: 95%;
+    border: 1px solid rgba(255, 255, 255, 0);
+    margin-left: 0;
+    top: 1px;
+    transition: all 0.3s ease-out 0s;}
+
+.lyCard96_text .name,
+.lyCard96_text .brief{color: #fff;transition: all 0.3s ease-out 0s;}
+
+.lyCard96_text .name{font-size: 18px;margin-bottom: 25px;padding: 20px 30px 0 30px;}
+.lyCard96_text .brief{font-size: 16px;line-height: 1.8;padding: 0px 30px 30px 30px;}
+
+@media (any-hover: hover) {
+    .lyCard96:hover{height: 400px;margin-top: -40px;box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);}
+    .lyCard96:hover .lyCard96_text::before{border: 1px solid rgba(255, 255, 255, 1);height: 110%;}
+}
+
+/* 鼠标移入内容块出现颜色,图片出现边框。 */
+.lyCard97_img .img,
+.lyCard97 .icon::after,
+.lyCard97 .icon::before{transition:all .6s cubic-bezier(.215,.61,.355,1) 0s;}
+
+.lyCard97{width: 400px;margin:0 20px;transition:all .6s cubic-bezier(.215,.61,.355,1) 0s;--color:#f98339}
+.lyCard97_img{width: 100%;height: 300px;position: relative;}
+.lyCard97_img::before{content: '';position: absolute;z-index: 3;border: 2px solid var(--color);width: calc(100% - 4px);height: calc(100% - 4px);opacity: 0;}
+
+.lyCard97_category{padding: 0 15px;transition: all 0.6s cubic-bezier(0.215, 0.97, 0.355, 1) 0s;border-bottom: 1px solid #999;padding-bottom: 10px;}
+.lyCard97_category .name{font-size: 18px;margin-bottom: 20px;padding-top: 20px;}
+.lyCard97_category .num{font-size: 16px;}
+.lyCard97 .icon{position: relative;}
+.lyCard97 .icon::before{content: '';
+    width: 37px;
+    height: 20px;
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: -20px;
+    background:url(http://resources.jsmo.xin/templates/upload/302/201606/icon.png) no-repeat -27px -66px;
+    margin-top: -10px;
+    border-left: 1px solid rgba(255, 255, 255, 0);
+    z-index: 2;
+}
+
+.lyCard97 .icon::after{content: '';position: absolute;width:1px;height:20%;background-color: #fff;left:-30px;top: 40%;opacity: 0;}
+
+@media (any-hover: hover) {
+    .lyCard97:hover{box-shadow: 0 12px 10px rgba(0, 0, 0, 0.1);}
+    .lyCard97:hover .img{transform: scale(1.1);}
+    .lyCard97:hover .lyCard97_category{padding: 10px 15px;border-color: rgba(0, 0, 0, .0);}
+    .lyCard97:hover .icon::before{opacity: 1;background:url(http://resources.jsmo.xin/templates/upload/302/201606/icon.png) no-repeat -64px -66px;}
+    .lyCard97:hover .icon::after{opacity: 1;}
+    .lyCard97:hover .lyCard97_img::before{opacity: 1;}
+    .lyCard97:hover .lyCard97_category{background-color: #f98339;}
+    .lyCard97:hover .name,
+    .lyCard97:hover .brief{color:#fff}
+}
+
+/* 鼠标移入内容块出现颜色,图片出现边框 */
+.lyCard98{width: 750px;margin:0 20px;transition: all 0.3s ease-out 0s;position: relative;}
+.lyCard98::before{content: '';position: absolute;bottom: 0;left: 50%;transform: translateX(-50%);width: 0;height: 1px;background-color: #999;transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;}
+.lyCard98_img{width: 50px;height: 100px;}
+.lyCard98 .name{font-size: 18px;margin: 50px 20px 40px 20px;}
+.lyCard98 .brief{font-size: 16px;color: #999;margin:0 20px 40px 20px;}
+.lyCard98 .btn{opacity: 0;transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;margin-bottom: 20px;font-size: 20px;}
+
+@media (any-hover: hover) {
+    .lyCard98:hover{transform: translateY(-5px);box-shadow: 0 5px 10px rgba(0,0,0,.1);} 
+    .lyCard98:hover::before{width: 100%;} 
+    .lyCard98:hover .btn{opacity: 1;}
+}
+
+/* 内容区出现,边框缩小到适合大小 */
+.lyCard99{width: 420px;overflow: hidden;position: relative;}
+.lyCard99_img{height: 400px;width: 100%;}
+.lyCard99_text{padding: 20px;background-color: #fff;transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;width: 100%;position: relative;opacity: 0;width: 120%;bottom: 19%;left: -10%;}
+.lyCard99_text::before{    
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 110%;
+    height: 110%;
+    -webkit-transform: translateY(-50%) translateX(-50%);
+    -ms-transform: translateY(-50%) translateX(-50%);
+    transform: translateY(-50%) translateX(-50%);
+    border: 1px solid transparent;
+    -webkit-transition: all .36s ease;
+    transition: all .36s ease;}
+.lyCard99_text .name{font-size:20px;margin-bottom:10px;}
+.lyCard99_text .brief{font-size:16px;}
+.lyCard99_text .icon{width:40px;height:100%;position: relative;}
+.lyCard99_text .icon1{font-size: 20px;}
+.lyCard99_text .icon::before{content: '';position: absolute;top: 0;bottom: 0;left: 0;background-color: rgba(0, 0, 0, .5);width: 1px;}
+
+@media (any-hover: hover) {
+    .lyCard99:hover .lyCard99_text::before{width: 96%;height: 80%;border-color: rgba(51, 51, 51, 0.36);}
+    .lyCard99:hover .lyCard99_text{opacity: 1;width: 100%;left: 0;}
+}
+
+/* 数字放大,边框缩小,图片高度变小 */
+.lyCard100::before,
+.lyCard100_text .num,
+.lyCard100_text .brief,
+.lyCard100_text .icon,
+.lyCard100_img{transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;}
+
+.lyCard100{width: 300px;margin: 0 20px;position: relative;}
+.lyCard100::before{content: '';position: absolute;opacity: 0;width: 100%;height: 100%;border: 1px solid #999;z-index: 4;}
+.lyCard100_text{padding: 50px 50px 20px 50px;}
+.lyCard100_text .name{font-size: 20px;margin-bottom: 10px;}
+.lyCard100_text .num{font-size: 14px;color:#EFEFEF;margin-bottom: 10px;z-index: -1;position: relative;}
+.lyCard100_text .brief{font-size: 16px;opacity: 0;}
+
+.lyCard100_img{height: 400px;width: 100%;max-height: 100%;overflow: hidden;}
+
+.lyCard100_img .img{bottom: 0;}
+
+@media (any-hover: hover) {
+    .lyCard100:hover::before{transform: scale(0.90);opacity: 1;}
+    .lyCard100:hover .lyCard100_img{height: 380px;}
+    .lyCard100:hover .num{transform: scale(6) translateY(5px);}
+    .lyCard100:hover .icon{transform: translateY(-10px);opacity: 0;}
+    .lyCard100:hover .brief{transform: translateY(-20px);opacity: 1;}
+}
+
+/* 名字变颜色,并且右移,下方图片出现边框 */
+.lyCard101_text::before,
+.lyCard101_text .name,
+.lyCard101_text .brief,
+.lyCard101_img::before,
+.lyCard101_img .img{transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;}
+
+.lyCard101{width: 700px;margin: 0 25px;--color:#f25a00}
+.lyCard101_text{padding: 40px 40px;background-color: #292929;position: relative;overflow:hidden;}
+.lyCard101_text::before{content: '';position: absolute;top: 30%;left: -100px;width: 60px;height: 1px;background-color:var(--color);}
+.lyCard101_text .name{font-size: 18px; color:#fff;}
+.lyCard101_text .brief{font-size: 16px;color:rgba(255, 255, 255, .5);margin-top: 20px;}
+
+.lyCard101_img{width: 100%;height: 300px;position: relative;}
+.lyCard101_img::before{content: '';position: absolute;border: 2px solid var(--color);width: 100%;height: 100%;transform: scale(0.90);opacity: 0;z-index: 2;}
+
+
+@media (any-hover: hover) {
+    .lyCard101:hover .lyCard101_text::before{left: 0;}
+    .lyCard101:hover .img{transform: scale(1.1);}
+    .lyCard101:hover .name{color:var(--color)}
+    .lyCard101:hover .name,
+    .lyCard101:hover .brief{transform: translateX(30px);}
+    .lyCard101:hover .lyCard101_img::before{opacity: 1;}
+}
+
+/* 名字变颜色,内容区下方图片显现 */
+.lyCard_text,
+.lyCard_text .year,
+.lyCard_text .name,
+.lyCard_text .brief,
+.lyCard102_img::before,
+.lyCard102_btn .btn1,
+.lyCard102_btn .icon{transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;}
+
+.lyCard102_bg{height: 800px;}
+
+.lyCard102{width: 500px;margin:0 15px;background-color: #333;--color:#038A03;overflow: hidden;}
+
+.lyCard_text{padding: 50px 20px 20px 20px;background-color: #333;height:62%;width: 100%;z-index: 3;}
+.lyCard_text .year{font-size: 18px;color:#fff;margin-bottom: 20px;}
+.lyCard_text .name{font-size: 18px;color:#fff;margin-bottom: 10px;}
+.lyCard_text .brief{font-size: 16px;color:rgba(255, 255, 255, .5);}
+
+.lyCard102_img{width: 100%;height: 200px;position: relative;}
+.lyCard102_img::before{content: '';position: absolute;bottom: 0;height: 1px;left: 5%;width: 0;background-color: rgba(255, 255, 255, .5);z-index: 4;}
+
+.lyCard102_btn{padding:40px 20px;;}
+.lyCard102_btn .btn{font-size: 16px;color:#fff}
+.lyCard102_btn .btn1{width: 50px;height: 50px;border-radius: 50%;border:1px solid rgba(255, 255, 255, .5);transform: translateX(100px);}
+.lyCard102_btn .icon{color:#fff;}
+
+@media (any-hover: hover) {
+    .lyCard102:hover .name{color: var(--color);}
+    .lyCard102:hover .year,
+    .lyCard102:hover .name,
+    .lyCard102:hover .brief{transform: translateY(-20px);}
+
+    .lyCard102:hover .lyCard_text{background-color: transparent;}
+
+    .lyCard102:hover .lyCard102_img::before{width: 90%;background-color: var(--color);}
+
+    .lyCard102:hover .btn1{transform: translateX(0);}
+    .lyCard102:hover .icon{color:var(--color)}
+}
+
+/* 鼠标移入,上方日期块移到到最下方,描述区上移 */
+.lyCard103_time,
+.lyCard103_time .month,
+.lyCard103_brief{transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s}
+
+.lyCard103{width: 500px;margin-right: 15px;--color:#49ADA3}
+.lyCard103_time{padding: 30px 45px;}
+.lyCard103_time .month{font-size: 50px;color:#999;}
+.lyCard103_time .icon{width: 50px;height: 50px;border: 1px solid #999;transition: all 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;opacity: 0;}
+
+.lyCard103_brief{padding: 50px 30px;border-top: 1px solid #999;;position: relative;}
+.lyCard103_brief::before{content: '';position: absolute;left: 0;top: 0;width: 0;height: 1px;background-color: var(--color);z-index: 3;transition: all 0.6s ease 0s;}
+.lyCard103_brief .name{font-size: 20px;}
+.lyCard103_brief .brief{font-size: 16px;color:#999;margin-top: 30px;margin-bottom: 30px;}
+
+@media (any-hover: hover) {
+    .lyCard103:hover .lyCard103_time{background-color: var(--color);transform: translateY(220%);}
+    .lyCard103:hover .month,
+    .lyCard103:hover .icon{color: #fff;border-color: #fff;}
+    .lyCard103:hover .icon{transform: translateX(-150%);opacity: 1;}
+    .lyCard103:hover .lyCard103_brief{transform: translateY(-20%);}
+    .lyCard103:hover .lyCard103_brief::before{width: 100%;}
+}
+
+/* 鼠标移入,下方内容出上移,白线移动到指定位置  */
+.lyCard104_text,
+.lyCard104_text .name::before{transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;}
+
+.lyCard104{width: 420px;overflow: hidden;position: relative;--color:linear-gradient(to right, #f9223e 8%, #AB2C71 68%, #AB2CA1)}
+.lyCard104_img{height: 400px;width: 100%;}
+.lyCard104_text{padding: 20px;background:var(--color)!important;border-top: 1px solid rgba(255, 255, 255, .5);bottom:0;width: 96%;transform: translateY(100%);left: 2%;right: 2%;}
+.lyCard104_text .name{font-size:20px;color: #fff;margin-bottom:10px;position: relative;}
+.lyCard104_text .name::before{content: '';position: absolute;top: 0;right:-10%;width: 50px;height: 1px;background-color: #fff;transform: translateY(200px);opacity: 0;}
+.lyCard104_text .brief{font-size:16px;color: #fff;}
+.lyCard104_text .icon{width:40px;height:100%;position: relative;}
+.lyCard104_text .icon1{color: #fff;font-size: 20px;}
+.lyCard104_text .icon::before{content: '';position: absolute;top: 0;bottom: 0;left: 0;background-color: rgba(255, 255, 255, .5);width: 1px;}
+
+@media (any-hover: hover) {
+    .lyCard104:hover .lyCard104_text{transform: translateY(-10%);bottom: 0;}
+    .lyCard104:hover .name::before{transform: translateY(0);opacity: 1;}
+}
+
+/* 按钮渐变变宽,序号变大,整体块向下偏移 */
+.lyCard105,
+.lyCard105::before,
+.lyCard105 .num,
+.lyCard105_text{transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s}
+
+.lyCard105_bg{height: 800px;background:url('https://resources.jsmo.xin/templates/upload/16825/201907/1564379031806.png') 100%/cover}
+.lyCard105{width: 750px;margin: 0 25px;padding: 20px 30px 20px 150px;position: relative;--color: linear-gradient(to right, #f9223e 8%, #f9223e 68%, #f9223e)}
+.lyCard105::before{content: '';position: absolute;left: 10%;;top: 46%;width: 50px;height: 1px;background-color: #fff;z-index: 2;transform-origin: left;}
+.lyCard105 .num{font-size: 40px;color:rgba(255, 255, 255, .5);top: 40%;left:-20px;color: rgba(255, 255, 255, .5);}
+
+.lyCard105_img{height: 80px;width: 80px;}
+
+.lyCard105_text .name{font-size: 18px;color:rgba(255, 255, 255, .5);margin-top: 20px;margin-bottom: 20px;}
+.lyCard105_text .brief{font-size: 16px;color:rgba(255, 255, 255, .2);margin-bottom: 30px;}
+
+.lyBtn105{width: 150px;height: 50px;background:var(--color);border-radius: 25px;transition: all 0.4s ease 0s;color: #fff;}
+
+@media (any-hover:hover) {
+    
+}
+@media (any-hover: hover) {
+    .lyCard105:hover{background-color: rgba(0, 0, 0, 0.5);}
+    .lyCard105:hover::before{transform: rotate(90deg);top:60%;left: 20%;}
+    .lyCard105:hover .lyCard105_text{transform: translateY(10px);}
+    
+    .lyCard105:hover .lyBtn105{width: 180px;background: linear-gradient(to right, #f9223e 8%, #AB2C71 68%, #AB2CA1);}
+    .lyCard105:hover .num{transform: scale(3) translate(12px,10px);}
+}
+
+/* 图片变小出现边框,描述出现,背景颜色变化  */
+.lyCard106_img,
+.lyCard106_img::after,
+.lyCard106_text,
+.lyCard106_text .name,
+.lyCard106_text .tag{transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;}
+
+.lyCard106{width: 360px;margin: 0 20px;}
+.lyCard106_img{height: 300px;width: 100%;}
+.lyCard106_img::after{content: '';position: absolute;width: 100%;height: 100%;border: 2px solid #040101;transform: scale(1);opacity: 0;}
+
+.lyCard106_text{padding: 30px;height: 85px;overflow: hidden;}
+.lyCard106_text .name{font-size: 20px;}
+.lyCard106_text .tag{font-size: 14px;color:#999;margin-top: 10px;}
+.lyCard106_text .brief{font-size: 16px;margin-top: 10px;line-height: 1.8;}
+
+@media (any-hover: hover) {
+    .lyCard106:hover .lyCard106_text{height: 200px;background-color: #040101;}
+    .lyCard106:hover .name,
+    .lyCard106:hover .tag,
+    .lyCard106:hover .brief{color: #fff;}
+    .lyCard106:hover .lyCard106_img{height: 270px;}
+    .lyCard106:hover .lyCard106_img::after{transform: scale(0.90);opacity: 1;}
+}
+
+/* 图片出现边框,按钮从小到上翻起 */
+.lyCard107_img::before,
+.lyCard107_text .icon::after,
+.lyCard107_img .img,
+.lyCard_btn{transition: all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;}
+
+.lyCard107{width: 485px;margin: 0 20px;overflow: hidden;box-shadow: 0 22px 40px rgba(0,0,0,.16);--color:#0072d4}
+.lyCard107_img{width: 100%;height: 250px;position: relative;}
+.lyCard107_img::before{content: '';position: absolute;top: 19px;bottom: 19px;left: 19px;width: 82%;border: 1px solid rgba(255, 255, 255, .5);opacity: 0;height: 80%;z-index: 3;}
+.lyCard107_img::after{content: '';position: absolute;top: 0;left: 0;width: 40px;height: 40px;background-color: rgba(0, 0, 0, .3);background: url(http://resources.jsmo.xin/templates/upload/307/icon/jia.png);transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;opacity: 0;transform: translateY(-50%);z-index: 4;}
+.lyCard107_text{padding:20px;}
+.lyCard107_text .name{font-size: 18px;}
+.lyCard107_text .brief{font-size: 14px;color: #999;margin-top: 10px;}
+.lyCard107_text .icon{position: relative;margin-top: 10px;}
+.lyCard107_text .icon::after{content: '';position: absolute;bottom: 0;left: 0;width: 4px;height: 1px;background-color: #333;}
+
+.lyCard_btn{width: 100%;height:50px;background-color:var(--color) ;transform: translateY(80px);margin-top: 20px;}
+.lyCard_btn .icon{background: url(https://preview.jsmo.xin/ue-1625/templates/ue_content/templates/images/more.png) no-repeat;width: 16px;height: 7px;display: inline-block;z-index: 3;position: relative;background-position: 0 -7px;}
+
+@media (any-hover: hover) {
+    .lyCard107:hover .img{transform: scale(1.1);}
+    .lyCard107:hover .lyCard107_img::before{opacity: 1;}
+    .lyCard107:hover .lyCard107_img::after{opacity: 1;top: 50%;}
+    .lyCard107:hover .icon::after{width: 30px;}
+
+    .lyCard107:hover .lyCard_btn{transform: translateY(0);}
+}
+
+/* 图片外框缩小,出现边框,按钮出现交互 */
+.lyCard108_img,
+.lyCard108_img::before,
+.lyCard108_text .name,
+.lyBtn108,
+.lyBtn108 .icon1,
+.lyBtn108 .icon2,
+.lyBtn108 .icon{transition: all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;}
+
+.bg-color{height:500px;}
+.lyCard108{width: 750px;margin: 0 25px;box-shadow: 0 10px 40px rgba(0,0,0,.16);--color:#0072d4}
+
+.lyCard108_img{width:100%;height: 350px;position: relative;}
+.lyCard108_img::before{content: '';position: absolute;border: 1px solid rgba(255, 255, 255, 0.8);width: 100%;height: 100%;transform: scale(1);z-index: 3;}
+
+.lyCard108_text{padding: 30px 15px;}
+.lyCard108_text .name{font-size: 18px;margin-bottom: 20px;}
+.lyCard108_text .brief{font-size: 16px;color: #999;margin-bottom: 150px;}
+
+.lyBtn108{width: 240px;height: 47px;border:1px solid #49ADA3;position: relative;font-size: 16px;}
+.lyBtn108 .icon1{transform: translateX(10px);}
+.lyBtn108 .icon{opacity: 0;font-size: 16px;transform: translateX(-5px);}
+
+@media (any-hover:hover) {
+    .lyCard108:hover .lyCard108_img{transform: scale(0.90);}
+    .lyCard108:hover .lyCard108_img::before{transform: scale(0.9);}
+    .lyCard108:hover .icon1{transform: translateX(0);}
+    .lyCard108:hover .icon{transform: translateX(10px);opacity: 1;}
+    .lyCard108:hover .lyBtn108{background-color: var(--color);}
+    .lyCard108:hover .name{color:var(--color)}
+    .lyCard108:hover .icon1,
+    .lyCard108:hover .icon2{color:#fff}
+}
+
+/* 图片缩小消失,下方出现圆形图片,并且描述替代原来图片位置 */
+.lyCard109,
+.lyCard109_img,
+.lyCard109_img2,
+.lyCard109_text{transition: all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;}
+
+.lyCard109{width: 380px;margin: 0 20px;box-shadow: 0 4px 29px rgba(0, 0, 0, .1);overflow: hidden;--color:#EF4136}
+.lyCard109_img{width: 100%;height: 350px;}
+.lyCard109_img1{top: 40%;left: 50%;transform: translate(-50%,-50%);z-index: 5;transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;}
+.lyCard109_img2{width:100px;height:100px;border-radius: 50%;opacity: 0;}
+.lyCard109_text{padding: 40px 20px;}
+.lyCard109_text .name{font-size: 18px;margin-bottom: 15px;position: relative;}
+
+
+.lyCard109_text1{padding: 20px;font-size: 16px;color: #fff;line-height: 1.8;transform: translateY(-240%);background-color: var(--color);height: 350px;transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;z-index: 3;}
+
+.lyCard109 .lyCard109_line{content: '';position: absolute;top:50%;left: 50%;transform: translateX(-50%);width: 1px;height: 50px;background-color: #999;transition: all 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;opacity: 0;}
+
+@media (any-hover:hover) {
+    .lyCard109:hover{box-shadow: 0 4px 29px rgba(0, 0, 0, 0);transform: translateY(15px);}
+    .lyCard109:hover .lyCard109_text{transform: translateY(20px);} 
+    .lyCard109:hover .lyCard109_text1{transform: translateY(-140%);}
+    .lyCard109:hover .lyCard109_img{transform: scale(0);}
+    .lyCard109:hover .lyCard109_img1{opacity: 1;top: 70%;}
+    .lyCard109:hover .lyCard109_img2{opacity: 1;}
+
+    .lyCard109:hover .lyCard109_line{top: 75%;opacity: 1;}
+    .lyCard109:hover .name{padding-top: 10px;color:var(--color) ;}
+}
+
+/* 图片缩小消失,边框出现,描述下移 */
+.lyCard110::before,
+.lyCard110_img,
+.lyCard110_img .img,
+.lyCard110_text{transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;}
+
+.lyCard110{width: 420px;margin: 0 20px;height: 300px;overflow: hidden;}
+.lyCard110::before{content: '';position: absolute;width: 100%;height: 100%;border:1px solid #999;transform: scale(0.8);opacity: 0;}
+.lyCard110_img{height: 300px;width: 100%;}
+
+.lyCard110_text{padding: 20px;transform: translateY(-150%);width: 100%;height: 100%;}
+.lyCard110_text .name{font-size: 18px;}
+.lyCard110_text .brief{font-size: 16px;margin-top: 15px;color:#999}
+
+@media (any-hover:hover) {
+    .lyCard110:hover::before{transform: scale(0.95);opacity: 1;}
+    .lyCard110:hover .lyCard110_text{transform: translateY(-45%);}
+    .lyCard110:hover .lyCard110_img{transform: scale(0);opacity: 0;}
+}
+
+
+/* 卡片效果151 */
+.lyCard151 {width: calc((100% - 60px)/4);position: relative;--Bwidth: 40px;}
+.lyCard151_img {width: 100%;padding-top: 70.8%;}
+.lyCard151_text {position: absolute;top: var(--Bwidth);left: 50%;transform: translateX(-50%);width: calc(100% - calc(var(--Bwidth)*2));height: 0;background-color: #fff;display: flex;align-items: center;justify-content: center;flex-direction: column;padding: 26px;-webkit-transition:.3s;transition:.3s;opacity: 0;}
+.lyCard151 .name {font-size: 18px;line-height: 30px;color: #474747;}
+.lyCard151 .brief {font-size: 12px;line-height: 16px;color: #a5a5a5;}
+@media (any-hover:hover) {
+    .lyCard151:hover .lyCard151_text {height: calc(100% - calc(var(--Bwidth)*2));opacity: 1;}
+}
+
+
+/* 卡片效果152 */
+.lyCard152_img::before,
+.lyCard152_img::after,
+.lyCard152_text::before{position: absolute;content: '';bottom: 0;left: 0;width: 100%;-webkit-transition:.3s;transition:.3s;}
+
+.lyCard152 {width: calc((100% - 60px));background-color: #eee;}
+.lyCard152_img {position: relative;width: 100%;padding-top: 64.6%;}
+.lyCard152_img::before {height: 1px;background-color: #e1e1e1;z-index: 2;opacity: 0;}
+.lyCard152_img::after {height: 0;background-color: #fff;z-index: 1;}
+.lyCard152_text {height: 80px;display: flex;align-items: center;justify-content: space-between;background-color: #fff;padding-left: 15px;padding-right: 30px;position: relative;-webkit-transition:.3s;transition:.3s;}
+.lyCard152_text::before {height: 1px;background-color: #e1e1e1;}
+.lyCard152 .name {font-size: 18px;line-height: 1;color: #555;}
+.lyCard152 .tag {font-size: 24px;line-height: 1;color: #333;}
+@media (any-hover:hover) {
+    .lyCard152:hover .lyCard152_img::before {opacity: 1;}
+    .lyCard152:hover .lyCard152_img::after {opacity: 0;height: 100%;}
+    .lyCard152:hover .lyCard152_text {background-color: transparent;padding-left: 30px;}
+    .lyCard152:hover .lyCard152_text::before {opacity: 0;} 
+}
+
+
+/* 卡片效果153 */
+.lyCard153 {width: calc((100% - 100px)/3);--color:#ffbc00;}
+.lyCard153 * {-webkit-transition:.3s;transition:.3s;}
+.lyCard153_img {width: 100%;padding-top: 52.8%;position: relative;}
+.lyCard153_icon {position: absolute;width: 120px;height: 0;display: flex;align-items: center;justify-content: center;font-size: 30px;line-height: 1;color: #fff;background-color: var(--color);right: 20px;top: 100%;transform: translateY(-36px);opacity: 0;}
+.lyCard153_text {padding: 20px 0;display: flex;align-items: start;justify-content: space-between;}
+.lyCard153_time {border: 1px solid #a1a1a1;padding: 14px;}
+.lyCard153_year {font-size: 24px;line-height: 30px;color: #656565;}
+.lyCard153_day {font-size: 14px;line-height: 16px;color: #8d8d8d;}
+.lyCard153 .name {font-size: 16px;line-height: 1;color: #333;margin-bottom: 10px;}
+.lyCard153 .brief {font-size: 14px;line-height: 24px;color: #898989;height: 72px;}
+@media (any-hover:hover) {
+    .lyCard153:hover .lyCard153_icon {height: 36px;opacity: 1;}
+    .lyCard153:hover .lyCard153_time {background-color: var(--color);border-color: var(--color);}
+    .lyCard153:hover .lyCard153_year {color: #fff;}
+    .lyCard153:hover .lyCard153_day {color: #fff;}
+    .lyCard153:hover .name {color: var(--color);text-decoration: underline;}
+}
+
+
+/* 卡片效果154 */
+.lyCard154_img::before,
+.lyCard154_img::before{position: absolute;-webkit-transition:.3s;transition:.3s;}
+
+.lyCard154 {width: calc((100% - 30px)/3);--color:#ffbc00;}
+.lyCard154 * {-webkit-transition:.3s;transition:.3s;}
+.lyCard154_img {width: 100%;padding-top: 79.78%;position: relative;border-radius: 10px;}
+.lyCard154_img::before {content: '';bottom: 0;left: 0;width: 100%;height: 0;border-radius: 10px;background-color: rgba(99, 136, 207, 0.85);z-index: 1;}
+.lyCard154_imgText {position: absolute;top: 50%;left: 0;width: 100%;z-index: 2;}
+.lyCard154_num {width: 100%;font-size: 50px;line-height: 1;color: #fff;position: relative;opacity: 0;}
+.lyCard154_img::before {content: '';top: 50%;left: 0;transform: translateY(-50%);height: 1px;width: 0;background-color: #fff;opacity: 0;}
+.lyCard154_brief {padding: 0 60px;font-size: 14px;line-height: 26px;color: #fff;position: relative;width: 100%;transform: translateY(100%);opacity: 0;}
+.lyCard154_text {padding: 24px 20px;}
+.lyCard154 .name {font-size: 18px;line-height: 30px;color: #181818;}
+.lyCard154 .brief {font-size: 14px;line-height: 22px;color: #9a9a9a;}
+@media (any-hover:hover) {
+    .lyCard154:hover .lyCard154_img::before {height: 100%;}
+    .lyCard154:hover .lyCard154_num {padding-left: 60px;opacity: 1;}
+    .lyCard154:hover .lyCard154_num::before {width: 50px;opacity: 1;}
+    .lyCard154:hover .lyCard154_brief {transform: translateY(0);opacity: 1;}
+    .lyCard154:hover .brief {transform: translateY(-100%);opacity: 0;}
+}
+
+
+/* 卡片效果155 */
+.lyCard155,
+.lyCard155 *,
+.lyCard155_img::after{-webkit-transition:.3s;transition:.3s;}
+
+.lyCard155 {width: calc((100% - 15px)/2);display: flex;align-items: start;justify-content: space-between;--color: #0abbb9;--bWidth: 10px;background-color: #fff;}
+.lyCard155_img {width: 38%;position: relative;}
+.lyCard155_img::after {position: absolute;content: '';top: 50%;left: 50%;transform: translate(-50%,-50%);width: 100%;height: 100%;border: var(--bWidth) solid transparent;pointer-events: none;opacity: 0;}
+.lyCard155_img::before {padding-top: 100%;}
+.lyCard155_text {padding: 20px 30px;width: 62%;}
+.lyCard155 .name {font-size: 16px;line-height: 30px;color: #6a6a6a;}
+.lyCard155 .tag {font-size: 14px;line-height: 22px;color: #9f9f9f;}
+.lyCard155 .brief {font-size: 14px;line-height: 24px;color: #999;height: 48px;margin-bottom: 30px;}
+.lyCard155 .btn {width: 100px;height: 32px;line-height: 32px;text-align: center;font-size: 14px;color: #999;border: 1px solid #efefef;}
+.lyCard155 .icon {font-size: 10px;}
+@media (any-hover:hover) {
+    .lyCard155:hover {background-color: var(--color);}
+    .lyCard155:hover img {transform: scale(1.1);-webkit-transform: scale(1.1);}
+    .lyCard155:hover .lyCard155_img::after {width: calc(100% - var(--bWidth));height: calc(100% - var(--bWidth));opacity: 1;border-color: var(--color);}
+    .lyCard155:hover .name,
+    .lyCard155:hover .tag,
+    .lyCard155:hover .brief{color: #fff;}
+    .lyCard155:hover .btn {color: #fff;border-color: #fff;}
+}
+
+
+/* 卡片效果156 */
+.lyCard156 {width: calc((100% - 40px)/3);border: 1px solid #eee;background-color: #fff;overflow: hidden;}
+.lyCard156 * {-webkit-transition:.3s;transition:.3s;}
+.lyCard156_img {width: 100%;padding-top: 68.47%;}
+.lyCard156_text {padding: 26px 20px 16px;position: relative;background-color: #fff;}
+.lyCard156 .name {font-size: 18px;color: #333;line-height: 30px;}
+.lyCard156 .tag {font-size: 14px;color: #888;line-height: 24px;}
+.lyCard156 .brief {font-size: 14px;color: #888;line-height: 26px;position: absolute;width: calc(100% - 40px);padding-top: 20px;}
+@media (any-hover:hover) {
+    .lyCard156:hover img {transform: scale(1.1);-webkit-transform: scale(1.1);}
+    .lyCard156:hover .lyCard156_text {transform: translateY(-86px);}
+}
+
+
+/* 卡片效果157 */
+.lyCard157 {width: calc((100% - 20px)/2);position: relative;--time: 1.6s;}
+.lyCard157_img {padding-top: 100%;width: 100%;position: relative;-webkit-transition: calc(var(--time)/2);transition: calc(var(--time)/2);}
+.lyCard157_text {position: absolute;top: 0;left: 0;width: 100%;height: 100%;background-color: #f8c80f;display: flex;flex-direction: column;align-items: center;justify-content: center;padding: 30px;-webkit-transition: calc(var(--time)/2);transition: calc(var(--time)/2);transform: rotateY(-90deg);}
+.lyCard157 .name {font-size: 24px;line-height: 30px;color: #0b0b0b;margin-bottom: 10px;}
+.lyCard157 .tag {font-size: 16px;line-height: 22px;color: #1a1a1a;margin-bottom: 20px;}
+.lyCard157 .brief {font-size: 16px;line-height: 26px;color: #494949;}
+@media (any-hover:hover) {
+    .lyCard157:hover .lyCard157_img {transform: rotateY(-90deg);animation: lyAnimate_1_rotateY calc(var(--time)/2) ease;}
+    .lyCard157:hover .lyCard157_text {transform: rotateY(0);animation: lyAnimate_2_rotateY calc(var(--time)/2) ease;}
+    .lyCard157:not(:hover) .lyCard157_img {transform: rotateY(0);animation: lyAnimate_2_rotateY calc(var(--time)/2) ease;}
+    .lyCard157:not(:hover) .lyCard157_text {transform: rotateY(-90deg);animation: lyAnimate_1_rotateY calc(var(--time)/2) ease;}
+}
+
+
+/* 卡片效果158 */
+.lyCard158 {width: calc((100% - 40px)/3);--color:#f8c80f;background-color: #1a1a1a;}
+.lyCard158 * {-webkit-transition: .5s;transition: .5s;}
+.lyCard158_img {width: 100%;padding-top: 60.5%;position: relative;}
+.lyCard158_text {padding: 30px 76px 30px 20px;position: relative;}
+.lyCard158 .name {font-size: 16px;line-height: 30px;color: #fff;}
+.lyCard158 .brief {font-size: 14px;line-height: 22px;color: rgba(255,255,255,0.8);}
+.lyCard158 .icon {position: absolute;width: 40px;height: 40px;border-radius: 50%;background-color: var(--color);font-size: 16px;color: #fff;line-height: 1;display: flex;align-items: center;justify-content: center;right: 20px;top: 50%;transform: translate(-100%,-50%);opacity: 0;}
+.lyCard158 svg {width: calc(100% - 20px);height: calc(100% - 20px);fill: none;position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);}
+.lyCard158 rect {stroke: var(--color);fill: none;z-index: 2;
+    stroke-width: 2;
+    width: calc(100% - 2px);
+    height: calc(100% - 2px);
+    stroke-dasharray: 400%;
+    stroke-dashoffset: 400%;
+    transition-property: stroke-dashoffset,transform;
+    transform-origin: 50% 50%;
+    will-change: stroke-dashoffset,transform;
+    transition: .5s;
+}
+@media (any-hover:hover) {
+    .lyCard158:hover rect {stroke-dashoffset: 0%;}
+    .lyCard158:hover .name {color: var(--color);}
+    .lyCard158:hover .icon {transform: translate(0,-50%);opacity: 1;}
+}
+
+
+/* 卡片效果159 */
+.lyCard159_img::after,
+.lyCard159_img::before,
+.lyCard159_text{-webkit-transition: .3s;transition: .3s;}
+
+.lyCard159 {width: calc((100% - 45px)/4);--color: #e3120b;--mWidth: 15px;--bWidth: 2px;}
+.lyCard159_img {width: 100%;padding-top: 70%;position: relative;}
+.lyCard159_img::after {position: absolute;content: '';top: 50%;left: 50%;transform: translate(-50%,-50%);pointer-events: none;height: calc(100% - var(--mWidth)*2);width: 0;border-top: var(--bWidth) solid var(--color);border-bottom: var(--bWidth) solid var(--color);z-index: 1;opacity: 0;}
+.lyCard159_img::before {position: absolute;content: '';top: 50%;left: 50%;transform: translate(-50%,-50%);pointer-events: none;width: calc(100% - var(--mWidth)*2 - var(--bWidth));height: 0;border-left: var(--bWidth) solid var(--color);border-right: var(--bWidth) solid var(--color);background-color: rgba(0,0,0,0.1);z-index: 1;opacity: 0;}
+.lyCard159_text {padding: 24px 20px;background-color: rgba(0,0,0,0.1);position: relative;}
+.lyCard159 .name {font-size: 16px;line-height: 30px;color: #fff;}
+.lyCard159 .brief {font-size: 14px;line-height: 20px;color: #636363;}
+@media (any-hover:hover) {
+    .lyCard159:hover .lyCard159_img::after {width: calc(100% - var(--mWidth)*2);opacity: 1;}
+    .lyCard159:hover .lyCard159_img::before {height: calc(100% - var(--mWidth)*2 + var(--bWidth)*2);opacity: 1;}
+    .lyCard159:hover .lyCard159_text {background-color: var(--color);padding-left: 30px;}
+}
+
+
+/* 卡片效果160 */
+.lyCard160 *,
+.lyCard160::after,
+.lyCard160::before,
+.lyCard160_name::before{-webkit-transition: .5s;transition: .5s;}
+
+.lyCard160 {width: calc((100% - 30px)/4);position: relative;--mWidth: 15px;--bWidth: 2px;--color: #e3120b;--bColor: rgba(0,0,0,0.2);overflow: hidden;}
+
+.lyCard160::after {position: absolute;content: '';top: 50%;left: 50%;transform: translate(-50%,-50%);pointer-events: none;height: calc(100% - var(--mWidth)*2 - var(--bWidth)*2);width: 0;border-top: var(--bWidth) solid var(--color);border-bottom: var(--bWidth) solid var(--color);opacity: 0;}
+.lyCard160::before {position: absolute;content: '';top: 50%;left: 50%;transform: translate(-50%,-50%);pointer-events: none;width: calc(100% - var(--mWidth)*2 - var(--bWidth)*2);height: 0;border-left: var(--bWidth) solid var(--color);border-right: var(--bWidth) solid var(--color);background-color: var(--bColor);opacity: 0;}
+.lyCard160_content {width: 100%;padding-top: 100%;position: relative;}
+.lyCard160 .icon1 {position: absolute;width: 100%;height: 1px;background-color: rgba(255, 255, 255,0.3);top: 50%;left: 50%;transform: translate(-50%,-50%);}
+.lyCard160_img {position: absolute;top: 0;left: 0;width: 100%;height: 50%;}
+.lyCard160_text {position: absolute;top: 50%;left: 0;width: 100%;height: 50%;display: flex;align-items: center;justify-content: center;flex-direction: column;padding: 0 40px;}
+.lyCard160:nth-child(2n) .lyCard160_img {top: 50%;}
+.lyCard160:nth-child(2n) .lyCard160_text {top: 0;}
+.lyCard160_name {width: 100%;font-size: 18px;line-height: 30px;color: #fff;padding-bottom: 15px;position: relative;}
+.lyCard160_name::before {position: absolute;content: '';bottom: 0;left: 50%;transform: translateX(-50%);width: 28px;height: 1px;background-color: rgba(255,255,255,0.5);}
+.lyCard160 .brief {width: 100%;font-size: 14px;line-height: 28px;color: #999;max-height: 56px;margin-top: 15px;}
+@media (any-hover:hover) {
+    .lyCard160:hover {background-color: rgba(255,255,255,0.05);box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);}
+    .lyCard160:hover::after {width: calc(100% - var(--mWidth)*2 - var(--bWidth)*2);opacity: 1;}
+    .lyCard160:hover::before {height: calc(100% - var(--mWidth)*2);opacity: 1;}
+    .lyCard160:hover .lyCard160_text {top: 50%;transform: translateY(-50%);}
+    .lyCard160:hover .lyCard160_img {transform: translateY(-100%);opacity: 0;}
+    .lyCard160:hover:nth-child(2n) .lyCard160_img {transform: translateY(100%);}
+    .lyCard160:hover .lyCard160_name::before {width: 100px;}
+}
+
+
+/* 卡片效果161 */
+.lyCard161::before,
+.lyCard161_img{position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);}
+
+.lyCard161 {width: calc((100% - 45px)/4);position: relative;}
+.lyCard161::before {content: '';width: 0;height: 0;border: 1px solid #555;-webkit-transition: .5s;transition: .5s;pointer-events: none;z-index: 1;opacity: 0;}
+.lyCard161 * {-webkit-transition: .5s;transition: .5s;}
+.lyCard161_content {width: 100%;padding-top: 65%;position: relative;}
+.lyCard161_img {width: 100%;height: 100%;}
+.lyCard161_text {position: absolute;top: 0;bottom: 0;width: 100%;height: 100%;padding: 20px;}
+.lyCard161 .name {width: 100%;font-size: 16px;line-height: 30px;color: #565656;opacity: 0;}
+.lyCard161 .brief {width: 100%;font-size: 14px;line-height: 20px;color: #929292;opacity: 0;}
+@media (any-hover:hover) {
+    .lyCard161:hover::before {width: 100%;height: 100%;opacity: 1;}
+    .lyCard161:hover .lyCard161_img {width: 0;height: 0;opacity: 0;}
+    .lyCard161:hover .name {transform: translateY(30px);opacity: 1;}
+    .lyCard161:hover .brief {transform: translateY(30px);opacity: 1;}
+}
+
+
+/* 卡片效果162 */
+.lyCard162 {width: 25%;position: relative;}
+.lyCard162 * {-webkit-transition: .3s;transition: .3s;}
+.lyCard162_content {display: flex;align-items: center;justify-content: center;flex-direction: column;padding: 40px;overflow: hidden;}
+.lyCard162_icon {font-size: 100px;line-height: 1;color: #fff;}
+.lyCard162 .name {font-size: 16px;line-height: 30px;color: #fff;width: 100%;text-align: center;}
+.lyCard162 .brief {font-size: 14px;line-height: 26px;color: #fff;width: 100%;text-align: center;}
+.lyCard162_num {position: absolute;font-size: 100px;line-height: 1;color: #fff;font-weight: bold;right: 0;top: 100%;opacity: 0;pointer-events: none;}
+@media (any-hover:hover) {
+    .lyCard162:hover .lyCard162_content {transform: translateY(50px);background-color: #2f2f2f;box-shadow: 0 0 20px rgba(0,0,0,0.2);}
+    .lyCard162:hover .lyCard162_num {transform: translateY(-50px);opacity: 1;}
+}

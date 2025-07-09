@@ -1,0 +1,43 @@
+/* 标题 */
+.ly_cropper_name{font-size:14px; font-weight:bold; color:#333;line-height: 1.8;}
+
+/* 比例下拉框 */
+/* .ly_cropper_sel{height:36px; width:100%; border:1px solid #d4dfeb; padding:0 5px; border-radius:3px;margin: 5px 0;display: flex;align-items: center;}
+.ly_cropper_sel select{height:100%; width:100%; vertical-align:middle;} */
+
+.ly_cropper_bili{gap: 10px;}
+.ly_cropper_bili dd{height: 30px;padding: 0 15px;flex: 1;border: 1px solid #ddd;border-radius: 3px;cursor: pointer;}
+.ly_cropper_bili dd.cur{border-color: var(--mainColor)}
+
+/* input */
+.ly_cropper_input{font-size:14px; border:1px solid #d4dfeb; border-radius:3px; padding:0 5px;display: inline-flex;align-items: center;}
+.ly_cropper_input_mt{margin-top: 20px}
+.ly_cropper_input input{width:50px; margin-left:4px; height:34px; color:#999;}
+
+/* 按钮图标 */
+.ly_cropper_icon{height:36px;width:36px;cursor:pointer;display: inline-flex;align-items: center;justify-content: center;}
+.ly_cropper_icon svg{transition: .3s;}
+.ly_cropper_icon:hover svg *{fill: #4fa4df;}
+
+/* 边框 */
+.ly_cropper_border{margin:20px 0; padding:0 0 20px; border-bottom:1px solid #d4dfeb;}
+
+/* 预览按钮 */
+.ly_cropper_view{font-size:14px; color:#fff;border-radius: 5px;border: 1px solid var(--mainColor);background:var(--mainColor);display: inline-flex;align-items: center;justify-content: center;padding: 5px 8px;cursor: pointer;min-width: 40px;}
+
+
+/* 左边布局 */
+.ly_cropper_left{width:250px; padding:28px; left:0; bottom:0; top:0; position:absolute; background:#edf6ff;}
+
+
+/* 视图 */
+.ly_cropper_preview{height:200px;box-shadow: 0 0 10px 1px rgba(0, 0, 0, .1);margin-top: 10px;overflow: hidden;}
+
+/* 禁止调整尺寸 */
+.ly_cropper_radio.cannot{cursor:not-allowed;}
+.ly_cropper_radio.cannot *{pointer-events:none; cursor:not-allowed;}
+
+
+/* 右侧布局 */
+.ly_cropper_right{left:254px; top:4px; bottom:4px; right:4px; position:absolute; visibility:hidden; transition:.3s; opacity:0;}
+.ly_cropper_right.isshow{visibility:visible; opacity:1;}

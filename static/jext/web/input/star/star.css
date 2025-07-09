@@ -1,0 +1,4 @@
+.lyui-star{line-height: 0px;margin-left:3px;}
+.lyui-star svg{width: 1em;}
+
+.lyui-star:first-child{margin-left:0px;}

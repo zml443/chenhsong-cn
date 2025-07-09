@@ -1,0 +1,3 @@
+[hover-mask]{position:relative;}
+[hover-mask] >*{position:relative;}
+.thehovermaskbg{height:3px; background:#4fa4df; position:absolute; left:-9999px;}

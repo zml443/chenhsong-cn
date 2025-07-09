@@ -1,0 +1,13 @@
+#jex-video-pop{background:rgba(0,0,0,.7); z-index:99999;}
+#jex-video-pop .videobox{background:#000; font-size:0; max-width:98%; width:1000px;position: relative;}
+#jex-video-pop .videobox::before{padding-top: 56.25%;display: block;content: '';}
+#jex-video-pop .videobox .video{position: absolute;top: 0;left: 0;}
+#jex-video-pop .videobox .video{width: 100%; height: 100%;}
+#jex-video-pop .videobox .close_i{position:absolute; right:-40px; top:0px;color: #fff;font-size: 30px;}
+
+#jex-video-pop .videobox .title{font-size: 20px;color: #fff;position: absolute;left: 0;bottom: -35px;}
+#jex-video-pop .videobox .brief{font-size: 16px;color: #fff;position: absolute;left: 0;bottom: -65px;}
+
+@media screen and (max-width: 960px){
+	#jex-video-pop:before{height:80%;}
+}

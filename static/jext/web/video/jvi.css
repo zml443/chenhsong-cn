@@ -1,0 +1,6 @@
+
+#jvideopop{background:rgba(0,0,0,.7); z-index:99999;}
+/*#jvideopop:before{height:96%;}*/
+#jvideopop .videobox{background:#000; font-size:0; max-width:98%; width:1000px;}
+#jvideopop .videobox .close{width:24px; position:absolute; left:calc(100% + 20px); top:3px;}
+#jvideopop .videobox .close path{fill:#fff;}

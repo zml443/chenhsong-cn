@@ -1,0 +1,51 @@
+.jxtipforbg{}
+
+.jxtipfor{position:fixed; left:-999999px; top:-999999px; max-width:80%; max-height:80%; background:#fff; border-radius:3px; box-shadow:0 0 9px rgba(0,0,0,.2); z-index:99;}
+.jxtipfor.is-inline{position:relative; left:0; top:0; max-width:inherit; max-height:inherit; background:none; border-radius:0; box-shadow:none; z-index:0;}
+.jxtipfor:before{position:absolute; content:''; top:-9px; right:-9px; bottom:-9px; left:-9px;}
+.jxtipfor.default-style{padding:20px; border-radius:3px;}
+.jxtipfor .tipbox{position:relative; overflow:auto;}
+
+.jxtipfor .arrow{position:absolute; width:8px; height:8px; z-index:5;}
+.jxtipfor .arrow:before,
+.jxtipfor .arrow:after{border:8px solid transparent; content:''; position:absolute;}
+
+.jxtipfor[p='bottom'] .arrow{bottom:100%; left:8px; width:16px;}
+.jxtipfor[p='bottom'] .arrow:before,
+.jxtipfor[p='bottom'] .arrow:after{border-top:none; border-bottom-color:#eaeaea; top:-2px; left:0;}
+.jxtipfor[p='bottom'] .arrow:after{border-bottom-color:#fff; top:0;}
+
+.jxtipfor[p='top'] .arrow{top:100%; left:8px; width:16px;}
+.jxtipfor[p='top'] .arrow:before,
+.jxtipfor[p='top'] .arrow:after{border-bottom:none; border-top-color:#eaeaea; top:0; left:0;}
+.jxtipfor[p='top'] .arrow:after{border-top-color:#fff; top:-2px;}
+
+.jxtipfor[p='right'] .arrow{right:100%; top:5px; height:16px;}
+.jxtipfor[p='right'] .arrow:before,
+.jxtipfor[p='right'] .arrow:after{border-left:none; border-right-color:#eaeaea; top:0;}
+.jxtipfor[p='right'] .arrow:after{border-right-color:#fff; left:2px;}
+
+
+.jxtipfor[p='bottom'][s='center'] .arrow,
+.jxtipfor[p='top'][s='center'] .arrow{left:50%; transform:translateX(-50%);}
+
+
+
+.jxtipfor.select .arrow{display:none;}
+.jxtipfor.select:before{display:none;}
+.jxtipfor.select dl{padding:5px 0; line-height:26px; font-size:13px;}
+.jxtipfor.select dl dd{padding:3px 5px; cursor:pointer; color:#666;}
+.jxtipfor.select dl dd:hover{background:#f1f1f1;}
+.jxtipfor.select dl dd[selected]{background:#4fa4df; color:#fff;}
+
+
+
+.jxtipfor.checkbox{padding:9px; max-width:600px; min-width:200px;}
+.jxtipfor.checkbox.is-inline{padding:0; max-width:inherit; min-width:inherit;}
+.jxtipfor.checkbox .arrow{display:none;}
+.jxtipfor.checkbox:before{display:none;}
+.jxtipfor.checkbox .checkbox{padding:5px 0; font-size:13px; float:left; margin:2px 9px; cursor:pointer;}
+.jxtipfor.checkbox .checkbox >*{display:inline-block; vertical-align:middle;}
+.jxtipfor.checkbox .checkbox i{width:15px; height:15px; border:1px solid #ccc; margin-right:3px; border-radius:3px;}
+.jxtipfor.checkbox .checkbox.cur i{background:#4fa4df; border-color:#4fa4df;}
+.jxtipfor.checkbox .checkbox input{display:none;}

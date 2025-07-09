@@ -1,0 +1,6 @@
+.ly_scroll_custom_x{width: 100%;height: 10px;background: #ccc;position: absolute;left: 0;bottom: 0;overflow: hidden;border-radius: 10px;}
+.ly_scroll_custom_slide_x{width: 20px;height: 100%;background: var(--mainColor);cursor: pointer;position: absolute;left: 0;top: 0;border-radius: 10px;}
+
+
+.ly_scroll_custom_y {width: 10px;height: 100%;background: #ccc;position: absolute;right: 0;top: 0;overflow: hidden;border-radius: 10px;}
+.ly_scroll_custom_slide_y {width: 100%;height: 10px;background: var(--mainColor);cursor: pointer;position: absolute;left: 0;top: 0;border-radius: 10px;}

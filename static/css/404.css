@@ -1,0 +1,33 @@
+
+body, html{background: none !important;}
+/*404默认样式*/
+#global_404{width: 100%; height: 100%;}
+#global_404 .enter{text-align: center; width: 100%; max-width: 562px; margin: 0 auto;}
+#global_404 .enter .d_0{padding-top:80px;}
+#global_404 .enter .d_1{padding:40px 0;}
+#global_404 .enter .return_home{width: 160px;height: 55px;margin: 0 auto;line-height: 55px;color: #ffffff;font-size: 18px;border-radius: 21px; background: #406bff;}
+#global_tech_support{width: 100%;text-align: center;color: #c2c8cc;font-size: 16px;bottom: 70px;}
+#global_tech_support a{color: #c2c8cc;font-size: 16px;}
+
+@media only screen and (max-width: 750px){
+	#global_404 .enter{width:95%;}
+	#global_404 .enter .return_home{width: 120px;height: 40px;line-height: 40px;font-size: 14px;border-radius: 12px;}
+	#global_tech_support{font-size: 12px;}
+	#global_tech_support a{font-size: 12px;}
+}
+
+
+/*关闭网站默认样式*/
+#global_close{width: 100%;height: 100%;}
+#global_close .close_wrap{width: 100%;margin: 0 auto;}
+#global_close .close_wrap .close_img{width: 100%;max-width: 646px;margin: 0 auto;}
+#global_close .close_wrap .close_font1{padding-top: 40px;text-align:center;color: #abb2c7;font-size: 24px;letter-spacing: 18px;}
+html[lang=en] #global_close .close_wrap .close_font1{letter-spacing: 0;}
+#global_close .close_wrap .close_font2{padding-top: 20px;text-align: center;color: #dee0e7;font-size: 16px;}
+#global_tech_support .copyright,#global_tech_support .icp,#global_tech_support .icp a{font-size: 12px;}
+
+@media only screen and (max-width: 750px){
+	#global_close .close_wrap{width: 95%;}
+	#global_close .close_wrap .close_font1{font-size: 18px;letter-spacing: 0;}
+	#global_close .close_wrap .close_font2{width: 80%;margin: 0 auto;padding-top: 10px;font-size: 14px;}
+}

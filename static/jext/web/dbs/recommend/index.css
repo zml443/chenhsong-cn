@@ -1,0 +1,12 @@
+#_dbs_recommend_selector{}
+#_dbs_recommend_selector .left{width: 300px;border-right:1px solid #dfdfdf;display: grid;grid-template-rows: 40px calc(100% - 40px);height: 100%;}
+#_dbs_recommend_selector .left .category{text-align: center;color: #999;font-size: 14px;align-self: center;}
+#_dbs_recommend_selector .left .ul{padding:0 12px;overflow: auto;}
+#_dbs_recommend_selector .left .ul .li{margin-top:20px; display: flex; position: relative;align-items: center; padding-bottom:20px; border-bottom:1px dashed #eee;}
+#_dbs_recommend_selector .left .ul .li:nth-last-child(1){border-bottom:none;}
+#_dbs_recommend_selector .left .ul .li .img{height: 60px; width:60px; border: 1px solid #ddd; margin-right: 15px;}
+#_dbs_recommend_selector .left .ul .li .name{flex: 1;margin-right: 15px;}
+#_dbs_recommend_selector .left .ul .li .close{height: 20px;width: 20px;cursor: pointer;}
+#_dbs_recommend_selector .left .ul .li .close *{fill: red;}
+
+#_dbs_recommend_selector .right{width: calc(100% - 300px);height: 100%;}

@@ -1,0 +1,459 @@
+/* 按钮样式1 */
+.lyBtn1 {position: relative;width: 200px;height: 50px;--color1: #6cccdc;--bWidth:2px;display: block;}
+
+
+.lyBtn1_content,
+.lyBtn1_content::after,
+.lyBtn1_content::before,
+.lyBtn1::after,
+.lyBtn1::before{position: absolute;}
+
+.lyBtn1::after,
+.lyBtn1_content::after,
+.lyBtn1_content::before{background-color: var(--color1);transition: 0.3s;-webkit-transition:0.3s;}
+
+.lyBtn1_content {top: 0;left: 0;width: 100%;height: 100%;}
+.lyBtn1::after {content: '';top: 0;left: 0;height: var(--bWidth);width: 0;}
+.lyBtn1::before {content: '';bottom: 0;left: 0;height: var(--bWidth);width: 100%;background-color: var(--color1);}
+.lyBtn1_content::after {content: '';top: 0;right: 0;height: 0;width: var(--bWidth);}
+.lyBtn1_content::before {content: '';bottom: 0;left: 0;height: 0;width: var(--bWidth);}
+
+@media (any-hover:hover) {
+.lyBtn1:hover::after {width: 100%;}
+.lyBtn1:hover .lyBtn1_content::after,
+.lyBtn1:hover .lyBtn1_content::before {height: 100%;}
+}
+
+
+/* 按钮样式2 */
+.lyBtn2_le,
+.lyBtn2_ri,
+.lyBtn2_bg{width: 60px;height: 60px;width: 60px;height: 60px;width: 60px;height: 60px;}
+
+.lyBtn2 {width: 120px;height: 60px;--color: #f25430;}
+.lyBtn2_le {font-size: 30px;line-height: 1;color: #fff;z-index: 2;}
+.lyBtn2_ri {font-size: 30px;line-height: 1;color: var(--color);z-index: 2;}
+.lyBtn2_bg {background-color: var(--color);top: 0;left: 0;}
+
+.lyBtn2.on .lyBtn2_bg {left: 60px;}
+.lyBtn2.on .lyBtn2_le {color: var(--color);}
+.lyBtn2.on .lyBtn2_ri {color: #fff;}
+
+
+/* 按钮样式3 */
+.lyBtn3 {--height: 50px;--color1: #ac835e;width: 200px;height: var(--height);border-radius: calc(var(--height)/2);background-color: var(--color1);}
+.lyBtn3 svg {width: 100%;height: var(--height);fill: #fff;}
+.lyBtn3 rect {stroke: var(--color1);fill: none;z-index: 2;
+    stroke-width: 2;
+    width: calc(100% - 2px);
+    height: calc(100% - 2px);
+    stroke-dasharray: 321%;
+    stroke-dashoffset: 321%;
+    transition-property: stroke-dashoffset,transform;
+    transform-origin: 50% 50%;
+    will-change: stroke-dashoffset,transform;
+    transition: 1s;
+}
+
+.lyBtn3 .btn {font-size: 16px;top: 0;left: 0;width: 100%;height: 100%;color: #fff;z-index: 3;}
+@media (any-hover:hover) {
+.lyBtn3:hover {background-color: #fff;}
+.lyBtn3:hover rect {stroke-dashoffset: 0%;fill: #fff;}
+.lyBtn3:hover .btn {color: var(--color1);}
+}
+
+
+/* 按钮样式4 */
+.lyBtn4 {--color1: #181d24;--color2: #ac835e;width: 100px;height: 100px;border-radius: 50%;background-color: var(--color2);}
+.lyBtn4 svg {width: 100%;height: 100%;}
+.lyBtn4 rect {stroke: #fff;fill: var(--color1);z-index: 2;
+    stroke-width: 2;
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+    stroke-dasharray: 321%;
+    stroke-dashoffset: 321%;
+    transition-property: stroke-dashoffset,transform;
+    transform-origin: 50% 50%;
+    will-change: stroke-dashoffset,transform;
+    transition: 1s;
+    transform: rotate(-45deg);
+}
+.lyBtn4 .btn {font-size: 16px;top: 0;left: 0;width: 100%;height: 100%;color: #fff;z-index: 3;}
+@media (any-hover:hover) {
+.lyBtn4:hover rect {stroke-dashoffset: 0%;fill: var(--color2);transform: rotate(0);}
+}
+
+
+/* 按钮样式5 */
+.lyBtn5 {width: 100px;height: 100px;border-radius: 50%;--color1: #858585;--color2: #2145A8;}
+.lyBtn5 svg {width: 100%;height: 100%;}
+.lyBtn5 .lyBtn5_rect1 {
+    z-index: 2;
+    stroke: var(--color1);fill: none;
+    stroke-width: 2;
+    width: calc(100% - 2px);
+    height: calc(100% - 2px);
+    stroke-dasharray: 2,2;
+}
+.lyBtn5 .lyBtn5_rect2 {stroke: var(--color2);fill: none;z-index: 1;
+    stroke-width: 1;
+    width: calc(100% - 2px);
+    height: calc(100% - 2px);
+    stroke-dasharray: 321%;
+    stroke-dashoffset: 321%;
+    transition-property: stroke-dashoffset,transform;
+    transform-origin: 50% 50%;
+    will-change: stroke-dashoffset,transform;
+    transition: 1s;
+}
+.lyBtn5 .btn {font-size: 30px;top: 0;left: 0;width: 100%;height: 100%;color: #858585;z-index: 3;}
+@media (any-hover:hover) {
+.lyBtn5:hover rect {stroke-dashoffset: 0;}
+}
+
+
+/* 按钮样式6 */
+.lyBtn6{position: relative;color: #fff;width: 80px;height: 80px;border-radius: 50%;background: rgba(204, 0, 0,.5);display: flex;align-items: center;justify-content: center;cursor: pointer;}
+.lyBtn6_i{font-size: 40px;transform: translateX(3px);}
+
+.lyBtn6::before,
+.lyBtn6::after{display: block;content: '';border: 1px solid rgba(255, 255, 255, .2);border-radius: 50%;background: transparent;position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);transition: .8s;pointer-events: none;}
+.lyBtn6::before{width: 160px;height: 160px;}
+.lyBtn6::after{width: 240px;height: 240px;transition: .6s;}
+@media (any-hover:hover) {
+.lyBtn6:hover::before,
+.lyBtn6:hover::after{transform:translate(-50%,-50%) scale(3) ;opacity: 0;}
+}
+
+
+/* 按钮样式7 */
+.lyBtn7 {width: 100px;height: 100px;border-radius: 50%;}
+.lyBtn7 svg {width: 100%;height: 100%;fill: none;}
+.lyBtn7 rect {stroke: #fff;z-index: 2;
+    stroke-width: 2;
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+    stroke-dasharray: 150%;
+    stroke-dashoffset: 0%;
+    transition-property: stroke-dashoffset,transform;
+    transform-origin: 50% 50%;
+    will-change: stroke-dashoffset,transform;
+    transition: 1s;
+    transform: rotate(-90deg);
+}
+.lyBtn7 .btn {font-size: 24px;top: 0;left: 0;width: 100%;height: 100%;color: #fff;z-index: 3;}
+@media (any-hover:hover) {
+.lyBtn7:hover rect {stroke-dashoffset: 0%;transform: rotate(90deg);}
+}
+
+
+/* 按钮样式8 */
+.lyBtn8 {font-size: 16px;line-height: 1;color: #666;width: 100px;height: 100px;border-radius: 50%;border: 1px solid #666;--color1: #3a51df;}
+@media (any-hover:hover) {
+    .lyBtn8:hover {background-color: var(--color1);border-color: var(--color1);color: #fff;letter-spacing: 5px;}
+}
+
+
+/* 按钮样式9 */
+.lyBtn9 {--color:#fff;--bWidth:2px;transition: 0.3s;-webkit-transition: 0.3s;}
+.lyBtn9 {width: 80px;height: 80px;border-radius: 50%;background-color: #fff;position: relative;}
+.lyBtn9::before {position: absolute;content: '';top: 50%;left: 50%;transform: translate(-50%,-50%);width: calc(100% - var(--bWidth)*2);height: calc(100% - var(--bWidth)*2);border-radius: 50%;border: var(--bWidth) solid var(--color);transition: 0.3s;-webkit-transition: 0.3s;pointer-events: none;}
+.lyBtn9 .btn {font-size: 16px;line-height: 1;color: #666;}
+.lyBtn9:not(:hover)::before {animation: lyAnimate_1_scale 3s linear infinite;}
+.lyBtn9:hover {background: url(./images/app.jpg) no-repeat center/cover;transform: scale(1.5);}
+.lyBtn9:hover .btn {color: #fff;}
+.lyBtn9:hover::before {opacity: 0 !important;}
+
+
+/* 按钮样式10 */
+.lyBtn10 {height: 52px;width: 350px;position: relative;border: 1px solid rgba(255, 255, 255, 0.5);background-color: rgba(255, 255, 255,0.3);}
+.lyBtn10::before {position: absolute;content: '';top: 0;left: 0;height: 100%;width: 0;background-color: #fe7600;transition: 0.3s;-webkit-transition:0.3s;}
+.lyBtn10 .btn {font-size: 20px;line-height: 1;color: #fff;position: relative;}
+@media (any-hover:hover) {
+    .lyBtn10:hover::before {animation: lyAnimate_1_width 0.5s ease-in-out;width: 100%;}
+}
+
+
+/* 按钮样式11 */
+.lyBtn11::before,
+.lyBtn11::after{position: absolute;height: 1px;width: 0;background-color: var(--color1);transition: 0.3s;-webkit-transition: 0.3s;z-index: 1;}
+.lyBtn11 {width: 106px;height: 42px;position: relative;border: 1px solid #ababab;transition: 0.3s;-webkit-transition: 0.3s;--color1: #909744;}
+.lyBtn11::before {content: '';top: 0;right: 50%;}
+.lyBtn11::after {content: '';bottom: 0;left: 0;}
+.lyBtn11 .btn {font-size: 16px;line-height: 1;color: #ababab;white-space: nowrap;position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);transition: 0.3s;-webkit-transition: 0.3s;}
+@media (any-hover:hover) {
+    .lyBtn11:hover {border-color: transparent;}
+    .lyBtn11:hover .btn {left: 0;transform: translate(0,-50%);color: var(--color1);}
+    .lyBtn11:hover::before {width: 50%;}
+    .lyBtn11:hover::after {width: 100%;}
+}
+
+
+/* 按钮样式12 */
+.lyBtn12 {--Bwidth1: 40px;--Bwidth2: 160px;width: var(--Bwidth1);height: var(--Bwidth1);border-radius: calc(var(--Bwidth1)/2);background-color: #1226aa;display: flex;align-items: center;justify-content: center;transition: 0.3s;-webkit-transition: 0.3s;}
+.lyBtn12 .btn {font-size: 20px;line-height: 1;color: #fff;}
+@media (any-hover:hover) {
+    .lyBtn12:hover {width: var(--Bwidth2);}
+}
+
+
+/* 按钮样式13 */
+.lyBtn13 {width: 164px;height: 46px;position: relative;display: flex;align-items: center;justify-content: center;border: 1px solid rgba(0,0,0,0.3);--color: rgba(0,0,0,0.6);}
+.lyBtn13::before {position: absolute;content: '';bottom: 0;left: 0;width: 100%;height: 0;background-color: var(--color);transition: 0.3s;-webkit-transition: 0.3s;z-index: 1;}
+.lyBtn13 .btn {font-size: 24px;color: #666;line-height: 1;z-index: 2;position: relative;}
+@media (any-hover:hover) {
+    .lyBtn13:hover {background-color: rgba(0,0,0,0.2);}
+    .lyBtn13:hover::before {height: 100%;}
+}
+
+
+/* 文字圆圈环绕并且匀速旋转 */
+.bg-color-51{background:#333;padding:50px}
+.lyBtn51 {width: 160px;height: 160px;margin-top: 20px;} 
+.lyBtn51 svg {display: block;overflow: visible;fill: #fff;animation-name:lyAnimate51;
+    /* animation-direction: alternate; */
+    animation-timing-function: linear; 
+    animation-delay: 0s; 
+    animation-iteration-count: infinite; 
+    animation-duration: 12s; }
+.lyBtn51 path {fill: none;}
+.lyBtn51 .icon{color: #fff;font-size: 40px;top: 50%;left: 50%;transform: translate(-50%,-50%);}
+
+
+/* 顺时针填充圆形边框  */
+.lyBtn52{width: 200px;margin-top: 55px;--color:red}
+.lyBtn52 .icon{width: 44px;height: 40px;}
+
+.lyBtn52_btn{width: 44px;height: 44px;top: 0px;z-index: 5;}
+
+.lyBtn52_btn1{
+    transition: all .6s cubic-bezier(.215,.61,.355,1) 0s;
+    cx: 22;
+    cy: 22;
+    fill: transparent;
+    r: 20;
+    stroke: var(--color);
+    stroke-dasharray: 126;
+    stroke-dashoffset: 126;
+    stroke-width: 1;
+}
+
+@media (any-hover: hover) {
+    .lyBtn52:hover .lyBtn52_btn1{stroke-dasharray:0;}
+}
+
+/* 视频播放按钮交互效果  */
+.bg-color-53{width:500px;height:500px;background-color:#333;}
+.lyBtn53_btn{width: 180px;height: 180px;color: #fff;z-index: 5;top: 50%;left: 50%;transition: 0.5s;opacity: 1;transform: translate(-50%,-50%);}
+.lyBtn53_btn .icon{font-size: 24px;margin-bottom: 20px;}
+.lyBtn53_btn .name{font-size: 18px;}
+.lyBtn53_btn .lyBtn53_btn1{position: absolute;top: 50%;left: 50%;width:180px;height: 180px;border: 1px solid rgba(255, 255, 255, 1);border-radius: 50%;transform: translate(-50%,-50%);transition: 0.3s;}
+
+@media (any-hover: hover) {
+	.lyBtn53_btn:hover .lyBtn53_btn1{width: 500px;height: 500px;border-color:rgba(255, 255, 255, 0) ;}
+}
+
+/* 按钮箭头往右滑动后再回到原位 */
+.lyBtn54{color: #fff;width: 26px;height: 26px;background:#ccc;border-radius: 50%;margin-top: 36px;transition: 0.3s;}
+
+@media (any-hover: hover){
+    /* 产品图hover */
+    .lyBtn54:hover{background-color: #dadada;}
+    .lyBtn54:hover .icon{animation-name: lyAnimate52;animation-duration: 0.6s;}
+}
+
+/* 鼠标移入，横线伸长沾满，出现按钮 */
+.lyBtn55 {padding: 20px 0;position: relative;}
+.lyBtn55 .time {font-size: 20px;line-height: 1;color: #000;}
+.lyBtn55_btn{font-size: 16px;line-height: 1;color: #333;}
+
+.lyBtn55::before {display: block;content: '';width: 100%;height: 2px;background: #222;position: absolute;left: 0;bottom:60px;transform: translateY(-50%);max-width: 65px;overflow: hidden;transition: .3s;}
+
+@media (any-hover:hover) {
+    .lyBtn55:hover .lyBtn55_btn{display: block;}
+    .lyBtn55:hover::before {max-width: 100%;left: 0;width: calc(100% + 30px);max-width: calc(100% + 30px);}
+}
+
+/* 按钮多方位效果 */
+.bg-color-56{background-color:yellow;height:200px;}
+.lyBtn56_btn{width: 150px;height: 50px;background-color:var(--color);font-size: 20px;color:#fff;transition: 0.3s;position: relative;z-index: 1;--color:#5942d2}
+.lyBtn56_btn::before{content:'';left: 50%;transform: translate(-50%,0);width: 0;position: absolute;height: 100%;transition: 0.3s;z-index: -1;}
+.lyBtn56_btnn{width: 150px;height: 50px;font-size: 20px;color:#fff;transition: 0.3s;}
+
+@media (any-hover:hover) {
+    .lyBtn56_btn:hover{width: 200px;color:#333}
+    .lyBtn56_btn:hover::before{width: 100%;background-color: #fff;}
+    .lyBtn56_btnn:hover{transform: translateY(-100px);}
+}
+
+.lyBtn57{position: relative;width: 300px;height: 300px;}
+.lyBtn57::before{content:'';position: absolute;width: 130px;height: 130px;border-radius: 50%;border:1px solid #333;z-index: -3;animation: lyAnimate54 1.5s infinite;}
+.lyBtn57_img{width: 150px;height: 150px;border-radius: 50%;transform: scale(0.6);transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);background: #fff;box-shadow: 5px 20px 30px rgba(0, 0, 0, 0.2);}
+.lyBtn57_img .img{opacity: 0;transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);}
+
+.lyBtn57 .icon{top: 42%;left: 50%;transform: translate(-50%,50%);font-size:26px;z-index: 4;}
+
+@media (any-hover:hover) {
+    .lyBtn57:hover .img{opacity: 1;}
+    .lyBtn57:hover .lyBtn57_img{transform: scale(1);}
+    .lyBtn57:hover .icon{color: #fff;}
+}
+
+/* 按钮颜色消失，边框从中间向两侧延伸 */
+.lyBtn58{width: 200px;height: 50px;background-color: green;position: relative;transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1)}
+.lyBtn58 .icon{font-size: 30px;color:#fff;width: 34px;height: 14px;display: block;background: url(http://resources.jsmo.xin/templates/upload/302/201606/icon.png) no-repeat 0 -22px;z-index: 3;transition: all ease-out 0.3s;}
+
+.lyBtn58::before,
+.lyBtn58::after{position: absolute;transform: translate(-50%,0) scale(0);width: 100%;height: 1px;background-color: #999;transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1)}
+
+.lyBtn58::before{content: '';top: 0;left: 50%;}
+.lyBtn58::after{content: '';bottom: 0;left: 50%;}
+
+@media (any-hover:hover) {
+    .lyBtn58:hover{background-color: #fff;}
+    .lyBtn58:hover .icon{color: #333;background: url(http://resources.jsmo.xin/templates/upload/302/201606/icon.png) no-repeat 0 -38px;}
+    .lyBtn58:hover::before{transform:translate(-50%,0) scale(1);} 
+    .lyBtn58:hover::after{transform:translate(-50%,0) scale(1);} 
+
+}
+
+/* 按钮左侧出现颜色向右侧延伸 */
+.lyBtn59{width: 400px;height: 80px;border:1px solid #999;position: relative;font-size: 30px;line-height: 80px;}
+.lyBtn59::before{content: 'MODE';position: absolute;width: 0;height: 100%;background-color:#3C3C3C;transition: all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;z-index: 3;color:#fff;text-align: center;}
+.lyBtn59 .icon{background: url(//resources.jsmo.xin/templates/upload/220/icon/icon.png)no-repeat 105px -57px;;transition: all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;width:100%;height: 100%;}
+
+@media (any-hover:hover) {
+    .lyBtn59:hover::before{width: 80%;}
+    .lyBtn59:hover .icon{transform: translateX(20px);}
+}
+
+/* 按钮边框翻转，并且出现箭头 */
+.lyBtn60,
+.icon1,
+.icon{transition: all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;}
+
+.lyBtn60{width: 240px;height: 47px;border-radius: 90px;border:1px solid #49ADA3;position: relative;font-size: 16px;}
+.lyBtn60 .icon1{transform: translateX(10px);}
+.lyBtn60::before{    
+    content: "";
+    display: block;
+    width: 240px;
+    height: 47px;
+    line-height: 47px;
+    border: 2px solid #49ADA3;
+    opacity: 0;
+    transition: all 0.5s ease 0s;
+    margin: 0 auto;
+    text-align: center;
+    position: absolute;
+    top: -3px;
+    left: 0;
+    transform: scale(1, 1);
+    bottom: 98px;
+    margin-left: -3px;
+    border-radius: 90px;}
+.lyBtn60 .icon{opacity: 0;font-size: 16px;transform: translateX(-5px);}
+
+@media (any-hover:hover) {
+    .lyBtn60:hover .icon1{transform: translateX(0);}
+    .lyBtn60:hover .icon{transform: translateX(10px);opacity: 1;}
+    .lyBtn60:hover{border-color:#fff}
+    .lyBtn60:hover::before{transform:rotateX(180deg);opacity: 1;}
+}
+
+/* 按钮左侧线，向右移动合成一个箭头 */
+.lyBtn61,
+.lyBtn61::before,
+.lyBtn61 .icon1,
+.lyBtn61 .icon{transition: all 0.2s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;}
+
+.lyBtn61{width: 240px;height: 47px;border:1px solid #49ADA3;position: relative;font-size: 16px;--color:#ff072a}
+.lyBtn61::before{content: '';position: absolute;width:80%;height: 1px;top: 48%;background-color: #999;z-index: 3;transform: translateX(-80%);}
+.lyBtn61 .icon1{transform: translateX(10px);}
+.lyBtn61 .icon{opacity: 0;font-size: 16px;transform: translateX(-5px);color:#fff}
+
+@media (any-hover:hover) {
+    .lyBtn61:hover{background-color: var(--color);color: #fff;}
+    .lyBtn61:hover::before{transform: translateX(34px);width: 10%;background-color: #fff;}
+    .lyBtn61:hover .icon1{transform: translateX(0);}
+    .lyBtn61:hover .icon{transform: translateX(20px);opacity: 1;}
+}
+
+/* 按钮颜色背景缩小，后方伪类边框放大 */
+.lyBtn62{width: 200px;height: 50px;position: relative;transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1)}
+.lyBtn62 .icon{font-size: 30px;color:#fff;width: 34px;height: 14px;display: block;background: url(http://resources.jsmo.xin/templates/upload/302/201606/icon.png) no-repeat 0 -22px;z-index: 3;transition: all ease-out 0.3s;}
+
+.lyBtn62::before{    
+    content: "";
+    display: block;
+    width: 200px;
+    height: 50px;
+    line-height: 47px;
+    border: 2px solid #333;
+    opacity: 1;
+    transition: all 0.5s ease 0s;
+    margin: 0 auto;
+    text-align: center;
+    position: absolute;
+    top: -3px;
+    left: 0;
+    transform: scale(0);
+    bottom: 98px;
+    margin-left: -3px;
+}
+
+.lyBtn62::after{
+    content: "";
+    display: block;
+    width: 200px;
+    height: 50px;
+    line-height: 47px;
+    background-color: green;
+    transition: all 0.5s ease 0s;
+    margin: 0 auto;
+    text-align: center;
+    position: absolute;
+    transform: scale(1);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+@media (any-hover:hover) {
+    .lyBtn62:hover{background-color: #fff;}
+    .lyBtn62:hover .icon{color: #333;background: url(http://resources.jsmo.xin/templates/upload/302/201606/icon.png) no-repeat 0 -38px;}
+    .lyBtn62:hover::before{transform:scale(1);} 
+    .lyBtn62:hover::after{transform: scale(0);opacity: 0;}
+}
+
+/* 按钮内文字移动，右侧块出现颜色 */
+.lyBtn63{width: 180px;height: 40px;box-shadow: 0 2px 12px #e2e2e2;border: #ddd 0px solid;}
+
+.lyBtn63_btn{width: 80%;color:#999;transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;}
+
+.lyBtn63 .icon{background-color:#383838;width: 20%;position: relative;transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;}
+.lyBtn63 .icon::before{content: '';position: absolute;background: url(http://resources.jsmo.xin/templates/upload/1362/images/jiantou2.png) no-repeat -55px -63px;width: 37px;height: 37px;}
+
+@media (any-hover:hover) {
+    .lyBtn63:hover .lyBtn63_btn{text-indent: 36px;}
+    .lyBtn63:hover .icon{background-color: #305DC3;}
+}
+
+/* 按钮放大,背景颜色变渐变 */
+.lyBtn64{width: 150px;height: 50px;background: linear-gradient(to right, #f9223e 8%, #f9223e 68%, #f9223e);border-radius: 25px;transition: all 0.4s ease 0s;color: #fff;}
+
+@media (any-hover:hover) {
+    .lyBtn64:hover{width: 180px;background: linear-gradient(to right, #f9223e 8%, #AB2C71 68%, #AB2CA1);}
+}
+
+/* 按钮内箭头翻转，阴影消失 */
+.lyBtn65{width: 200px;height: 50px;position: relative;transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);box-shadow: 0 22px 40px rgba(0,0,0,.16);}
+.lyBtn65 .icon{font-size: 30px;color:#fff;width: 80px;height: 50px;display: block;background: url(https://preview.jsmo.xin/ue-1625/templates/ue_content/templates/images/morebig.png) no-repeat;z-index: 3;transition: all ease-out 0.3s;}
+
+
+@media (any-hover:hover) {
+    .lyBtn65:hover{background-color: #fff;box-shadow: 0 8px 30px rgba(161, 161, 161, 0.2);}
+    .lyBtn65:hover .icon{color: #333;background: url(https://preview.jsmo.xin/ue-1625/templates/ue_content/templates/images/morebig.png) no-repeat 0 -38px;}
+
+}

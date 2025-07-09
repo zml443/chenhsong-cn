@@ -1,0 +1,68 @@
+.ly_roll_number{}
+.ly_roll_number_span{}
+
+/* 转整圈 */
+@-webkit-keyframes ly_roll_number {
+    0%{transform: translateY(-0)}
+    100%{transform: translateY(-100%)}
+}
+
+/* 转上半圈 */
+@-webkit-keyframes ly_roll_number_start {
+    0%{transform: translateY(-0)}
+    100%{transform: translateY(-50%)}
+}
+/* 转下半圈 */
+@-webkit-keyframes ly_roll_number_center {
+    0%{transform: translateY(-50%)}
+    100%{transform: translateY(-100%)}
+}
+
+/* 转结束圈||会转到对应的数字 */
+@-webkit-keyframes ly_roll_number0 {
+    0%{transform: translateY(-0)}
+    100%{transform: translateY(-100%)}
+}
+@-webkit-keyframes ly_roll_number1 {
+    0%{transform: translateY(-0)}
+    100%{transform: translateY(-10%)}
+}
+@-webkit-keyframes ly_roll_number2 {
+    0%{transform: translateY(-0)}
+    100%{transform: translateY(-20%)}
+}
+@-webkit-keyframes ly_roll_number3 {
+    0%{transform: translateY(-0)}
+    100%{transform: translateY(-30%)}
+}
+@-webkit-keyframes ly_roll_number4 {
+    0%{transform: translateY(-0)}
+    100%{transform: translateY(-40%)}
+}
+@-webkit-keyframes ly_roll_number5 {
+    0%{transform: translateY(-0)}
+    100%{transform: translateY(-50%)}
+}
+@-webkit-keyframes ly_roll_number6 {
+    0%{transform: translateY(-0)}
+    100%{transform: translateY(-60%)}
+}
+@-webkit-keyframes ly_roll_number7 {
+    0%{transform: translateY(-0)}
+    100%{transform: translateY(-70%)}
+}
+@-webkit-keyframes ly_roll_number8 {
+    0%{transform: translateY(-0)}
+    100%{transform: translateY(-80%)}
+}
+@-webkit-keyframes ly_roll_number9 {
+    0%{transform: translateY(-0)}
+    100%{transform: translateY(-90%)}
+}
+
+/* 整体动画开始和结束 */
+@-webkit-keyframes ly_roll_number_opacity {
+    0%{opacity: 1;}
+    50%{opacity: 0.6;}
+    100%{opacity: 1;}
+}

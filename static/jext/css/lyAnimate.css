@@ -1,0 +1,125 @@
+/* 按钮 */
+
+/* 文字圆圈环绕并且匀速旋转 */
+@keyframes lyAnimate51{
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(-360deg);
+    }
+}
+
+/* 按钮  按钮箭头往右滑动后再回到原位 */
+
+@keyframes lyAnimate52{
+    0% { margin-left: 0px; opacity: 1; }
+    50% { margin-left: 20px; opacity: 0; }
+    75% { margin-left: -20px; opacity: 0; }
+    100%{margin-left: 0;opacity: 1;}
+}
+
+/*遮盖层铺满，再消失 */
+@keyframes lyAnimate53{
+    0%{transform: translateX(-100%);}
+    50%{transform: translateX(0);}
+    100%{transform: translateX(100%);}
+}
+
+@keyframes lyAnimate54{
+    0%{width: 130px;height: 130px;opacity: 1;}
+    100%{width: 150px;height: 150px;opacity: 0;}
+}
+
+/* 鼠标移入上方颜色块覆盖内容区在底部有弹跳的效果 */
+@keyframes lyAnimate55{
+    0%{height: 0;}
+    50%{height: 100%;}
+    75%{height: 90%;}
+    100%{height: 100%;}
+}
+
+@keyframes lyAnimate56{
+    0%{height: 100%;}
+    100%{height: 0;}
+}
+
+/* 动画：从左入场，往右出场 */
+@keyframes lyAnimate_1_start {
+    0% {
+        transform: translateX(-100%);-webkit-transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);-webkit-transform: translateX(0);
+    }
+}
+@keyframes lyAnimate_1_end {
+    0% {
+        transform: translateX(0);-webkit-transform: translateX(0);
+    }
+    100% {
+        transform: translateX(100%);-webkit-transform: translateX(100%);
+    }
+}
+
+/* 动画：大小变化,加停顿效果 */
+@keyframes lyAnimate_1_scale {
+    0% {
+        width: 100%;height: 100%;opacity: 0;
+    }
+    50% {
+        width: 130%;height: 130%;opacity: 0;
+    }
+    75% {
+        opacity: 1;
+    }
+    100% {
+        width: 160%;height: 160%;opacity: 0;
+    }
+}
+
+/* 动画：长度回弹 */
+@keyframes lyAnimate_1_width {
+    0% {
+        width: 0;
+    }
+    50% {
+        width: 100%;
+    }
+    62.5% {
+        width: 90%;
+    }
+    75% {
+        width: 100%;
+    }
+    87.5% {
+        width: 96%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+/* 动画：Y轴翻转 */
+@keyframes lyAnimate_1_rotateY {
+    0% {
+        transform: rotateY(0deg);
+    }
+    50% {
+        transform: rotateY(-90deg);
+    }
+    100% {
+        transform: rotateY(-90deg);
+    }
+}
+@keyframes lyAnimate_2_rotateY {
+    0% {
+        transform: rotateY(-90deg);
+    }
+    50% {
+        transform: rotateY(-90deg);
+    }
+    100% {
+        transform: rotateY(0deg);
+    }
+}

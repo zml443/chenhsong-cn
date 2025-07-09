@@ -1,0 +1,126 @@
+/* 展开式关闭掉body的鼠标事件 */
+body.ly_header_menu_close_pointer_event{pointer-events: none;}
+[ly-header-menu2]{pointer-events: all;}
+
+
+/* 遮罩背景 */
+.ly_header_menu_default{transition:.3s; width:100vw; /*height:100vh;*/ left:0; top:0; bottom: 0; z-index:19; background:rgba(0,0,0,.1); font-size:14px; opacity:0}
+.ly_header_menu_default.cur{right:0; opacity:1; visibility:visible;}
+
+
+/* 展示区 */
+.ly_header_menu_default_wrap{background:var(--bg_color);height:100%;overflow: hidden;  transform:translateX(101%); float:right; transition:.3s;position: relative;display: flex;}
+.ly_header_menu_default.cur .ly_header_menu_default_wrap{transform:translateX(0);}
+
+
+/* 侧拉 第一栏 */
+.ly_header_menu_default_nav{height: 100%;background: var(--bg_color);transition: .3s;width: 25vw;padding-top:100px;}
+.ly_header_menu_default_nav.cur{}
+.ly_header_menu_default_nav.prev{}
+
+/* 侧拉 第二栏 */
+.ly_header_menu_default_subnav{height: 100%;background: var(--bg_color);transition: .3s;width: 25vw;padding-top:100px;display: none;border-left: 1px solid transparent;}
+/* 当前 */
+.ly_header_menu_default_subnav.cur{display: block;border-color:var(--num_color);}
+/* 上一个 */
+.ly_header_menu_default_subnav.prev{}
+
+
+/* 侧拉 返回按钮 */
+.ly_header_menu_default_subnav_back{font-size:20px;line-height: 1.8;color: var(--font_color);position: relative;padding:13px 4vw;text-align: center;display: none;cursor: pointer;height: 80px;}
+/* 下边框 */
+/* .ly_header_menu_default_subnav_back::after{display: none;content: '';width: 100%;height: 1px;position: absolute;bottom: 0;left: 0;opacity: .2;background: var(--font_color);} */
+.ly_header_menu_default_subnav_back_i{font-size: 20px;float: left;}
+.ly_header_menu_default_subnav_back_span{display: none;}
+
+
+/* 所有的 li */
+.ly_header_menu_default_nav_li{font-size:21px;line-height: 28px;color: var(--font_color);position: relative;margin: 0 4vw;padding:13px 0px;transition: .3s;}
+/* 第二栏 下的li */
+.ly_header_menu_default_subnav .ly_header_menu_default_nav_li{font-size: 16px;}
+/* li 的下边框 */
+/* .ly_header_menu_default_nav_li::after{display: block;content: '';width: 100%;height: 1px;position: absolute;top: 0;left: 0;opacity: .2;background: var(--font_color);} */
+
+
+/* li下的数字与箭头 */
+.ly_header_menu_default_nav_li > span{color: var(--font_color);cursor: pointer;opacity: 0;transition: .3s;}
+.ly_header_menu_default_nav_li_i{font-size: 20px;padding-left: 8px;cursor: pointer;opacity: 0;transition: .3s;}
+
+
+/* 第一栏 li - 语言切换按钮 */
+.ly_header_menu_default_nav_li_btn,
+.ly_header_menu_default_nav_li_btn_drop,
+.ly_header_menu_default_nav_li_btn_drop_box{display: none;}
+
+
+
+@media (any-hover: hover){
+    /* li 的交互状态 */
+    .ly_header_menu_default_nav:hover > * > *,
+    .ly_header_menu_default_subnav:hover > * > *{opacity: .6;}
+
+    .ly_header_menu_default_nav_li:hover,
+    .ly_header_menu_default_nav_li:hover > span,
+    .ly_header_menu_default_nav_li:hover > i{opacity: 1;}
+
+    .ly_header_menu_default_nav_li.cur,
+    .ly_header_menu_default_nav_li.cur > span,
+    .ly_header_menu_default_nav_li.cur > i{opacity: 1;}
+}
+
+
+@media only screen and (max-width: 750px) {
+    /* app 侧边栏样式 */
+    .ly_header_menu_default_wrap{width: 530px;}
+
+    /* 所有的 li */
+    .ly_header_menu_default_nav_li{font-size: var(--font-sma-S);line-height: var(--font-sma-L);padding: 26px 0;margin: 0 8vw;}
+    .ly_header_menu_default_subnav .ly_header_menu_default_nav_li{font-size: var(--font-sma-S);line-height: var(--font-sma-L);}
+    .ly_header_menu_default_nav_li > span{opacity: 1;}
+    .ly_header_menu_default_nav_li_i{font-size: var(--font-sma-S);opacity: 1;}
+
+    /* 语言选择按钮 */
+    .ly_header_menu_default_nav_li_btn{display: flex;flex-wrap: wrap;margin: 0 8vw;padding:25px 0px;gap: 30px;position: absolute;left: 0;right: 0;bottom: 0;background: var(--bg_color);}
+    .ly_header_menu_default_nav_li_btn > *{min-width: calc((100% - 60px) / 3);height: 70px;border-radius: 35px;padding: 0 16px;font-size:var(--font-sma-S);color: var(--font_color);border: 1px solid var(--num_color);display: inline-flex;align-items: center;justify-content: center;}
+    /* 当前语言颜色 */
+    .ly_header_menu_default_nav_li_btn > *.cur{border-color: var(--mainColor);color: var(--mainColor);}
+
+    /* 语言选择可展开 */
+    .ly_header_menu_default_nav_li_btn_drop{display: flex;justify-content: center;align-items: center;margin: 0 8vw;padding:25px 0px;gap: 30px;position: absolute;left: 0;right: 0;bottom: 0;color: var(--font_color);font-size: var(--font-sma-S);background: var(--bg_color);}
+    .ly_header_menu_default_nav_li_btn_drop > i{font-size: var(--font-sma-S);transition: .3s;}
+
+    /* 语言选择展开 */
+    .ly_header_menu_default_nav_li_btn_drop_box{position: absolute;left: 0;right: 0;top: 100%;bottom: 0;background: #fff;transition: .3s;display: flex;flex-direction: column;background: var(--font_color);color: var(--bg_color);padding: 60px 0;overflow-y: auto;}
+    .ly_header_menu_default_nav_li_btn_drop_box.cur{top: calc(10% + 120px);}
+
+    .ly_header_menu_default_nav_li_btn_drop_box > *{font-size: var(--font-sma-S);line-height: var(--font-sma-L);padding: 26px 0;margin: 0 8vw;}
+    /* 当前语言颜色 */
+    .ly_header_menu_default_nav_li_btn_drop_box > *.cur{color: var(--mainColor);}
+
+    /* 第一栏 */
+    .ly_header_menu_default_nav{padding-top:120px;width: 100%;}
+    .ly_header_menu_default_nav.cur{transform:translateX(-20%);opacity: 0;}
+    .ly_header_menu_default_nav.prev{transform:translateX(-120%);opacity: 0;}
+
+    /* 第二栏 */
+    .ly_header_menu_default_subnav{padding-top:120px;width: 100%;position: absolute;top: 0px;left:100%;display: block;}
+    /* 当前 */
+    .ly_header_menu_default_subnav.cur{transform: translateX(-100%);border-color:transparent;}
+    /* 上一个 */
+    .ly_header_menu_default_subnav.prev{transform:translateX(-120%);opacity: 0;}
+
+    /* 返回按钮 */
+    .ly_header_menu_default_subnav_back{font-size: var(--font-sma-S);padding:13px 8vw;display: block;}
+    .ly_header_menu_default_subnav_back::after{display: block;}
+    .ly_header_menu_default_subnav_back_i{font-size: var(--font-sma-S);}
+}
+
+
+
+
+
+/* 左侧出现 ———————————————————————————————————— */
+
+/* 展示区 */
+.ly_header_menu_default[data-direction="left"] .ly_header_menu_default_wrap{ transform:translateX(-101%); float:left;background:var(--bg_color);}
+.ly_header_menu_default[data-direction="left"].cur .ly_header_menu_default_wrap{transform:translateX(0);}

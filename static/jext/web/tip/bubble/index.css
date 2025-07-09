@@ -1,0 +1,10 @@
+.__tip_bubble{
+	--bg:rgba(0,0,0,.8); 
+	--color:#fff; 
+	box-shadow:0 0 9px rgba(0,0,0,.3); background:var(--bg); opacity:1; z-index:2000; transition:.3s; opacity:0; pointer-events:none; font-size:12px; color:var(--color);
+}
+.__tip_bubble.cur{opacity:1;}
+.__tip_bubble .content{padding:9px 12px;}
+
+.__tip_bubble[data-tip-position="top_center"].cur{transform:translate(0,-12px);}
+.__tip_bubble[data-tip-position="top_center"] .toward{--width:9px; position:absolute; border:var(--width) solid transparent; border-top-color:var(--bg); left:50%; top:calc(100% - 1px); transform:translate(-50%,0);}

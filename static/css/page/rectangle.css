@@ -1,0 +1,28 @@
+
+.lyui_paging{display: flex;align-items: center;justify-content: center;line-height:1;}
+.lyui_paging_number{margin-left: 0.5em;}
+
+.lyui_paging_label,
+.lyui_paging_point,
+.lyui_paging_btn,
+.lyui_paging_prev,
+.lyui_paging_next{font-size: 1em;min-width: 2.5em;height: 2.5em;display:flex;align-items: center;justify-content: center;border-radius: 4px;cursor:pointer;background: #f6f6f6;transition: .3s;}
+
+.lyui_paging_prev,
+.lyui_paging_next{font-family: serif}
+
+.lyui_paging_btn:hover,
+.lyui_paging_prev:hover,
+.lyui_paging_next:hover{color: #fff;background-color: #333;}
+
+.lyui_paging_point,
+.lyui_paging_next,
+.lyui_paging_btn{margin-left: 0.5em;}
+.lyui_paging_btn:first-child{margin-left: 0;}
+
+.lyui_paging_btn.cur{color: #fff;background-color: #333;}
+
+.lyui_paging_label{width: 4em;margin: 0 0.5em;background: none;border: 1px solid #e1e1e1;}
+.lyui_paging_label input{width: 100%;text-align: center;}
+.lyui_paging_go{display:flex;align-items: center;justify-content: center;cursor: pointer;padding: 10px 5px;}
+.lyui_paging_total{margin-left: 2em;}

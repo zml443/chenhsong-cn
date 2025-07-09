@@ -1,0 +1,42 @@
+@keyframes No000_auto_loop_row_left {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+@keyframes No000_auto_loop_row_right {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(50%);
+    }
+}
+@keyframes No000_auto_loop_col_top {
+    0% {
+        transform: translateY(0%);
+    }
+    100% {
+        transform: translateY(-50%);
+    }
+}
+@keyframes No000_auto_loop_col_bottom {
+    0% {
+        transform: translateY(0%);
+    }
+    100% {
+        transform: translateY(50%);
+    }
+}
+
+[ly-carousel-autoloop]{width: 100%;overflow: hidden;display: flex;justify-content: flex-start;align-items: flex-start;}
+[ly-carousel-autoloop][data-direction='right']{justify-content: flex-end;}
+[ly-carousel-autoloop][data-direction='bottom']{align-items: flex-end;}
+[ly-carousel-autoloop] .wrapper{display: flex;animation: 16s No000_auto_loop_row_left linear infinite;position: relative;}
+[ly-carousel-autoloop][data-direction='right'] .wrapper{animation-name: No000_auto_loop_row_right;}
+[ly-carousel-autoloop][data-direction='top'] .wrapper{animation: 16s No000_auto_loop_col_top linear infinite;}
+[ly-carousel-autoloop][data-direction='bottom'] .wrapper{animation-name: No000_auto_loop_col_bottom;}
+[ly-carousel-autoloop] .wrapper .slide{flex:0 0 auto;}
+[ly-carousel-autoloop] .wrapper.pause{animation-play-state: paused;}

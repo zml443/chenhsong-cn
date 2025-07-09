@@ -1,0 +1,13 @@
+/* 卡片效果9 */
+.lyLoop1 .slide {height: 500px;font-size: 30px;color: #fff;background: 50%/cover;}
+.lyLoop1_choice .name {font-size: 30px;}
+.lyLoop1_choice .name.cur {color: #2145A8;}
+
+
+/* 卡片效果10 */
+.lyLoop2 .slide {height: 500px;font-size: 30px;color: #fff;background: 50%/cover;}
+.lyLoop2 .swiper-pagination-bullets{display: flex;}
+.lyLoop2 .swiper-pagination-bullet{font-size:14px;color: #fff;align-self: center;display: flex;justify-content: center;background-color: transparent;opacity: 1;margin: 0 10px !important;}
+.lyLoop2 .swiper-pagination-bullets-bullet:first-child{margin-left: 0;}
+.lyLoop2 .swiper-pagination-bullet-active{background-color: transparent;font-size: 16px;color: orange;margin-top: 2px;transform: translateY(-2px);}
+

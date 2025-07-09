@@ -1,0 +1,9 @@
+
+._2-5d {
+	position: relative;
+	overflow: hidden;
+}
+._2-5d canvas{
+	width: 100%;
+	transform: scale(1.05);
+}
