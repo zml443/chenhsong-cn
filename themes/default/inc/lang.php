@@ -12,7 +12,7 @@
                     <a href="<?=$url; ?>" class="li trans <?//=$v['cur']?>"><?=$v['Name']?></a>
                 <?php }?>
             </div>
-            <a href="/?lang=en" class="lang_en trans">Global - English</a>
+            <a href="global.chenhsong.com" target="_blank" class="lang_en trans">Global - English</a>
         </div>
     </div>
 </section>

@@ -224,9 +224,10 @@ if ($language_used_ary) {
 	c('language', array(key($language_name)));
 }
 // ==============
-if ($_GET['lang']) {
-	$_SESSION['lang'] = $_GET['lang'];
-}
+// if ($_GET['lang']) {
+// 	$_SESSION['lang'] = $_GET['lang'];
+// }
+$_SESSION['lang'] = "cn";
 c('lang', in_array($_SESSION['lang'],c('language'))?$_SESSION['lang'] : (in_array($language_default,c('language'))?$language_default:c('language.0')));
 c('manage.lang', in_array($_SESSION['manage.lang'],c('manage.language'))?$_SESSION['manage.lang'] : c('manage.language.0'));
 
